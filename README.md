@@ -15,7 +15,7 @@
 
 ## About
 
-I'm a software engineer with a B.Tech in Computer Science (CGPA 8.7, G. H. Raisoni College of Engineering, 2025). I build production-grade mobile apps and ML systems — from founding a Play Store studio to contributing to Wikimedia's open-source keyboard.
+I'm a software engineer with a B.Tech in Computer Science from G. H. Raisoni College of Engineering (2025). I build production-grade mobile apps and ML systems — from founding a Play Store studio to contributing to Wikimedia's open-source keyboard.
 
 - 🚀 **Founder @ Devanshu Studios** — shipped [PyMaster](https://play.google.com/store/apps/details?id=com.devanshustudios.pymaster), a Python learning platform with 1,200+ exercises and a Gemini AI tutor
 - 🌍 **Globalink Research Intern @ Mitacs** — built a cross-platform Flutter app, presented at an international symposium in Canada
@@ -78,8 +78,8 @@ I'm a software engineer with a B.Tech in Computer Science (CGPA 8.7, G. H. Raiso
 
 <div align="center">
 
-<img src="https://github-readme-stats.vercel.app/api?username=bhanu-dev82&show_icons=true&theme=tokyonight&hide_border=true&count_private=true&cache_seconds=86400" height="160" />
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=bhanu-dev82&layout=compact&theme=tokyonight&hide_border=true&langs_count=8&cache_seconds=86400" height="160" />
+<img src="https://streak-stats.demolab.com?user=bhanu-dev82&theme=tokyonight&hide_border=true&date_format=j%20M%5B%20Y%5D" height="160" />
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=bhanu-dev82&layout=compact&theme=tokyonight&hide_border=true&langs_count=8" height="160" />
 
 </div>
 
