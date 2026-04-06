@@ -1,315 +1,200 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const htmlElement = document.documentElement;
-    const headerElement = document.querySelector('header#header');
-    let headerHeight = headerElement ? headerElement.offsetHeight : 70;
+document.addEventListener('DOMContentLoaded', function () {
+    const html = document.documentElement;
+    const header = document.querySelector('#header');
+    let headerH = header ? header.offsetHeight : 64;
     const loadingScreen = document.getElementById('loadingScreen');
 
     // --- Loading Screen ---
     if (loadingScreen) {
-        // Use a class to hide, allowing for CSS transitions
         setTimeout(() => {
             loadingScreen.style.opacity = '0';
-            // Optional: remove from DOM after transition
             setTimeout(() => loadingScreen.style.display = 'none', 500);
-        }, 300);
+        }, 400);
     }
 
     // --- Smooth Scrolling ---
-    const navLinks = document.querySelectorAll('nav ul li a[href^="#"]');
-    navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+        link.addEventListener('click', function (e) {
+            const target = document.querySelector(this.getAttribute('href'));
+            if (!target) return;
             e.preventDefault();
-            let targetId = this.getAttribute('href');
-            let targetElement = document.querySelector(targetId);
-
-            if (targetElement) {
-                const elementPosition = targetElement.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
-                window.scrollTo({ top: offsetPosition, behavior: "smooth" });
-
-                // Close mobile nav if open
-                const navMenu = document.getElementById('navLinks');
-                const navToggle = document.getElementById('navToggle');
-                if (navMenu && navMenu.classList.contains('active')) {
-                    navMenu.classList.remove('active');
-                    if (navToggle) navToggle.innerHTML = '<i class="fas fa-bars"></i>';
-                    document.body.style.overflow = '';
-                }
+            window.scrollTo({ top: target.getBoundingClientRect().top + window.pageYOffset - headerH, behavior: 'smooth' });
+            const navMenu = document.getElementById('navLinks');
+            const navToggle = document.getElementById('navToggle');
+            if (navMenu && navMenu.classList.contains('active')) {
+                navMenu.classList.remove('active');
+                if (navToggle) navToggle.innerHTML = '<i class="fas fa-bars"></i>';
             }
         });
     });
 
-    // --- Mobile Navigation Toggle ---
+    // --- Mobile Nav Toggle ---
     const navToggle = document.getElementById('navToggle');
     const navMenu = document.getElementById('navLinks');
     if (navToggle && navMenu) {
-        navToggle.addEventListener('click', function() {
+        navToggle.addEventListener('click', function () {
             navMenu.classList.toggle('active');
-            const isActive = navMenu.classList.contains('active');
-            this.innerHTML = isActive ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
-            document.body.style.overflow = isActive ? 'hidden' : '';
+            this.innerHTML = navMenu.classList.contains('active')
+                ? '<i class="fas fa-times"></i>'
+                : '<i class="fas fa-bars"></i>';
         });
     }
 
-    // --- Dynamic Year for Footer ---
-    const yearSpan = document.getElementById('currentYear');
-    if (yearSpan) yearSpan.textContent = new Date().getFullYear();
+    // --- Footer Year ---
+    const yearEl = document.getElementById('currentYear');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-    // --- Active Link Highlighting on Scroll ---
+    // --- Active Nav Link on Scroll ---
     const sections = document.querySelectorAll('main section[id]');
-    const headerNavLinks = document.querySelectorAll('header nav ul li a'); // Ensure this matches your nav structure
-
-    function changeLinkState() {
-        let currentSectionId = '';
-        const scrollOffset = headerHeight + 80; // Generous offset for when section is "active"
-
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            if (window.scrollY >= sectionTop - scrollOffset) {
-                currentSectionId = section.getAttribute('id');
-            }
+    const navLinks = document.querySelectorAll('header nav ul li a');
+    function updateActiveLink() {
+        let current = '';
+        sections.forEach(s => {
+            if (window.scrollY >= s.offsetTop - headerH - 80) current = s.id;
         });
-
-        headerNavLinks.forEach(link => {
-            link.classList.remove('active'); // Use a more descriptive class like 'active-nav-link'
-            if (link.getAttribute('href') === `#${currentSectionId}`) {
-                link.classList.add('active');
-            }
+        navLinks.forEach(a => {
+            a.classList.toggle('active', a.getAttribute('href') === `#${current}`);
         });
-        // Handle case for top of the page (e.g., hero section)
-        if (currentSectionId === '' && headerNavLinks.length > 0 && window.scrollY < (sections[0] ? sections[0].offsetTop - scrollOffset : 100)) {
-             if (headerNavLinks[0].getAttribute('href') === '#hero') { // Or your first section ID
-                headerNavLinks[0].classList.add('active');
-            }
-        }
     }
-
-    if (sections.length > 0 && headerNavLinks.length > 0) {
-        setTimeout(changeLinkState, 150); // Initial check
-        window.addEventListener('scroll', changeLinkState, { passive: true });
-    }
-
+    window.addEventListener('scroll', updateActiveLink, { passive: true });
+    setTimeout(updateActiveLink, 200);
 
     // --- Theme Toggle ---
-    const themeToggleButton = document.getElementById('theme-toggle');
-
+    const themeBtn = document.getElementById('theme-toggle');
     function applyTheme(theme) {
-        htmlElement.setAttribute('data-theme', theme);
-        if (themeToggleButton) {
-            themeToggleButton.innerHTML = theme === 'dark' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
-            themeToggleButton.setAttribute('title', theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode');
-        }
+        html.setAttribute('data-theme', theme);
+        if (themeBtn) themeBtn.innerHTML = theme === 'dark' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
         localStorage.setItem('theme', theme);
-
-        // Re-initialize or update particle effects with new theme colors
-        // Wrapped in a small timeout to ensure CSS variables are updated in the DOM
-        setTimeout(() => {
-            initGeneralParticles();
-            initHeroPlexusEffect();
-        }, 50);
+        setTimeout(() => { initParticles(); initPlexus(); }, 60);
     }
+    function getCSSVar(v) { return getComputedStyle(html).getPropertyValue(v).trim(); }
 
-    function getCssVariable(variableName) {
-        return getComputedStyle(htmlElement).getPropertyValue(variableName).trim();
-    }
+    const saved = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    applyTheme(saved || (prefersDark ? 'dark' : 'light'));
 
-    // --- General Background Particles (particles.js) ---
-    function initGeneralParticles() {
-        if (typeof particlesJS === 'undefined' || !document.getElementById('particles-js')) return;
-
-        // Destroy existing instance if it exists (important for theme changes)
-        if (window.pJSDom && window.pJSDom[0] && window.pJSDom[0].pJS) {
-            window.pJSDom[0].pJS.fn.vendors.destroypJS();
-            window.pJSDom[0].pJS = null; // Clear reference
-        }
-
-        const currentTheme = htmlElement.getAttribute('data-theme') || 'light';
-        let particleColorValue = getCssVariable('--current-particle-color1'); // Defined in CSS for each theme
-        const defaultParticleColorLight = '#333333';
-        const defaultParticleColorDark = '#FFFFFF';
-
-        if (!particleColorValue || !/^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/.test(particleColorValue)) {
-            particleColorValue = currentTheme === 'dark' ? defaultParticleColorDark : defaultParticleColorLight;
-        }
-
-        particlesJS("particles-js", {
-            "particles": {
-                "number": {"value": currentTheme === 'dark' ? 40 : 60, "density": {"enable": true, "value_area": 800}},
-                "color": {"value": particleColorValue },
-                "shape": {"type": "circle"},
-                "opacity": {"value": currentTheme === 'dark' ? 0.3 : 0.4, "random": true, "anim": {"enable": true, "speed": 0.5, "opacity_min": 0.05, "sync": false}},
-                "size": {"value": currentTheme === 'dark' ? 1.5 : 2.5, "random": true},
-                "line_linked": {"enable": false}, // Typically off for this general effect
-                "move": {"enable": true, "speed": currentTheme === 'dark' ? 0.6 : 0.8, "direction": "none", "random": true, "straight": false, "out_mode": "out", "bounce": false}
-            },
-            "interactivity": {"detect_on": "canvas", "events": {"onhover": {"enable": false}, "onclick": {"enable": false}, "resize": true}},
-            "retina_detect": true
+    if (themeBtn) {
+        themeBtn.addEventListener('click', () => {
+            applyTheme(html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
         });
     }
 
-
-    // --- Hero Section Plexus Effect (Custom Canvas Animation) ---
-    const heroPlexusCanvas = document.getElementById('hero-plexus-canvas');
-    let ctxPlexus, particlesArrayPlexus = [], animationFrameIdPlexus;
-
-    function initHeroPlexusEffect() {
-        if (!heroPlexusCanvas) return;
-        ctxPlexus = heroPlexusCanvas.getContext('2d');
-        if (animationFrameIdPlexus) cancelAnimationFrame(animationFrameIdPlexus);
-
-        setHeroCanvasSize(); // Set size first
-        if (heroPlexusCanvas.width > 0 && heroPlexusCanvas.height > 0) {
-            createPlexusParticles(); // Then create particles based on new size
-            animatePlexusHero();
+    // --- Background Particles ---
+    function initParticles() {
+        if (typeof particlesJS === 'undefined' || !document.getElementById('particles-js')) return;
+        if (window.pJSDom && window.pJSDom[0] && window.pJSDom[0].pJS) {
+            window.pJSDom[0].pJS.fn.vendors.destroypJS();
+            window.pJSDom = [];
         }
+        const color = getCSSVar('--particle-color') || '#7c6af7';
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 35, density: { enable: true, value_area: 900 } },
+                color: { value: color },
+                shape: { type: 'circle' },
+                opacity: { value: 0.25, random: true },
+                size: { value: 2, random: true },
+                line_linked: { enable: false },
+                move: { enable: true, speed: 0.6, random: true, out_mode: 'out' }
+            },
+            interactivity: { events: { onhover: { enable: false }, onclick: { enable: false } } },
+            retina_detect: true
+        });
     }
 
-    function setHeroCanvasSize() {
-        if (!heroPlexusCanvas) return;
-        const heroSection = document.getElementById('hero');
-        if (heroSection) {
-            // Set canvas to match the hero section's rendered size
-            heroPlexusCanvas.width = heroSection.offsetWidth;
-            heroPlexusCanvas.height = heroSection.offsetHeight;
-        } else {
-            // Fallback if hero section isn't found (though it should be)
-            heroPlexusCanvas.width = window.innerWidth;
-            heroPlexusCanvas.height = window.innerHeight;
-        }
+    // --- Hero Plexus Canvas ---
+    const canvas = document.getElementById('hero-plexus-canvas');
+    let ctx, particles = [], rafId;
+
+    function initPlexus() {
+        if (!canvas) return;
+        ctx = canvas.getContext('2d');
+        if (rafId) cancelAnimationFrame(rafId);
+        resizePlexus();
+        createParticles();
+        animatePlexus();
     }
 
-    class ParticlePlexus {
-        constructor(x, y, directionX, directionY, size, color) {
-            this.x = x; this.y = y; this.directionX = directionX; this.directionY = directionY; this.size = size; this.color = color;
-        }
-        draw() {
-            if (!ctxPlexus) return;
-            ctxPlexus.beginPath(); ctxPlexus.arc(this.x, this.y, this.size, 0, Math.PI * 2, false); ctxPlexus.fillStyle = this.color; ctxPlexus.fill();
+    function resizePlexus() {
+        if (!canvas) return;
+        const hero = document.getElementById('hero');
+        canvas.width = hero ? hero.offsetWidth : window.innerWidth;
+        canvas.height = hero ? hero.offsetHeight : window.innerHeight;
+    }
+
+    class Dot {
+        constructor() { this.reset(); }
+        reset() {
+            this.x = Math.random() * canvas.width;
+            this.y = Math.random() * canvas.height;
+            this.vx = (Math.random() - 0.5) * 0.3;
+            this.vy = (Math.random() - 0.5) * 0.3;
+            this.r = Math.random() * 1.5 + 0.5;
+            this.color = getCSSVar('--plexus-particle') || '#7c6af7';
         }
         update() {
-            if (!heroPlexusCanvas || !ctxPlexus) return;
-            if (this.x + this.size > heroPlexusCanvas.width || this.x - this.size < 0) this.directionX = -this.directionX;
-            if (this.y + this.size > heroPlexusCanvas.height || this.y - this.size < 0) this.directionY = -this.directionY;
-            this.x += this.directionX; this.y += this.directionY; this.draw();
+            this.x += this.vx; this.y += this.vy;
+            if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+            if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+        }
+        draw() {
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+            ctx.fillStyle = this.color;
+            ctx.fill();
         }
     }
 
-    function createPlexusParticles() {
-        if (!heroPlexusCanvas || heroPlexusCanvas.width === 0 || heroPlexusCanvas.height === 0 || !ctxPlexus) return;
-        particlesArrayPlexus = []; // Clear existing particles
-
-        const particleColor = getCssVariable('--current-plexus-particle');
-        let numberOfParticles = (heroPlexusCanvas.width * heroPlexusCanvas.height) / 9000; // Density factor
-        numberOfParticles = Math.max(20, Math.min(100, Math.floor(numberOfParticles))); // Cap particle count
-
-        for (let i = 0; i < numberOfParticles; i++) {
-            let size = (Math.random() * 1.2) + 0.3; // Slightly larger and more varied
-            let x = Math.random() * heroPlexusCanvas.width;
-            let y = Math.random() * heroPlexusCanvas.height;
-            let directionX = (Math.random() * 0.2) - 0.1; // Slower movement
-            let directionY = (Math.random() * 0.2) - 0.1;
-            particlesArrayPlexus.push(new ParticlePlexus(x, y, directionX, directionY, size, particleColor));
-        }
+    function createParticles() {
+        particles = [];
+        const count = Math.min(80, Math.floor((canvas.width * canvas.height) / 10000));
+        for (let i = 0; i < count; i++) particles.push(new Dot());
     }
 
-    function connectPlexusLines() {
-        if (!heroPlexusCanvas || !particlesArrayPlexus || !ctxPlexus || particlesArrayPlexus.length === 0) return;
-
-        const lineColorWithOpacity = getCssVariable('--current-plexus-line'); // This should be an rgba value from CSS
-        const maxDistance = Math.min(heroPlexusCanvas.width / 7, heroPlexusCanvas.height / 7, 120); // Connection distance
-
-        // Extract base RGB from the CSS variable (e.g., "rgba(R,G,B,A)")
-        const rgbMatch = lineColorWithOpacity.match(/rgba?\((\d+,\s*\d+,\s*\d+)(?:,\s*[\d.]+)?\)/);
-        const baseRgbColor = rgbMatch && rgbMatch[1] ? rgbMatch[1] : '102,102,102'; // Fallback base color
-
-        for (let a = 0; a < particlesArrayPlexus.length; a++) {
-            for (let b = a + 1; b < particlesArrayPlexus.length; b++) {
-                let dx = particlesArrayPlexus[a].x - particlesArrayPlexus[b].x;
-                let dy = particlesArrayPlexus[a].y - particlesArrayPlexus[b].y;
-                let distance = Math.sqrt(dx * dx + dy * dy);
-
-                if (distance < maxDistance) {
-                    const opacity = Math.max(0, (1 - (distance / maxDistance)) * 0.7); // Line opacity based on distance
-                    ctxPlexus.strokeStyle = `rgba(${baseRgbColor}, ${opacity})`;
-                    ctxPlexus.lineWidth = 0.3; // Thinner lines
-                    ctxPlexus.beginPath();
-                    ctxPlexus.moveTo(particlesArrayPlexus[a].x, particlesArrayPlexus[a].y);
-                    ctxPlexus.lineTo(particlesArrayPlexus[b].x, particlesArrayPlexus[b].y);
-                    ctxPlexus.stroke();
+    function drawLines() {
+        const maxDist = 120;
+        const lineColor = getCSSVar('--plexus-line') || 'rgba(124,106,247,0.15)';
+        const rgb = lineColor.match(/[\d.]+/g);
+        const base = rgb ? `${rgb[0]},${rgb[1]},${rgb[2]}` : '124,106,247';
+        for (let i = 0; i < particles.length; i++) {
+            for (let j = i + 1; j < particles.length; j++) {
+                const dx = particles[i].x - particles[j].x;
+                const dy = particles[i].y - particles[j].y;
+                const d = Math.sqrt(dx * dx + dy * dy);
+                if (d < maxDist) {
+                    ctx.strokeStyle = `rgba(${base},${(1 - d / maxDist) * 0.5})`;
+                    ctx.lineWidth = 0.4;
+                    ctx.beginPath();
+                    ctx.moveTo(particles[i].x, particles[i].y);
+                    ctx.lineTo(particles[j].x, particles[j].y);
+                    ctx.stroke();
                 }
             }
         }
     }
 
-    function animatePlexusHero() {
-        if (!heroPlexusCanvas || !particlesArrayPlexus || !ctxPlexus) return;
-        animationFrameIdPlexus = requestAnimationFrame(animatePlexusHero);
-        ctxPlexus.clearRect(0, 0, heroPlexusCanvas.width, heroPlexusCanvas.height);
-
-        if (particlesArrayPlexus) { // Ensure array exists
-            for (let i = 0; i < particlesArrayPlexus.length; i++) {
-                particlesArrayPlexus[i].update();
-            }
-            connectPlexusLines();
-        }
+    function animatePlexus() {
+        rafId = requestAnimationFrame(animatePlexus);
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        particles.forEach(p => { p.update(); p.draw(); });
+        drawLines();
     }
 
-    if (heroPlexusCanvas) {
-        let resizeTimeoutPlexus;
-        window.addEventListener('resize', function() {
-            clearTimeout(resizeTimeoutPlexus);
-            resizeTimeoutPlexus = setTimeout(() => {
-                if (animationFrameIdPlexus) cancelAnimationFrame(animationFrameIdPlexus); // Stop old animation
-                initHeroPlexusEffect(); // Re-initialize completely on resize
-            }, 250); // Debounce resize
+    if (canvas) {
+        let resizeTimer;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(() => { cancelAnimationFrame(rafId); initPlexus(); }, 250);
         });
     }
 
-    // --- Scroll Animations for Sections (Fade-in) ---
-    const fadeElements = document.querySelectorAll('.fade-in'); // Your CSS should have .fade-in and .fade-in.visible
-    const observerOptions = {
-        root: null, // relative to the viewport
-        rootMargin: '0px',
-        threshold: 0.1 // 10% of the element is visible
-    };
+    // --- Scroll Fade-in ---
+    const fadeEls = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+    }, { threshold: 0.08 });
+    fadeEls.forEach(el => observer.observe(el));
 
-    const intersectionObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible'); // Add 'visible' class for CSS transition
-                observer.unobserve(entry.target); // Stop observing once visible
-            }
-        });
-    }, observerOptions);
-
-    fadeElements.forEach(el => intersectionObserver.observe(el));
-
-    // --- Initial Theme Setup ---
-    const savedTheme = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-    if (savedTheme) {
-        applyTheme(savedTheme);
-    } else if (prefersDark) {
-        applyTheme('dark');
-    } else {
-        applyTheme('light'); // Default to light
-    }
-
-    if (themeToggleButton) {
-        themeToggleButton.addEventListener('click', () => {
-            const newTheme = htmlElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-            applyTheme(newTheme);
-        });
-    }
-
-    // Adjust header height on resize for smooth scrolling calculations
-    let resizeTimeoutHeader;
-    window.addEventListener('resize', () => {
-        clearTimeout(resizeTimeoutHeader);
-        resizeTimeoutHeader = setTimeout(() => {
-            if (headerElement) headerHeight = headerElement.offsetHeight;
-        }, 100);
-    });
-
+    // --- Resize: update header height ---
+    window.addEventListener('resize', () => { if (header) headerH = header.offsetHeight; }, { passive: true });
 });

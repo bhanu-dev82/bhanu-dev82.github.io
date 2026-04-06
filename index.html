@@ -1,40 +1,39 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light"> <!-- Default to light theme -->
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio of Bhanu Nagpure, a Software Development Professional specializing in Machine Learning, Mobile Apps, and IoT.">
-    <meta name="keywords" content="Bhanu Nagpure, Portfolio, Resume, Machine Learning, Software Developer, Mobile App Development, IoT, Flutter, Python, Android">
-    <title>Bhanu Nagpure | Software Development Professional</title>
+    <meta name="description" content="Portfolio of Bhanu Nagpure — Founder of Devanshu Studios, Mobile Engineer, ML Researcher. Creator of PyMaster on Google Play.">
+    <meta name="keywords" content="Bhanu Nagpure, Portfolio, PyMaster, Devanshu Studios, Flutter, Machine Learning, Android, Kotlin, Python">
+    <title>Bhanu Nagpure | Developer & Founder</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Loading Screen -->
     <div class="loading" id="loadingScreen">
-        <div class="loader"></div>
+        <div class="loader-ring"></div>
     </div>
 
     <div id="particles-js"></div>
 
     <header id="header">
         <nav>
-            <div class="nav-container container"> <!-- Added .container for consistency -->
-                <a href="#hero" class="nav-logo">Bhanu Nagpure</a>
+            <div class="nav-container container">
+                <a href="#hero" class="nav-logo">BN</a>
                 <ul class="nav-links" id="navLinks">
                     <li><a href="#about">About</a></li>
                     <li><a href="#experience">Experience</a></li>
                     <li><a href="#skills">Skills</a></li>
                     <li><a href="#projects">Projects</a></li>
-                    <li><a href="#highlights">Highlights</a></li>
-                    <li><a href="#references">References</a></li>
+                    <li><a href="#apps">Apps</a></li>
+                    <li><a href="#highlights">Recognition</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
                 <div class="nav-controls">
                     <button id="theme-toggle" aria-label="Toggle theme" title="Toggle Theme">
-                        <i class="fas fa-moon"></i>
+                        <i class="fas fa-sun"></i>
                     </button>
                     <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
                         <i class="fas fa-bars"></i>
@@ -48,24 +47,33 @@
         <!-- Hero Section -->
         <section id="hero" class="hero-section">
             <canvas id="hero-plexus-canvas"></canvas>
-            <div class="container hero-content glass-effect">
-                <div class="hero-layout-wrapper"> <!-- New wrapper for potential column layout -->
+            <div class="container hero-content">
+                <div class="hero-layout-wrapper">
                     <div class="hero-image-container">
-                        <!-- %%%%%%%%%%%%%%%% -->
                         <img src="images/profile.jpg" alt="Bhanu Nagpure" class="hero-image">
+                        <div class="hero-image-ring"></div>
                     </div>
                     <div class="hero-text-content">
+                        <p class="hero-greeting">Hey, I'm</p>
                         <h1>Bhanu Nagpure</h1>
-                        <p class="tagline">Software Development Professional <span class="pipe">|</span> AI & Machine Learning <span class="pipe">|</span> IoT Solutions</p>
-                        <p class="hero-summary">
-                            A proactive and results-driven software development professional, I specialize in crafting impactful, scalable solutions leveraging AI, Machine Learning, Mobile, and IoT technologies to drive innovation and contribute to cutting-edge research.
+                        <p class="tagline">
+                            <span class="tag-chip">Founder @ Devanshu Studios</span>
+                            <span class="tag-chip">Mobile Engineer</span>
+                            <span class="tag-chip">ML Researcher</span>
                         </p>
+                        <p class="hero-summary">
+                            I build production-grade mobile apps and ML systems. Currently shipping <strong>PyMaster</strong> — a Python learning platform on Google Play — and contributing to open source at Wikimedia Foundation.
+                        </p>
+                        <div class="hero-actions">
+                            <a href="#projects" class="btn btn-primary">View My Work</a>
+                            <a href="#apps" class="btn btn-outline">My Apps</a>
+                        </div>
                         <div class="social-links">
                             <a href="https://www.linkedin.com/in/bhanunagpure" target="_blank" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
                             <a href="https://github.com/bhanu-dev82" target="_blank" aria-label="GitHub" title="GitHub"><i class="fab fa-github"></i></a>
                             <a href="mailto:bhanunagpure453@gmail.com" aria-label="Email" title="Email"><i class="fas fa-envelope"></i></a>
+                            <a href="https://play.google.com/store/apps/developer?id=Devanshu+Studios" target="_blank" aria-label="Google Play" title="Google Play"><i class="fab fa-google-play"></i></a>
                         </div>
-                        <a href="#projects" class="btn btn-primary">View My Work</a>
                     </div>
                 </div>
             </div>
@@ -75,23 +83,21 @@
         <section id="about" class="section-padding fade-in">
             <div class="container">
                 <h2 class="section-title">About Me</h2>
-                <div class="about-content-wrapper glass-effect">
-                    <div class="about-columns"> <!-- Wrapper for two-column layout -->
-                        <div class="about-description-column">
-                            <p>
-                                I am a proactive software development professional with a strong background in machine learning, mobile app
-                                development, and IoT solutions. My experience lies in leading cross-functional projects from concept to implementation,
-                                with a keen focus on creating impactful and scalable software. I am passionate about leveraging AI, machine learning, and
-                                open-source technologies to drive innovation and contribute to cutting-edge research in software development.
-                            </p>
-                        </div>
-                        <div class="about-education-column">
-                            <h3>Education</h3>
-                            <div class="education-item">
-                                <h4>G. H. Raisoni College of Engineering, Nagpur, MH, India</h4>
-                                <p>Bachelor of Technology in Computer Science and Engineering</p>
-                                <p><em>Expected Graduation: June 2025 (December 2021 – Present)</em></p>
-                            </div>
+                <div class="about-grid">
+                    <div class="about-card glass-effect">
+                        <p>
+                            I'm a software engineer who loves building things that ship. From founding <strong>Devanshu Studios</strong> and launching PyMaster on the Play Store, to contributing to Wikimedia's open-source keyboard app, I focus on writing clean, scalable code that solves real problems.
+                        </p>
+                        <p>
+                            My background spans mobile development (Flutter, Android), machine learning (NLP, Computer Vision), and IoT systems. I've interned at Athabasca University in Canada and worked with Mitacs as a Globalink Research Intern.
+                        </p>
+                    </div>
+                    <div class="about-card glass-effect">
+                        <h3><i class="fas fa-graduation-cap"></i> Education</h3>
+                        <div class="education-item">
+                            <h4>G. H. Raisoni College of Engineering</h4>
+                            <p>B.Tech in Computer Science & Engineering</p>
+                            <p class="edu-meta">CGPA: 8.7 / 10.0 &nbsp;·&nbsp; Nagpur, India &nbsp;·&nbsp; Dec 2021 – Jun 2025</p>
                         </div>
                     </div>
                 </div>
@@ -101,69 +107,112 @@
         <!-- Experience Section -->
         <section id="experience" class="section-padding fade-in">
             <div class="container">
-                <h2 class="section-title">Professional Experience</h2>
+                <h2 class="section-title">Experience</h2>
                 <div class="experience-timeline">
+
                     <article class="timeline-item glass-effect">
-                        <div class="timeline-icon"><i class="fas fa-brain"></i></div>
+                        <div class="timeline-dot"><i class="fas fa-rocket"></i></div>
                         <div class="timeline-content">
-                            <h3>Machine Learning Intern</h3>
-                            <h4>Athabasca University, Athabasca, AB, Canada</h4>
-                            <p class="dates">Aug 2024 - Oct 2024</p>
-                            <p><strong>Project:</strong> Ideological Analysis Algorithm</p>
+                            <div class="timeline-header">
+                                <div>
+                                    <h3>Founder & Lead Mobile Engineer</h3>
+                                    <h4>Devanshu Studios &nbsp;<span class="location-badge"><i class="fas fa-globe"></i> Remote</span></h4>
+                                </div>
+                                <span class="dates-badge">Aug 2025 – Present</span>
+                            </div>
                             <ul>
-                                <li>Led research on cutting-edge text ideology identification algorithms, improving prediction accuracy by <strong>25%</strong>.</li>
-                                <li>Designed and optimized an ML pipeline, resulting in a <strong>15% reduction</strong> in processing time and enhanced performance for large datasets.</li>
+                                <li>Architected and shipped <strong>PyMaster</strong> — a production-grade Python learning platform (50k+ LOC) using Flutter and Clean Architecture.</li>
+                                <li>Engineered a Native AI Tutor using Gemini LLM integration for context-aware debugging assistance, processing inputs locally for privacy.</li>
+                                <li>Built an offline-first sync engine to queue user progress locally and batch-upload to Firebase, ensuring zero data loss during network interruptions.</li>
+                                <li>Implemented scalable state management with Riverpod 2.0 and monetization via RevenueCat (IAP) and Google Mobile Ads mediation.</li>
                             </ul>
                         </div>
                     </article>
+
                     <article class="timeline-item glass-effect">
-                        <div class="timeline-icon"><i class="fas fa-globe-americas"></i></div>
+                        <div class="timeline-dot"><i class="fab fa-wikipedia-w"></i></div>
                         <div class="timeline-content">
-                            <h3>Globalink Research Intern</h3>
-                            <h4>Mitacs, Edmonton, AB, Canada</h4>
-                            <p class="dates">Apr 2024 - Aug 2024</p>
-                            <p><strong>Project:</strong> MfieldTrip - Flutter Application</p>
+                            <div class="timeline-header">
+                                <div>
+                                    <h3>Open Source Contributor</h3>
+                                    <h4>Wikimedia Foundation (Scribe-Android) &nbsp;<span class="location-badge"><i class="fas fa-globe"></i> Remote</span></h4>
+                                </div>
+                                <span class="dates-badge">Feb 2025 – Present</span>
+                            </div>
                             <ul>
-                                <li>Developed a cross-platform Flutter application for field assignments, achieving a <strong>98% user satisfaction rate</strong> across web, iOS, and Android platforms.</li>
-                                <li>Led end-to-end project development, including UI/UX design, frontend, and backend implementation.</li>
-                                <li>Presented research findings at an international conference and authored comprehensive project documentation.</li>
+                                <li>Enhanced UX for the Scribe-Android keyboard app (Kotlin) by developing tablet-specific layouts for 7+ languages including German, French, and Spanish.</li>
+                                <li>Resolved critical UI bugs related to theme consistency and animations; refactored the core KeyHandler module for better maintainability.</li>
                             </ul>
                         </div>
                     </article>
+
                     <article class="timeline-item glass-effect">
-                        <div class="timeline-icon"><i class="fas fa-mobile-alt"></i></div>
+                        <div class="timeline-dot"><i class="fas fa-brain"></i></div>
                         <div class="timeline-content">
-                            <h3>Software Developer Intern</h3>
-                            <h4>BETIC-GHRCE, Nagpur, MH, India</h4>
-                            <p class="dates">Oct 2022 – May 2024</p>
-                            <p><strong>Project:</strong> Smart device for early screening of OSMF</p>
+                            <div class="timeline-header">
+                                <div>
+                                    <h3>Machine Learning Intern</h3>
+                                    <h4>Athabasca University &nbsp;<span class="location-badge"><i class="fas fa-map-marker-alt"></i> Athabasca, AB, Canada</span></h4>
+                                </div>
+                                <span class="dates-badge">Aug 2024 – Oct 2024</span>
+                            </div>
+                            <ul>
+                                <li>Delivered <strong>95% prediction accuracy</strong> for a text ideology identification model by researching and implementing cutting-edge NLP algorithms (Transformers/BERT).</li>
+                                <li>Developed and deployed a prototype web interface for model access, enabling researchers to validate outputs efficiently.</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="timeline-item glass-effect">
+                        <div class="timeline-dot"><i class="fas fa-globe-americas"></i></div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <div>
+                                    <h3>Globalink Research Intern</h3>
+                                    <h4>Mitacs &nbsp;<span class="location-badge"><i class="fas fa-map-marker-alt"></i> Edmonton, AB, Canada</span></h4>
+                                </div>
+                                <span class="dates-badge">Apr 2024 – Aug 2024</span>
+                            </div>
+                            <ul>
+                                <li>Led end-to-end development of a cross-platform (iOS, Android, Web) field assignment app using Flutter, handling UI/UX, frontend, and backend.</li>
+                                <li>Presented research findings at the 3rd Annual TRESL Lab International Symposium, Athabasca, Canada.</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="timeline-item glass-effect">
+                        <div class="timeline-dot"><i class="fas fa-mobile-alt"></i></div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <div>
+                                    <h3>Software Developer Intern</h3>
+                                    <h4>BETIC-GHRCE &nbsp;<span class="location-badge"><i class="fas fa-map-marker-alt"></i> Nagpur, India</span></h4>
+                                </div>
+                                <span class="dates-badge">Oct 2022 – May 2024</span>
+                            </div>
                             <ul>
                                 <li>Engineered an Android app for TMJ disorder screening, enhancing classification accuracy by <strong>60%</strong> over previous systems.</li>
-                                <li>Boosted camera performance by <strong>30%</strong>, leveraging Google ML Library to improve diagnostic accuracy.</li>
+                                <li>Boosted camera performance by <strong>30%</strong> using Google ML Library to improve diagnostic accuracy.</li>
                             </ul>
                         </div>
                     </article>
+
                     <article class="timeline-item glass-effect">
-                        <div class="timeline-icon"><i class="fas fa-flask"></i></div>
+                        <div class="timeline-dot"><i class="fas fa-flask"></i></div>
                         <div class="timeline-content">
-                            <h3>Fellowship</h3>
-                            <h4>Indian Institute of Technology Bombay, Mumbai, MH, India</h4>
-                            <p class="dates">Mar 2022 – Oct 2022</p>
-                            <p><strong>Project:</strong> MEDHA and MEDIC</p>
+                            <div class="timeline-header">
+                                <div>
+                                    <h3>Fellowship</h3>
+                                    <h4>IIT Bombay &nbsp;<span class="location-badge"><i class="fas fa-map-marker-alt"></i> Mumbai, India</span></h4>
+                                </div>
+                                <span class="dates-badge">Mar 2022 – Oct 2022</span>
+                            </div>
                             <ul>
-                                <li>Led a team to design and prototype solutions for xerostomia patients, reducing diagnostic time by <strong>80%</strong> through innovative rapid prototyping techniques.</li>
-                                <li>Developed and presented a functional medical device prototype using MIT App Builder, receiving commendation from industry experts at IIT Bombay.</li>
+                                <li>Led a team to design and prototype solutions for xerostomia patients, reducing diagnostic time by <strong>80%</strong>.</li>
+                                <li>Developed a functional medical device prototype using MIT App Builder, commended by industry experts at IIT Bombay.</li>
                             </ul>
                         </div>
                     </article>
-                </div>
-                <div class="volunteer-experience-wrapper glass-effect fade-in">
-                     <h3 class="sub-section-title"><i class="fas fa-hands-helping"></i> Volunteer Experience</h3>
-                     <div class="volunteer-item">
-                        <h4>Oral Cancer Awareness Camps Organizer</h4>
-                        <p class="dates">Dec 2022 - June 2023</p>
-                        <p>Educated over 1,000 individuals on the risks of tobacco and betel nut consumption, collaborating with Lata Mangeshkar Hospital doctors.</p>
-                    </div>
                 </div>
             </div>
         </section>
@@ -171,38 +220,30 @@
         <!-- Skills Section -->
         <section id="skills" class="section-padding fade-in">
             <div class="container">
-                <h2 class="section-title">Skills & Expertise</h2>
+                <h2 class="section-title">Skills</h2>
                 <div class="skills-grid">
                     <div class="skill-category glass-effect">
-                        <h3><i class="fas fa-code"></i> Programming Languages</h3>
+                        <h3><i class="fas fa-code"></i> Languages</h3>
                         <div class="skill-tags">
-                            <span>Kotlin</span><span>Python</span><span>C</span><span>C++</span><span>Java</span><span>SQL</span><span>HTML</span><span>CSS</span><span>JavaScript</span>
+                            <span>Python</span><span>Kotlin</span><span>Java</span><span>Dart</span><span>C++</span><span>SQL</span><span>JavaScript</span>
                         </div>
                     </div>
                     <div class="skill-category glass-effect">
-                        <h3><i class="fas fa-tools"></i> Frameworks & Tools</h3>
+                        <h3><i class="fas fa-mobile-alt"></i> Mobile</h3>
                         <div class="skill-tags">
-                            <span>Flutter</span><span>Firebase</span><span>Android Dev</span><span>Git/GitHub</span><span>NumPy</span><span>Pandas</span><span>YOLO</span>
+                            <span>Flutter</span><span>Android SDK</span><span>Riverpod 2.0</span><span>Clean Architecture</span><span>RevenueCat</span><span>Firebase</span>
                         </div>
                     </div>
                     <div class="skill-category glass-effect">
-                        <h3><i class="fas fa-cogs"></i> Development Expertise</h3>
+                        <h3><i class="fas fa-robot"></i> AI & Data</h3>
                         <div class="skill-tags">
-                            <span>Cross-Platform Mobile</span><span>ML Pipelines</span><span>UI/UX Design</span>
-                            <span>Debugging & Testing</span><span>Documentation</span><span>Agile</span>
+                            <span>Generative AI (LLMs)</span><span>TensorFlow</span><span>PyTorch</span><span>Scikit-learn</span><span>OpenCV</span><span>Pandas</span><span>BERT</span><span>YOLO</span>
                         </div>
                     </div>
-                     <div class="skill-category glass-effect">
-                        <h3><i class="fas fa-desktop"></i> Operating Systems</h3>
+                    <div class="skill-category glass-effect">
+                        <h3><i class="fas fa-tools"></i> Tools & Platforms</h3>
                         <div class="skill-tags">
-                            <span>Linux</span><span>macOS</span><span>Windows</span><span>Android</span>
-                        </div>
-                    </div>
-                    <div class="skill-category research-interests glass-effect">
-                        <h3><i class="fas fa-lightbulb"></i> Research Interests</h3>
-                         <div class="skill-tags">
-                            <span>Machine Learning</span><span>Deep Learning</span><span>HCI</span>
-                            <span>NLP</span><span>App Dev</span><span>Open Source</span><span>Transformers</span><span>LLMs</span><span>IoT</span>
+                            <span>Git / GitHub</span><span>Google Cloud (GCP)</span><span>REST APIs</span><span>CI/CD</span><span>Linux</span><span>Firebase</span>
                         </div>
                     </div>
                 </div>
@@ -212,42 +253,39 @@
         <!-- Projects Section -->
         <section id="projects" class="section-padding fade-in">
             <div class="container">
-                <h2 class="section-title">Featured Projects</h2>
+                <h2 class="section-title">Projects</h2>
                 <div class="projects-grid">
                     <article class="project-card glass-effect">
-                        <!-- %%%%%%%%%%%%%%%% -->
-                        <img src="images/vsafe_anywhere.jpeg" alt="V-Safe-Anywhere Project Thumbnail" class="project-thumbnail">
+                        <img src="images/vsafe_anywhere.jpeg" alt="V-Safe-Anywhere" class="project-thumbnail">
                         <div class="project-info">
-                            <h3>V-Safe-Anywhere: Women's Safety with Wearable AI & IoT</h3>
-                            <p class="project-dates">Nov 2022 - Apr 2024</p>
-                            <p>Developed an IoT-based wearable safety device achieving 98% uptime with real-time data sync and Firebase authentication. My research, focusing on its scalable and secure architecture, was published by IGI Global.</p>
-                            <p class="tech-stack"><strong>Tech:</strong> Flutter, Firebase, Google Cloud (Sheet, Apps Script), IoT</p>
+                            <h3>V-Safe-Anywhere</h3>
+                            <p class="project-meta">Women's Safety · Wearable AI & IoT &nbsp;·&nbsp; Nov 2022 – Apr 2024</p>
+                            <p>IoT-based wearable safety device with 98% uptime, real-time Firebase sync, and secure authentication. Research published by IGI Global.</p>
+                            <p class="tech-stack">Flutter · Firebase · Google Cloud · IoT</p>
                             <div class="project-links">
-                                <a href="https://www.igi-global.com/chapter/v-safe-anywhere/342150" target="_blank" class="btn btn-secondary">View Publication</a>
+                                <a href="https://www.igi-global.com/chapter/v-safe-anywhere/342150" target="_blank" class="btn btn-outline-sm">Publication <i class="fas fa-external-link-alt"></i></a>
                             </div>
                         </div>
                     </article>
                     <article class="project-card glass-effect">
-                        <!-- %%%%%%%%%%%%%%%% -->
-                        <img src="images/osmf.jpeg" alt="OSMF Screening Project Thumbnail" class="project-thumbnail">
+                        <img src="images/osmf.jpeg" alt="OCanPredict OSMF Screening" class="project-thumbnail">
                         <div class="project-info">
-                            <h3>Smart Device for Early OSMF Screening (OCanPredict)</h3>
-                            <p class="project-dates">Dec 2022 - July 2023</p>
-                            <p>Engineered the Android app (OCanPredict) for a biomedical device aiding in Oral Submucous Fibrosis (OSMF) screening, successfully increasing diagnostic efficiency by 40%. This innovation garnered multiple national and state-level awards.</p>
-                            <p class="tech-stack"><strong>Tech:</strong> Android (Kotlin/Java), IoT, Firebase</p>
+                            <h3>OCanPredict — OSMF Screening</h3>
+                            <p class="project-meta">Biomedical · Android &nbsp;·&nbsp; Dec 2022 – Jul 2023</p>
+                            <p>Android app for a biomedical device aiding Oral Submucous Fibrosis screening, increasing diagnostic efficiency by 40%. Won multiple national and state-level awards.</p>
+                            <p class="tech-stack">Android (Kotlin/Java) · IoT · Firebase</p>
                         </div>
                     </article>
                     <article class="project-card glass-effect">
-                        <!-- %%%%%%%%%%%%%%%% -->
-                        <img src="images/autonomous.jpeg" alt="Autonomous Garbage Collector Thumbnail" class="project-thumbnail">
+                        <img src="images/autonomous.jpeg" alt="Autonomous Garbage Collector" class="project-thumbnail">
                         <div class="project-info">
-                            <h3>Autonomous Floating Garbage Collection (CV & Robotics)</h3>
-                            <p class="project-dates">June 2023 - Sep 2023</p>
-                            <p>Designed and implemented a computer vision system for detecting and retrieving floating waste, which reduced manual collection efforts by 60%. The work was presented at an international conference and the code is open-sourced.</p>
-                            <p class="tech-stack"><strong>Tech:</strong> Python, YOLO, NumPy, Pandas, IoT</p>
+                            <h3>Autonomous Garbage Collection Robot</h3>
+                            <p class="project-meta">Computer Vision · Robotics &nbsp;·&nbsp; Jun 2023 – Sep 2023</p>
+                            <p>CV system using YOLOv5 to autonomously detect and retrieve floating waste, reducing manual collection by 60%. Presented at 8th ICACS 2024, Hong Kong.</p>
+                            <p class="tech-stack">Python · YOLOv5 · NumPy · Pandas · IoT</p>
                             <div class="project-links">
-                                <a href="https://dl.acm.org/doi/10.1145/3693939.3693957" target="_blank" class="btn btn-secondary mr-2">Paper</a>
-                                <a href="https://github.com/bhanu-dev82" target="_blank" class="btn btn-secondary">GitHub</a>
+                                <a href="https://dl.acm.org/doi/10.1145/3693939.3693957" target="_blank" class="btn btn-outline-sm">Paper <i class="fas fa-external-link-alt"></i></a>
+                                <a href="https://github.com/bhanu-dev82" target="_blank" class="btn btn-outline-sm">GitHub <i class="fab fa-github"></i></a>
                             </div>
                         </div>
                     </article>
@@ -255,35 +293,80 @@
             </div>
         </section>
 
+        <!-- Apps Section (PyMaster) -->
+        <section id="apps" class="section-padding fade-in">
+            <div class="container">
+                <h2 class="section-title">My Apps</h2>
+                <p class="section-subtitle">Published on Google Play under Devanshu Studios</p>
+                <div class="app-showcase glass-effect">
+                    <div class="app-icon-col">
+                        <div class="app-icon-wrapper">
+                            <img src="images/PyMaster.png" alt="PyMaster App Icon" class="app-icon-img">
+                        </div>
+                        <div class="app-badges">
+                            <a href="https://play.google.com/store/apps/details?id=com.devanshustudios.pymaster" target="_blank" class="play-badge">
+                                <i class="fab fa-google-play"></i>
+                                <span>
+                                    <small>Get it on</small>
+                                    Google Play
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="app-details-col">
+                        <h3>PyMaster — Learn Python Coding</h3>
+                        <p class="app-developer">by Devanshu Studios</p>
+                        <p class="app-description">
+                            PyMaster is a production-grade Python learning platform with 1,200+ interactive exercises, interview-style questions, and a league system designed for real-world skills. Built with Flutter and Clean Architecture, featuring an AI Tutor powered by Google Gemini for context-aware debugging help.
+                        </p>
+                        <div class="app-features">
+                            <span><i class="fas fa-check-circle"></i> 1,200+ Exercises</span>
+                            <span><i class="fas fa-check-circle"></i> AI Tutor (Gemini)</span>
+                            <span><i class="fas fa-check-circle"></i> League System</span>
+                            <span><i class="fas fa-check-circle"></i> Offline Support</span>
+                            <span><i class="fas fa-check-circle"></i> Cloud Sync</span>
+                        </div>
+                        <div class="app-tech">
+                            <span>Flutter</span><span>Dart</span><span>Firebase</span><span>Riverpod 2.0</span><span>Gemini AI</span><span>RevenueCat</span>
+                        </div>
+                        <div class="app-links">
+                            <a href="https://play.google.com/store/apps/details?id=com.devanshustudios.pymaster" target="_blank" class="btn btn-primary">View on Play Store</a>
+                            <a href="https://sites.google.com/view/devanshustudios/home" target="_blank" class="btn btn-outline">Privacy Policy</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Highlights Section -->
         <section id="highlights" class="section-padding fade-in">
             <div class="container">
-                <h2 class="section-title">Recognition & Contributions</h2>
+                <h2 class="section-title">Recognition</h2>
                 <div class="highlights-grid">
                     <div class="highlight-item glass-effect">
                         <h3><i class="fas fa-award"></i> Awards & Grants</h3>
                         <ul>
-                            <li><strong>Third Place:</strong> Inter-University Research Convention: Avishkar 2024, Nashik (Jan 2024)</li>
-                            <li><strong>Runner-up:</strong> DIPEX 2023, Amravati (Apr 2023)</li>
-                            <li><strong>Runner-up:</strong> SHRISTI 2023, Kottayam (Mar 2023)</li>
-                            <li><strong>Grant Awardee:</strong> BIREC E-YUVA GRANT (₹10 lakh funding) (Feb 2023)</li>
-                            <li><strong>Winner:</strong> MEDHA and MEDIC-2022 (Oct 2022)</li>
+                            <li><strong>Third Place</strong> — Inter-University Research Convention: Avishkar 2024, Nashik (Jan 2024)</li>
+                            <li><strong>Runner-up</strong> — DIPEX 2023, Amravati (Apr 2023)</li>
+                            <li><strong>Runner-up</strong> — SHRISTI 2023, Kottayam (Mar 2023)</li>
+                            <li><strong>Grant Awardee</strong> — BIREC E-YUVA GRANT (₹10 lakh funding) (Feb 2023)</li>
+                            <li><strong>Winner</strong> — MEDHA and MEDIC-2022 (Oct 2022)</li>
                             <li>Multiple national/state awards for OSMF project innovation.</li>
                         </ul>
                     </div>
                     <div class="highlight-item glass-effect">
                         <h3><i class="fas fa-book-open"></i> Publications & Patents</h3>
                         <ul>
-                            <li><strong>Publication:</strong> "V-Safe-Anywhere: Empowering Women's Safety with Wearable AI and IoT." <em>IGI Global</em>. (March 1, 2024) <a href="https://www.igi-global.com/chapter/v-safe-anywhere/342150" target="_blank">[Link]</a></li>
-                            <li><strong>Conference Paper:</strong> "Autonomous Floating Garbage Collection Device using Computer Vision and Robotics." (D. Tamgadge, B. Nagpure, R. Mandal). <em>8th ICACS 2024</em>. <a href="https://dl.acm.org/doi/10.1145/3693939.3693957" target="_blank">[Link]</a></li>
-                            <li><strong>Patent:</strong> Smart Chairside TMJ Examination and Muscle Activity Detector Tool. (Pub. No. 202321022476, March 28, 2023) <a href="https://ipindia.gov.in/patentsearchlanguages/(S(lgggz0x0hi23z44xdo4i2exq))/CommerceSearchAddPath.aspx?Path=TUJDQUNFL0FERFNTL1BUSVBESUEucGRm" target="_blank">[Details]</a></li>
+                            <li>"V-Safe-Anywhere: Empowering Women's Safety with Wearable AI and IoT." <em>IGI Global</em>, March 2024. <a href="https://www.igi-global.com/chapter/v-safe-anywhere/342150" target="_blank">[Link]</a></li>
+                            <li>"Autonomous Floating Garbage Collection Device using Computer Vision and Robotics." <em>8th ICACS 2024</em>. <a href="https://dl.acm.org/doi/10.1145/3693939.3693957" target="_blank">[Link]</a></li>
+                            <li><strong>Patent:</strong> Smart Chairside TMJ Examination and Muscle Activity Detector Tool. (Pub. No. 202321022476, Mar 2023)</li>
                         </ul>
                     </div>
                     <div class="highlight-item glass-effect">
-                        <h3><i class="fas fa-bullhorn"></i> Conference Presentations</h3>
+                        <h3><i class="fas fa-bullhorn"></i> Conferences</h3>
                         <ul>
-                            <li>"Development of A Mobile Field Trip Application" - <em>3rd Annual TRESL Lab International Symposium</em>, Athabasca, AB, Canada (July 2024)</li>
-                            <li>Autonomous Floating Garbage Collection Device - <em>8th International Conference on Algorithms, Computing and Systems</em>, Hong Kong (Oct 2024)</li>
+                            <li>"Development of A Mobile Field Trip Application" — <em>3rd Annual TRESL Lab International Symposium</em>, Athabasca, Canada (Jul 2024)</li>
+                            <li>"Autonomous Floating Garbage Collection Device" — <em>8th ICACS</em>, Hong Kong (Oct 2024)</li>
                         </ul>
                     </div>
                 </div>
@@ -293,52 +376,26 @@
         <!-- References Section -->
         <section id="references" class="section-padding fade-in">
             <div class="container">
-                <h2 class="section-title">Professional References</h2>
-                <p class="text-center section-subtitle">
-                    I have had the privilege of collaborating with and learning from esteemed professionals.Contact information for references is available upon request for verification purposes.
-                </p>
+                <h2 class="section-title">References</h2>
+                <p class="section-subtitle">Contact information available upon request.</p>
                 <div class="references-grid">
                     <div class="reference-item glass-effect">
-                        <div class="reference-item-inner"> <!-- Wrapper for image and text columns -->
-                            <div class="reference-image-col">
-                                <!-- %%%%%%%%%%%%%%%% -->
-                                <img src="https://dam.athabascau.ca/GF7L4P38/at/b7c3mtb9rtfx73qf89m69b79/DrQingtan?auto=webp" alt="Dr. Qing Tan" class="reference-image">
-                            </div>
-                            <div class="reference-details-col">
-                                <h4>Dr. Qing Tan</h4>
-                                <p class="reference-affiliation">Athabasca University</p>
-                                <p class="reference-context">Supervised my Machine Learning Internship focusing on Ideological Analysis Algorithms and ML pipeline optimization.</p>
-                                <!-- <a href="mailto:qingt@athabascau.ca" class="reference-contact-link"><i class="fas fa-envelope"></i> Contact</a> -->
-                            </div>
-                        </div>
+                        <img src="https://dam.athabascau.ca/GF7L4P38/at/b7c3mtb9rtfx73qf89m69b79/DrQingtan?auto=webp" alt="Dr. Qing Tan" class="reference-image">
+                        <h4>Dr. Qing Tan</h4>
+                        <p class="reference-affiliation">Athabasca University</p>
+                        <p class="reference-context">Supervised ML Internship on Ideological Analysis Algorithms.</p>
                     </div>
                     <div class="reference-item glass-effect">
-                         <div class="reference-item-inner"> <!-- Wrapper for image and text columns -->
-                            <div class="reference-image-col">
-                                <!-- %%%%%%%%%%%%%%%% -->
-                                <img src="images/vibha-bora-madam.jpg" alt="Dr. Vibha Bora" class="reference-image">
-                            </div>
-                            <div class="reference-details-col">
-                                <h4>Dr. Vibha Bora</h4>
-                                <p class="reference-affiliation">G. H. Raisoni College of Engineering</p>
-                                <p class="reference-context">Academic mentor providing guidance on engineering projects, research methodologies, and fostering innovation.</p>
-                                 <!-- <a href="mailto:vibha.bora@raisoni.net" class="reference-contact-link"><i class="fas fa-envelope"></i> Contact</a> -->
-                            </div>
-                        </div>
+                        <img src="images/vibha-bora-madam.jpg" alt="Dr. Vibha Bora" class="reference-image">
+                        <h4>Dr. Vibha Bora</h4>
+                        <p class="reference-affiliation">G. H. Raisoni College of Engineering</p>
+                        <p class="reference-context">Academic mentor on engineering projects and research methodologies.</p>
                     </div>
                     <div class="reference-item glass-effect">
-                        <div class="reference-item-inner"> <!-- Wrapper for image and text columns -->
-                            <div class="reference-image-col">
-                                 <!-- %%%%%%%%%%%%%%%% -->
-                                <img src="images/hod-madam-2024.jpeg" alt="Dr. Snehlata Dongre" class="reference-image">
-                            </div>
-                            <div class="reference-details-col">
-                                <h4>Dr. Snehlata Dongre</h4>
-                                <p class="reference-affiliation">Symbiosis Institute of Technology Nagpur</p>
-                                <p class="reference-context">Faculty advisor offering valuable insights on technical development, research direction, and academic projects.</p>
-                                 <!--<a href="mailto:snehlata.dongre@raisoni.net" class="reference-contact-link"><i class="fas fa-envelope"></i> Contact</a> -->
-                            </div>
-                        </div>
+                        <img src="images/hod-madam-2024.jpeg" alt="Dr. Snehlata Dongre" class="reference-image">
+                        <h4>Dr. Snehlata Dongre</h4>
+                        <p class="reference-affiliation">Symbiosis Institute of Technology Nagpur</p>
+                        <p class="reference-context">Faculty advisor on technical development and research direction.</p>
                     </div>
                 </div>
             </div>
@@ -346,18 +403,19 @@
 
         <!-- Contact Section -->
         <section id="contact" class="section-padding fade-in">
-            <div class="container text-center">
+            <div class="container">
                 <div class="contact-box glass-effect">
-                    <h2 class="section-title">Let's Get In Touch</h2>
-                    <p>I am actively seeking challenging opportunities and collaborations where I can contribute my skills and passion for technology. If my profile aligns with your needs, I'd be delighted to connect and discuss further.</p>
+                    <h2 class="section-title">Get In Touch</h2>
+                    <p>Open to challenging opportunities, collaborations, and interesting conversations. Let's build something together.</p>
                     <a href="mailto:bhanunagpure453@gmail.com" class="btn btn-primary main-contact-btn">bhanunagpure453@gmail.com</a>
-                    <div class="contact-info-icons">
+                    <div class="contact-info-row">
                         <span><i class="fas fa-phone"></i> +91 982-210-7989</span>
                         <span><i class="fas fa-map-marker-alt"></i> Nagpur, MH, India</span>
                     </div>
                     <div class="social-links-contact">
-                        <a href="https://www.linkedin.com/in/bhanunagpure" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                        <a href="https://github.com/bhanu-dev82" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://www.linkedin.com/in/bhanunagpure" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                        <a href="https://github.com/bhanu-dev82" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://play.google.com/store/apps/developer?id=Devanshu+Studios" target="_blank"><i class="fab fa-google-play"></i> Play Store</a>
                     </div>
                 </div>
             </div>
@@ -365,8 +423,12 @@
     </main>
 
     <footer>
-        <div class="container">
-            <p>© <span id="currentYear"></span> Bhanu Nagpure. Crafted with Passion & Precision.</p>
+        <div class="container footer-inner">
+            <p>© <span id="currentYear"></span> Bhanu Nagpure &nbsp;·&nbsp; Devanshu Studios</p>
+            <div class="footer-links">
+                <a href="https://sites.google.com/view/devanshustudios/home" target="_blank">Privacy Policy</a>
+                <a href="https://play.google.com/store/apps/details?id=com.devanshustudios.pymaster" target="_blank">PyMaster on Play Store</a>
+            </div>
         </div>
     </footer>
 

@@ -1,87 +1,106 @@
-# 👋 Hello World! I'm Bhanu Nagpure!
+<div align="center">
 
-A final-year Computer Science student passionate about building scalable, impactful solutions at the intersection of **Machine Learning**, **Mobile Development**, and **IoT**.
+<img src="https://capsule-render.vercel.app/api?type=waving&color=7c6af7&height=120&section=header&text=Bhanu%20Nagpure&fontSize=40&fontColor=ffffff&fontAlignY=65&animation=fadeIn" />
 
-<p align="center">
-  <a href="https://github.com/bhanu-dev82">
-    <img src="https://github-readme-stats.vercel.app/api?username=bhanu-dev82&show_icons=true&theme=radical&hide_border=true&count_private=true&cache_seconds=86400" alt="Bhanu's GitHub Stats" />
-  </a>
-</p>
+### Mobile Engineer · ML Researcher · Open Source Contributor
 
-<p align="center">
-  <!-- Replaced placeholder text with actual links from your resume -->
-  <a href="https://www.linkedin.com/in/bhanunagpure/" target="_blank"><img src="https://img.shields.io/badge/LinkedIn-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/></a> 
-  <a href="mailto:bhanunagpure453@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"/></a> 
-  <!-- I'm adding your GitHub and Portfolio links from the resume header -->
-  <a href="https://github.com/bhanu-dev82" target="_blank"><img src="https://img.shields.io/badge/GitHub-%23181717.svg?&style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/></a> 
-  <a href="https://bhanu-dev82.github.io/" target="_blank"><img src="https://img.shields.io/badge/Portfolio-WebApp-blue?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Portfolio"/></a>
-</p>
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/bhanunagpure/)
+[![Portfolio](https://img.shields.io/badge/Portfolio-7c6af7?style=flat-square&logo=google-chrome&logoColor=white)](https://bhanu-dev82.github.io/)
+[![Play Store](https://img.shields.io/badge/Google_Play-414141?style=flat-square&logo=google-play&logoColor=white)](https://play.google.com/store/apps/details?id=com.devanshustudios.pymaster)
+[![Email](https://img.shields.io/badge/Email-D14836?style=flat-square&logo=gmail&logoColor=white)](mailto:bhanunagpure453@gmail.com)
+
+</div>
 
 ---
 
-### 🚀 About Me
+## About
 
-I am a CS enthusiast with global research internship experience, specializing in transforming complex problems into innovative, user-centric solutions. My work spans from creating life-saving IoT devices to developing cross-platform applications and contributing to large-scale open-source projects like the **Wikimedia Foundation**.
+I'm a software engineer with a B.Tech in Computer Science (CGPA 8.7, G. H. Raisoni College of Engineering, 2025). I build production-grade mobile apps and ML systems — from founding a Play Store studio to contributing to Wikimedia's open-source keyboard.
 
-- 🔭 I’m currently building ML solutions with **cutting-edge text ideology identification algorithms** and diving deeper into **Transformer architectures**.
-- 🌱 I’m always learning and exploring new frontiers in **AI for Social Good** and **efficient ML model deployment**.
-- 👯 I’m looking to collaborate on open-source projects related to **sustainable tech**, **healthcare innovation**, or **intelligent mobile applications**.
-- 💬 Ask me about **Flutter Development**, **Computer Vision with OpenCV/YOLO**, or my **IoT Projects**!
-- 📫 How to reach me: Drop me an [email](mailto:bhanu.nagpure@email.com) or connect on [LinkedIn](https://www.linkedin.com/in/bhanunagpure/).
-
----
-
-### 🛠️ My Tech Stack
-
-Here's a glimpse of the technologies and tools I'm proficient in:
-
-<p align="center">
-  <!-- Languages -->
-  <a href="#"><img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"></a> 
-  <a href="#"><img src="https://img.shields.io/badge/Kotlin-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white"></a> 
-  <a href="#"><img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white"></a> 
-  <a href="#"><img src="https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white"></a> 
-  <a href="#"><img src="https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white"></a> 
-  <a href="#"><img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"></a> 
-  <a href="#"><img src="https://img.shields.io/badge/SQL-4479A1?style=for-the-badge&logo=postgresql&logoColor=white"></a> 
-  <!-- ML/DL Frameworks -->
-  <a href="#"><img src="https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white"></a> 
-  <a href="#"><img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white"></a> 
-  <a href="#"><img src="https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white"></a> 
-  <a href="#"><img src="https://img.shields.io/badge/OpenCV-5C3EE8?style=for-the-badge&logo=opencv&logoColor=white"></a> 
-  <!-- Frameworks & Tools -->
-  <a href="#"><img src="https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white"></a> 
-  <a href="#"><img src="https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black"></a> 
-  <a href="#"><img src="https://img.shields.io/badge/Android%20Studio-3DDC84?style=for-the-badge&logo=android-studio&logoColor=white"></a> 
-  <a href="#"><img src="https://img.shields.io/badge/Google%20Cloud-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white"></a> 
-  <a href="#"><img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white"></a> 
-</p>
-
-**Core Competencies:** Machine Learning, Deep Learning, Computer Vision, IoT Solutions, Cross-Platform Mobile App Development (Flutter), Native Android (Kotlin), RESTful APIs, Cloud Computing, UI/UX Design, Agile Project Management.
+- 🚀 **Founder @ Devanshu Studios** — shipped [PyMaster](https://play.google.com/store/apps/details?id=com.devanshustudios.pymaster), a Python learning platform with 1,200+ exercises and a Gemini AI tutor
+- 🌍 **Globalink Research Intern @ Mitacs** — built a cross-platform Flutter app, presented at an international symposium in Canada
+- 🧠 **ML Intern @ Athabasca University** — achieved 95% accuracy on text ideology classification using BERT/Transformers
+- 🔓 **Open Source @ Wikimedia Foundation** — contributing to Scribe-Android (Kotlin), tablet layouts for 7+ languages
+- 📄 **Published** in IGI Global & ACM · **Patent** holder · **₹10 lakh grant** awardee
 
 ---
 
-### 🏆 Highlighted Projects & Research
+## Tech Stack
 
-Here are some of the projects I'm particularly proud of. For more, please check out my repositories!
+**Languages**
 
-| Project                                                                              | Key Technologies                                        | Highlights & Links                                                                                                                                                                                                    |
-| ------------------------------------------------------------------------------------ | ------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **V-Safe-Anywhere: IoT Wearable for Women's Safety**                                 | `Flutter`, `Firebase`, `IoT`, `Google Apps Script`      | <li>Developed a life-saving device with real-time data sync.</li> <li>🌟 **Key Achievement:** 98% service uptime.</li> <li>🔗 **[View Publication (IGI Global)](https://www.igi-global.com/chapter/v-safe-anywhere/343078)**</li>                     |
-| **Autonomous Floating Garbage Collector**                                              | `Python`, `OpenCV`, `YOLO`, `IoT`                       | <li>Designed a CV-powered robot to automate waste collection.</li> <li>🌟 **Key Achievement:** Reduced manual collection by 60%.</li> <li>🔗 **[View Paper (ACM)](https://dl.acm.org/doi/abs/10.1145/3708597.3708599)** \| **[Source Code](https://github.com/bhanu-dev82/floating-water-object-detection)**</li> |
-| **Smart Device for Early OSMF Screening**                                           | `Android (Kotlin)`, `Firebase`, `IoT`, `Biomedical`     | <li>Built an Android app integrated with a biomedical device.</li> <li>🌟 **Key Achievement:** Increased diagnostic efficiency by 40%.</li> <li>🏆 Received multiple national & state-level awards.</li>          |
-| **MfieldTrip: Cross-Platform Research App (Mitacs Internship)**                            | `Flutter`, `Firebase`, `UI/UX Design`, `iOS/Android/Web`| <li>Led end-to-end development of an app for field assignments.</li> <li>🌟 **Key Achievement:** Presented at an international conference.</li> <li>📈 Received >85% user satisfaction.</li>  |
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![Kotlin](https://img.shields.io/badge/Kotlin-7F52FF?style=flat-square&logo=kotlin&logoColor=white)
+![Dart](https://img.shields.io/badge/Dart-0175C2?style=flat-square&logo=dart&logoColor=white)
+![Java](https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white)
+![C++](https://img.shields.io/badge/C++-00599C?style=flat-square&logo=c%2B%2B&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
+![SQL](https://img.shields.io/badge/SQL-4479A1?style=flat-square&logo=postgresql&logoColor=white)
+
+**Mobile & Frameworks**
+
+![Flutter](https://img.shields.io/badge/Flutter-02569B?style=flat-square&logo=flutter&logoColor=white)
+![Android](https://img.shields.io/badge/Android_SDK-3DDC84?style=flat-square&logo=android&logoColor=white)
+![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=flat-square&logo=firebase&logoColor=black)
+![Riverpod](https://img.shields.io/badge/Riverpod_2.0-7c6af7?style=flat-square&logoColor=white)
+![RevenueCat](https://img.shields.io/badge/RevenueCat-F25A2B?style=flat-square&logoColor=white)
+
+**AI & Data**
+
+![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?style=flat-square&logo=tensorflow&logoColor=white)
+![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white)
+![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?style=flat-square&logo=scikit-learn&logoColor=white)
+![OpenCV](https://img.shields.io/badge/OpenCV-5C3EE8?style=flat-square&logo=opencv&logoColor=white)
+![Gemini](https://img.shields.io/badge/Gemini_AI-4285F4?style=flat-square&logo=google&logoColor=white)
+
+**Tools & Platforms**
+
+![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
+![GCP](https://img.shields.io/badge/Google_Cloud-4285F4?style=flat-square&logo=google-cloud&logoColor=white)
+![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=black)
+![CI/CD](https://img.shields.io/badge/CI%2FCD-2088FF?style=flat-square&logo=github-actions&logoColor=white)
 
 ---
 
-### 📊 GitHub Stats & Activity
+## Featured Work
 
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=bhanu-dev82&layout=compact&theme=radical&hide_border=true&langs_count=10&cache_seconds=86400" alt="Top Languages" />
-</p>
+| Project | Stack | Highlights |
+|---|---|---|
+| [**PyMaster**](https://play.google.com/store/apps/details?id=com.devanshustudios.pymaster) — Python learning app | Flutter · Dart · Firebase · Gemini AI · Riverpod | 50k+ LOC · AI Tutor · Offline-first sync · IAP via RevenueCat |
+| **V-Safe-Anywhere** — Women's wearable safety device | Flutter · Firebase · IoT | 98% uptime · [IGI Global publication](https://www.igi-global.com/chapter/v-safe-anywhere/342150) |
+| **Autonomous Garbage Collection Robot** | Python · YOLOv5 · OpenCV · IoT | 60% reduction in manual effort · [ACM paper](https://dl.acm.org/doi/10.1145/3693939.3693957) |
+| **OCanPredict** — OSMF screening Android app | Kotlin · Android SDK · Firebase | 40% efficiency gain · Multiple national awards |
+| **MfieldTrip** — Cross-platform field research app | Flutter · Firebase · iOS/Android/Web | Presented at 3rd Annual TRESL Lab Symposium, Canada |
 
 ---
 
-<p align="center">
-  Thank you for visiting my profile! Let's connect and build something amazing together.
-</p>
+## GitHub Stats
+
+<div align="center">
+
+<img src="https://github-readme-stats.vercel.app/api?username=bhanu-dev82&show_icons=true&theme=tokyonight&hide_border=true&count_private=true&cache_seconds=86400" height="160" />
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=bhanu-dev82&layout=compact&theme=tokyonight&hide_border=true&langs_count=8&cache_seconds=86400" height="160" />
+
+</div>
+
+---
+
+## Recognition
+
+- 🥉 **3rd Place** — Avishkar 2024 Inter-University Research Convention, Nashik
+- 🥈 **Runner-up** — DIPEX 2023, Amravati & SHRISTI 2023, Kottayam
+- 💰 **₹10 Lakh Grant** — BIREC E-YUVA Grant (Feb 2023)
+- 🏆 **Winner** — MEDHA and MEDIC-2022, IIT Bombay
+- 📜 **Patent** — Smart Chairside TMJ Examination Tool (Pub. No. 202321022476)
+
+---
+
+<div align="center">
+
+**Open to full-time roles in Mobile Engineering, ML Engineering, and Software Development.**
+
+[![LinkedIn](https://img.shields.io/badge/Let's_connect_on_LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/bhanunagpure/)
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=7c6af7&height=80&section=footer" />
+
+</div>
