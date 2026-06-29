@@ -369,23 +369,19 @@
                             <span>Flutter</span><span>Dart</span><span>Riverpod 2.0</span><span>Firebase</span><span>Gemini AI</span><span>RevenueCat</span>
                         </div>
                         
-                        <!-- PyMaster Screenshots Slider -->
-                        <div class="screenshot-slider" id="pymaster-slider">
-                            <button class="slider-btn prev-btn" aria-label="Previous images"><i class="fas fa-chevron-left"></i></button>
+                        <!-- PyMaster Screenshots Gallery -->
+                        <div class="screenshot-slider" id="pymaster-slider" aria-label="PyMaster app screenshots">
+                            <button class="slider-btn prev-btn" type="button" aria-label="Previous PyMaster screenshot"><i class="fas fa-chevron-left"></i></button>
                             <div class="slider-track-wrap">
                                 <div class="slider-track">
-                                    <div class="slider-slide">
-                                        <img src="images/app_screenshots/pymaster/pymaster_1.jpg" alt="PyMaster Screen 1" loading="lazy">
-                                        <img src="images/app_screenshots/pymaster/pymaster_2.jpg" alt="PyMaster Screen 2" loading="lazy">
-                                        <img src="images/app_screenshots/pymaster/pymaster_3.jpg" alt="PyMaster Screen 3" loading="lazy">
-                                    </div>
-                                    <div class="slider-slide">
-                                        <img src="images/app_screenshots/pymaster/pymaster_4.jpg" alt="PyMaster Screen 4" loading="lazy">
-                                        <img src="images/app_screenshots/pymaster/pymaster_5.jpg" alt="PyMaster Screen 5" loading="lazy">
-                                    </div>
+                                    <img src="images/app_screenshots/pymaster/pymaster_1.jpg" alt="PyMaster lesson dashboard screenshot" loading="lazy">
+                                    <img src="images/app_screenshots/pymaster/pymaster_2.jpg" alt="PyMaster Python exercise screenshot" loading="lazy">
+                                    <img src="images/app_screenshots/pymaster/pymaster_3.jpg" alt="PyMaster learning path screenshot" loading="lazy">
+                                    <img src="images/app_screenshots/pymaster/pymaster_4.jpg" alt="PyMaster AI tutor screenshot" loading="lazy">
+                                    <img src="images/app_screenshots/pymaster/pymaster_5.jpg" alt="PyMaster progress screenshot" loading="lazy">
                                 </div>
                             </div>
-                            <button class="slider-btn next-btn" aria-label="Next images"><i class="fas fa-chevron-right"></i></button>
+                            <button class="slider-btn next-btn" type="button" aria-label="Next PyMaster screenshot"><i class="fas fa-chevron-right"></i></button>
                         </div>
 
                         <div class="app-links">
@@ -419,21 +415,17 @@
                             <span>Kotlin</span><span>Jetpack Compose</span><span>LiteRT-LM</span><span>Hilt</span><span>CameraX</span>
                         </div>
                         
-                        <!-- Chakuli Screenshots Slider -->
-                        <div class="screenshot-slider" id="chakuli-slider">
-                            <button class="slider-btn prev-btn" aria-label="Previous images"><i class="fas fa-chevron-left"></i></button>
+                        <!-- Chakuli Screenshots Gallery -->
+                        <div class="screenshot-slider" id="chakuli-slider" aria-label="Chakuli app screenshots">
+                            <button class="slider-btn prev-btn" type="button" aria-label="Previous Chakuli screenshot"><i class="fas fa-chevron-left"></i></button>
                             <div class="slider-track-wrap">
                                 <div class="slider-track">
-                                    <div class="slider-slide">
-                                        <img src="images/app_screenshots/chakuli/chakuli_1.jpg" alt="Chakuli Screen 1" loading="lazy">
-                                        <img src="images/app_screenshots/chakuli/chakuli_2.jpg" alt="Chakuli Screen 2" loading="lazy">
-                                    </div>
-                                    <div class="slider-slide">
-                                        <img src="images/app_screenshots/chakuli/chakuli_3.jpg" alt="Chakuli Screen 3" loading="lazy">
-                                    </div>
+                                    <img src="images/app_screenshots/chakuli/chakuli_1.jpg" alt="Chakuli local AI chat screenshot" loading="lazy">
+                                    <img src="images/app_screenshots/chakuli/chakuli_2.jpg" alt="Chakuli model selection screenshot" loading="lazy">
+                                    <img src="images/app_screenshots/chakuli/chakuli_3.jpg" alt="Chakuli offline assistant screenshot" loading="lazy">
                                 </div>
                             </div>
-                            <button class="slider-btn next-btn" aria-label="Next images"><i class="fas fa-chevron-right"></i></button>
+                            <button class="slider-btn next-btn" type="button" aria-label="Next Chakuli screenshot"><i class="fas fa-chevron-right"></i></button>
                         </div>
 
                         <div class="coming-soon-box">
@@ -575,31 +567,42 @@
         }, { threshold: 0.07 }).observe(el);
     });
 
-    // Screenshot Sliders
+    // Screenshot galleries
     function initSlider(id) {
         const slider = document.getElementById(id);
         if (!slider) return;
+        const wrap = slider.querySelector('.slider-track-wrap');
         const track = slider.querySelector('.slider-track');
-        const slides = slider.querySelectorAll('.slider-slide');
+        const slides = slider.querySelectorAll('.slider-track img');
         const prev = slider.querySelector('.prev-btn');
         const next = slider.querySelector('.next-btn');
-        let idx = 0;
-        const total = slides.length;
+        if (!wrap || !track || !slides.length || !prev || !next) return;
 
-        function update() {
-            track.style.transform = `translateX(-${idx * 100}%)`;
+        function getStep() {
+            const styles = getComputedStyle(track);
+            const gap = parseFloat(styles.columnGap || styles.gap) || 0;
+            return slides[0].getBoundingClientRect().width + gap;
+        }
+
+        function updateButtons() {
+            const maxScroll = wrap.scrollWidth - wrap.clientWidth - 2;
+            prev.disabled = wrap.scrollLeft <= 2;
+            next.disabled = wrap.scrollLeft >= maxScroll;
         }
 
         prev.addEventListener('click', (e) => {
             e.preventDefault();
-            idx = (idx - 1 + total) % total;
-            update();
+            wrap.scrollBy({ left: -getStep(), behavior: 'smooth' });
         });
+
         next.addEventListener('click', (e) => {
             e.preventDefault();
-            idx = (idx + 1) % total;
-            update();
+            wrap.scrollBy({ left: getStep(), behavior: 'smooth' });
         });
+
+        wrap.addEventListener('scroll', updateButtons, { passive: true });
+        window.addEventListener('resize', updateButtons, { passive: true });
+        updateButtons();
     }
     initSlider('pymaster-slider');
     initSlider('chakuli-slider');
