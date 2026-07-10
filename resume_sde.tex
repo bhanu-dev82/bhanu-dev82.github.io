@@ -1,0 +1,206 @@
+%-------------------------
+% Resume — Software Development Engineer (Two Page)
+% Author : Bhanu Nagpure
+% Optimised for: Groww SDE-I, Bengaluru
+%-------------------------
+
+\documentclass[letterpaper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{carlito}
+\usepackage{microtype}
+\usepackage{latexsym}
+\usepackage{titlesec}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage[left=0.6in,top=0.5in,right=0.6in,bottom=0.5in]{geometry}
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+\setlength{\parskip}{0pt}
+
+\titleformat{\section}{\vspace{-2pt}\scshape\raggedright\large\bfseries}{}{0em}{}[\color{black}\titlerule]
+\titlespacing*{\section}{0pt}{10pt}{5pt}
+
+\pdfgentounicode=1
+
+\newcommand{\resumeItem}[1]{\item\small{#1}}
+
+\newcommand{\resumeSubheading}[4]{%
+  \item\vspace{3pt}
+  \begin{tabular*}{\textwidth}[t]{@{}l@{\extracolsep{\fill}}r@{}}
+    \textbf{#1} & \small{#2} \\
+    \textit{\small #3} & \textit{\small #4} \\
+  \end{tabular*}\vspace{-4pt}%
+}
+
+\newcommand{\resumeProjectHeading}[3]{%
+  \item\vspace{3pt}
+  \begin{tabular*}{\textwidth}[t]{@{}l@{\extracolsep{\fill}}r@{}}
+    \textbf{#1} \textit{\small | #2} & \small{#3} \\
+  \end{tabular*}\vspace{-4pt}%
+}
+
+\newcommand{\resumeSubHeadingListStart}{%
+  \begin{itemize}[leftmargin=0pt, label={}, itemsep=0pt, parsep=0pt, topsep=0pt]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}\vspace{4pt}}
+
+\newcommand{\resumeItemListStart}{%
+  \begin{itemize}[leftmargin=0.15in, label=\textbullet, itemsep=3pt, parsep=0pt, topsep=4pt]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{4pt}}
+
+%-------------------------------------------
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+  {\Huge\bfseries Bhanu Nagpure}\\[5pt]
+  \small
+  +91 982-210-7989 \;$|$\;
+  \href{mailto:bhanunagpure453@gmail.com}{\underline{bhanunagpure453@gmail.com}} \;$|$\;
+  \href{https://linkedin.com/in/bhanunagpure}{\underline{linkedin.com/in/bhanunagpure}} \;$|$\;
+  \href{https://github.com/bhanu-dev82}{\underline{github.com/bhanu-dev82}} \;$|$\;
+  \href{https://bhanu-dev82.github.io}{\underline{bhanu-dev82.github.io}} \;$|$\;
+  Nagpur, India
+\end{center}
+
+%-----------EDUCATION-----------
+\section{Education}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {G H Raisoni College of Engineering}{Dec 2021 -- Jun 2025}
+    {B.Tech in Computer Science \& Engineering \;$|$\; CGPA: \textbf{8.7 / 10.0}}{Nagpur, India}
+\resumeSubHeadingListEnd
+
+%-----------TECHNICAL SKILLS-----------
+\section{Technical Skills}
+\begin{itemize}[leftmargin=0pt, label={}, itemsep=2.5pt, parsep=0pt, topsep=2pt]
+  \item\small{\textbf{Languages:} Java (primary), Kotlin, Python, C++, SQL, JavaScript}
+  \item\small{\textbf{Data Structures \& Algorithms:} Arrays, Linked Lists, Trees, Graphs, Hash Maps, Heaps, Dynamic Programming, Sorting \& Searching, Time/Space complexity analysis}
+  \item\small{\textbf{Backend \& Systems:} REST APIs, Firebase (Firestore, Auth, Storage, Crashlytics), SQL/NoSQL databases, async pipelines, offline-first sync, event-driven architecture}
+  \item\small{\textbf{Concurrency:} Java threading \& concurrency primitives, Kotlin Coroutines \& Flow, WorkManager (background scheduling, retry logic, constraints)}
+  \item\small{\textbf{Architecture \& Design:} Clean Architecture, MVVM/MVI, SOLID principles, Dependency Injection (Hilt), Repository pattern, unit-testable component design}
+  \item\small{\textbf{Tools \& DevOps:} Git, CI/CD, Gradle (Kotlin DSL), Google Cloud Platform, Linux, Android Studio}
+\end{itemize}
+
+%-----------EXPERIENCE-----------
+\section{Professional Experience}
+\resumeSubHeadingListStart
+
+  \resumeSubheading
+    {Devanshu Studios --- Founder \& Lead Engineer}{Aug 2025 -- Present}
+    {Independent}{Remote}
+    \resumeItemListStart
+      \resumeItem{Took \textbf{complete ownership} of designing, building, and shipping \textbf{PyMaster} (\href{https://play.google.com/store/apps/details?id=com.devanshustudios.pymaster}{\underline{Play Store}}) --- 50k+ LOC production platform with \textbf{Clean Architecture}, multi-env build system (dev/staging/prod), Riverpod 2.0, and Gemini AI Tutor.}
+      \resumeItem{Engineered an \textbf{offline-first async sync engine}: event-driven queue persists user progress via Hive, batch-uploads to Firebase on reconnect --- \textbf{zero data loss} under intermittent connectivity with deterministic conflict resolution.}
+      \resumeItem{Architected \textbf{Chakuli --- Offline AI Chatbot} (Play Store beta, 12+ testers): on-device LLM inference (Gemma 2/3, Phi 3.5 Mini) via \textbf{LiteRT-LM} with zero cloud calls; WorkManager handles multi-GB model downloads with exponential backoff and foreground notifications.}
+      \resumeItem{Designed \textbf{unit-testable, maintainable components}: Repository pattern + Hilt DI enabling independent testing of data, domain, and presentation layers; Proto DataStore for type-safe persistence, EncryptedSharedPreferences for secure key storage.}
+      \resumeItem{Owned full \textbf{production lifecycle}: CI/CD pipeline, Play Console publishing, A/B testing, Crashlytics incident response, RevenueCat billing stack (subscriptions + IAP), AdMob native ad mediation.}
+    \resumeItemListEnd
+
+  \resumeSubheading
+    {Athabasca University --- Globalink Research Intern (Mitacs)}{Apr 2024 -- Oct 2024}
+    {Machine Learning \& Software Development}{Edmonton, AB, Canada}
+    \resumeItemListStart
+      \resumeItem{Built a text ideology classifier in \textbf{Java/Python} using \textbf{BERT/Transformers} achieving \textbf{95\% prediction accuracy}; deployed as a REST-backed web service for researcher validation.}
+      \resumeItem{Led sole development of a \textbf{cross-platform (iOS, Android, Web)} field-trip app --- Firebase Auth/Storage backend, OpenStreetMaps integration; presented at \textbf{TRESL Lab International Symposium}, Canada (Jul 2024).}
+    \resumeItemListEnd
+
+  \resumeSubheading
+    {BETIC-GHRCE --- Software Developer Intern}{Oct 2022 -- May 2024}
+    {}{Nagpur, India}
+    \resumeItemListStart
+      \resumeItem{Built a production \textbf{Java/Kotlin} diagnostic app using MediaPipe FaceMesh --- \textbf{60\%} accuracy improvement, \textbf{30\%} inference speedup through camera pipeline optimisation.}
+      \resumeItem{Contributed to a \textbf{granted Indian patent}: \textit{``Smart Chairside TMJ Examination and Muscle Activity Detector Tool''} (Pub.\ No.\ 202321022476 --- \textbf{Granted}).}
+    \resumeItemListEnd
+
+  \resumeSubheading
+    {Wikimedia Foundation --- Open Source Contributor}{Feb 2025 -- Present}
+    {Scribe-Android (Kotlin)}{Remote}
+    \resumeItemListStart
+      \resumeItem{Implemented tablet keyboard layouts for 7+ languages in Kotlin; refactored core \textbf{KeyHandler} module to reduce coupling and improve testability; resolved critical UI bugs.}
+    \resumeItemListEnd
+
+  \resumeSubheading
+    {IIT Bombay --- Fellowship, Design for Health}{Mar 2022 -- Oct 2022}
+    {}{Mumbai, India}
+    \resumeItemListStart
+      \resumeItem{Led team to prototype a xerostomia diagnostic device --- reduced assessment time by \textbf{80\%}. Software layer built with MIT App Inventor + IoT hardware; presented at IIT Bombay.}
+    \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{Key Projects}
+\resumeSubHeadingListStart
+
+  \resumeProjectHeading
+    {PyMaster --- Learn Python}{Dart, Kotlin, Firebase, Riverpod 2.0, Gemini AI, RevenueCat}{2025 -- Present}
+    \resumeItemListStart
+      \resumeItem{\textbf{Live on Google Play.} 1,200+ exercises, gamified leagues, Gemini AI Tutor, offline-first sync --- 50k+ LOC, 99.5\% crash-free sessions. Multi-env Flavors, go\_router, RevenueCat IAP, AdMob mediation, Firebase Sign-In.}
+    \resumeItemListEnd
+
+  \resumeProjectHeading
+    {Chakuli --- Offline AI Chatbot}{Kotlin, Java, LiteRT-LM, Jetpack Compose, WorkManager, Proto DataStore}{2025 -- Present}
+    \resumeItemListStart
+      \resumeItem{\textbf{Closed beta on Play Store (12+ testers).} Runs Gemma 2/3, Phi 3.5 Mini, SmolLM entirely on-device --- zero cloud inference. Jetpack Compose UI, Hilt DI, CameraX, Agent Skills, encrypted key storage.}
+    \resumeItemListEnd
+
+  \resumeProjectHeading
+    {V-Safe-Anywhere --- Women's Safety System}{Flutter, Java, Firebase, IoT, Google Cloud}{2022 -- 2024}
+    \resumeItemListStart
+      \resumeItem{IoT wearable + app: panic button triggers \textbf{real-time GPS broadcast} via Firebase --- \textbf{98\% uptime}. Published by \href{https://www.igi-global.com/chapter/v-safe-anywhere/342150}{\underline{IGI Global}}.}
+    \resumeItemListEnd
+
+  \resumeProjectHeading
+    {OCanPredict --- OSMF Screening App}{Java, Kotlin, MediaPipe FaceMesh, Firebase}{2022 -- 2023}
+    \resumeItemListStart
+      \resumeItem{Real-time OSMF facial screening via MediaPipe FaceMesh --- \textbf{40\%} diagnostic efficiency gain. Multiple national awards; contributed to granted patent.}
+    \resumeItemListEnd
+
+  \resumeProjectHeading
+    {Autonomous Garbage Collection Robot}{Python, YOLOv5, OpenCV, NumPy, IoT}{2023}
+    \resumeItemListStart
+      \resumeItem{YOLOv5 computer vision pipeline for autonomous waste detection --- \textbf{60\%} reduction in manual effort. Published at \href{https://dl.acm.org/doi/10.1145/3693939.3693957}{\underline{ACM ICACS 2024, Hong Kong}}.}
+    \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%-----------PUBLICATIONS & PATENTS-----------
+\section{Publications, Patents \& Conferences}
+\vspace{2pt}
+\small{
+\textbf{Journal:} ``V-Safe-Anywhere: Empowering Women's Safety with Wearable AI and IoT.'' \textit{IGI Global}, Mar 2024. \href{https://www.igi-global.com/chapter/v-safe-anywhere/342150}{\underline{[Link]}}\\[4pt]
+\textbf{Conference:} ``Autonomous Floating Garbage Collection Device using Computer Vision and Robotics.'' \textit{8th ICACS 2024, ACM}, Hong Kong, Oct 2024. \href{https://dl.acm.org/doi/10.1145/3693939.3693957}{\underline{[Link]}}\\[4pt]
+\textbf{Conference:} ``Development of a Mobile Field Trip Application.'' \textit{3rd Annual TRESL Lab International Symposium}, Athabasca, Canada, Jul 2024.\\[4pt]
+\textbf{Patent (Granted):} \textit{``Smart Chairside TMJ Examination and Muscle Activity Detector Tool.''} Office of the Controller General of Patents, India. (Pub.\ No.\ 202321022476 --- \textbf{Granted}.) \quad
+\textbf{Patent (Pending):} \textit{``AI-Based Portable Device for Dental Disease Detection.''} DPIIT, Govt.\ of India. (App.\ No.\ 202421006731, Published Aug 2025.)
+}
+
+%-----------AWARDS-----------
+\section{Awards \& Recognition}
+\vspace{2pt}
+\small{
+\textbf{3rd Place} Avishkar 2024 \;$|$\; \textbf{Runner-up} DIPEX 2023 \;$|$\; \textbf{Runner-up} SHRISTI 2023 \;$|$\; \textbf{Grant Awardee} BIREC E-YUVA Rs.\,10L seed funding \;$|$\; \textbf{Winner} MEDHA 2022 \;$|$\; \textbf{Winner} MEDIC-2022 \;$|$\; Multiple national awards for OCanPredict.
+}
+
+%-----------WRITING-----------
+\section{Technical Writing \& Open Source}
+\vspace{2pt}
+\small{
+\textbf{Medium} (\href{https://medium.com/@bhanu.r.nagpure.8082}{\underline{medium.com/@bhanu.r.nagpure.8082}}): \textit{``I Built a Python Learning App From a Hospital Bed''} (Jun 2026); \textit{``I Didn't Stress Test My Native Ads. My App Paid the Price''} (Apr 2026); \textit{``Why I Stopped Building Apps and Started Building an Engine in Flutter''} (Mar 2026).\\[4pt]
+\textbf{Open Source:} Wikimedia Foundation / Scribe-Android (Kotlin) --- tablet keyboard layouts for 7+ languages, UI bug fixes, KeyHandler refactor.
+}
+
+\end{document}
