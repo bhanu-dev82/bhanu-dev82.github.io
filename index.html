@@ -1,26 +1,25 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Bhanu Nagpure — Android & Flutter Developer, Founder of Devanshu Studios. Creator of PyMaster and Chakuli on Google Play. B.Tech CSE, CGPA 8.7. Open-source contributor at Wikimedia Foundation.">
-    <meta name="keywords" content="Bhanu Nagpure, Android Developer, Flutter Developer, Jetpack Compose, Kotlin, Dart, Mobile Engineer, Devanshu Studios, PyMaster, Chakuli, Nagpur, India">
+    <meta name="description" content="Bhanu Nagpure — Software Engineer & Indie Founder. Ships mobile, on-device AI, and full product systems. Creator of PyMaster & Chakuli. B.Tech CSE, patents, Mitacs research, Wikimedia contributor.">
+    <meta name="keywords" content="Bhanu Nagpure, Software Engineer, Android, Flutter, On-Device AI, Machine Learning, Jetpack Compose, Kotlin, Dart, Devanshu Studios, PyMaster, Chakuli, Nagpur, India">
     <meta name="author" content="Bhanu Nagpure">
     <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#000000">
 
-    <!-- Open Graph -->
-    <meta property="og:title" content="Bhanu Nagpure | Android & Flutter Developer">
-    <meta property="og:description" content="Founder of Devanshu Studios. Shipped PyMaster & Chakuli to Google Play. Expert in Kotlin, Jetpack Compose, Flutter, Firebase, and on-device AI.">
+    <meta property="og:title" content="Bhanu Nagpure | Software Engineer & Indie Founder">
+    <meta property="og:description" content="Founder of Devanshu Studios. Shipped PyMaster & Chakuli to Google Play. Mobile systems, on-device AI, ML research, and production engineering.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://bhanu-dev82.github.io">
 
-    <!-- Structured Data for AI/ATS scanners -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Person",
       "name": "Bhanu Nagpure",
-      "jobTitle": "Android & Flutter Developer",
+      "jobTitle": "Software Engineer",
       "email": "bhanunagpure453@gmail.com",
       "telephone": "+91-982-210-7989",
       "url": "https://bhanu-dev82.github.io",
@@ -34,41 +33,52 @@
         "name": "G H Raisoni College of Engineering",
         "address": { "@type": "PostalAddress", "addressLocality": "Nagpur", "addressCountry": "IN" }
       },
-      "knowsAbout": ["Android Development","Flutter","Kotlin","Jetpack Compose","Dart","Firebase","On-Device AI","LiteRT","Riverpod","Clean Architecture","Machine Learning"]
+      "knowsAbout": ["Software Engineering","Android Development","Flutter","Kotlin","Jetpack Compose","Dart","On-Device AI","Machine Learning","Firebase","Clean Architecture","Product Development"]
     }
     </script>
 
-    <title>Bhanu Nagpure | Android & Flutter Developer</title>
+    <title>Bhanu Nagpure | Software Engineer & Indie Founder</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Animated background -->
+    <!-- Chakuli-style mesh background · PyMaster Solar accents in UI -->
     <div class="bg-canvas" aria-hidden="true">
-        <div class="bg-orb bg-orb-1"></div>
-        <div class="bg-orb bg-orb-2"></div>
-        <div class="bg-orb bg-orb-3"></div>
+        <div class="bg-orb bg-orb-1" title="neural"></div>
+        <div class="bg-orb bg-orb-2" title="gold"></div>
+        <div class="bg-orb bg-orb-3" title="coral"></div>
     </div>
-    <!-- Loading -->
-    <div class="loading" id="loadingScreen"><div class="loader-ring"></div></div>
+
+    <div class="loading" id="loadingScreen">
+        <div class="loader-ring"></div>
+        <div class="loader-text">booting portfolio…</div>
+    </div>
 
     <header id="header">
         <nav>
             <div class="nav-container">
-                <a href="#hero" class="nav-logo">Bhanu Nagpure</a>
+                <a href="#hero" class="nav-logo">
+                    <span class="logo-mark">~/</span>bhanu<span class="logo-dot">.</span>
+                </a>
                 <ul class="nav-links" id="navLinks">
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#experience">Experience</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#apps">Apps</a></li>
-                    <li><a href="#highlights">Recognition</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#apps">apps</a></li>
+                    <li><a href="#about">about</a></li>
+                    <li><a href="#experience">experience</a></li>
+                    <li><a href="#skills">skills</a></li>
+                    <li><a href="#projects">projects</a></li>
+                    <li><a href="#highlights">recognition</a></li>
+                    <li><a href="#contact">contact</a></li>
                 </ul>
                 <div class="nav-controls">
-                    <button id="theme-toggle" aria-label="Toggle dark/light mode" title="Toggle theme">🌙</button>
-                    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation"><i class="fas fa-bars"></i></button>
+                    <button id="theme-toggle" aria-label="Toggle dark/light mode" title="Toggle theme">
+                        <i class="fas fa-sun"></i>
+                    </button>
+                    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                        <i class="fas fa-bars"></i>
+                    </button>
                 </div>
             </div>
         </nav>
@@ -78,34 +88,152 @@
         <!-- Hero -->
         <section id="hero" class="hero-section">
             <div class="hero-content">
-                <div class="hero-layout-wrapper">
-                    <div class="hero-image-container">
-                        <img src="images/profile.jpg" alt="Bhanu Nagpure — Android & Flutter Developer" class="hero-image">
-                    </div>
-                    <div class="hero-text-content">
-                        <p class="hero-greeting">Hi, I'm</p>
-                        <h1>Bhanu Nagpure</h1>
-                        <p class="tagline">
-                            <span class="tag-chip">Android Developer</span>
-                            <span class="tag-chip">Flutter Developer</span>
-                            <span class="tag-chip">Founder @ Devanshu Studios</span>
-                        </p>
-                        <p class="hero-summary">
-                            Mobile engineer who builds and ships production-grade apps. <strong>2 apps on Google Play</strong>, international research internships in Canada, and an open-source contributor at Wikimedia Foundation. B.Tech CSE, CGPA 8.7.
-                        </p>
-                        <div class="hero-actions">
-                            <a href="#projects" class="btn btn-primary" id="viewWorkBtn">View My Work</a>
-                            <a href="#apps" class="btn btn-outline" id="myAppsBtn">My Apps</a>
-                            <a href="Resume_Bhanu.pdf" download class="btn-download" id="downloadCvBtn"><i class="fas fa-download"></i> Download CV</a>
+                <div class="hero-panel">
+                    <div class="hero-main">
+                        <div class="hero-image-container">
+                            <img src="images/profile.jpg" alt="Bhanu Nagpure — Software Engineer" class="hero-image" width="200" height="200">
+                            <div class="hero-status hero-status-float">
+                                <span class="pulse" aria-hidden="true"></span>
+                                Open to work
+                            </div>
                         </div>
-                        <div class="social-links">
-                            <a href="https://www.linkedin.com/in/bhanunagpure" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                            <a href="https://github.com/bhanu-dev82" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                            <a href="https://medium.com/@bhanu.r.nagpure.8082" target="_blank" rel="noopener" aria-label="Medium Blog"><i class="fab fa-medium"></i></a>
-                            <a href="mailto:bhanunagpure453@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-                            <a href="https://play.google.com/store/apps/developer?id=Devanshu+Studios" target="_blank" rel="noopener" aria-label="Google Play"><i class="fab fa-google-play"></i></a>
+                        <div class="hero-text-content">
+                            <p class="hero-greeting">Software Engineer · Founder</p>
+                            <h1>Bhanu Nagpure</h1>
+                            <p class="hero-role">I ship end-to-end products — mobile, on-device AI, and the systems under them.</p>
+                            <p class="hero-summary">
+                                <span class="hl">2 apps on Google Play</span>
+                                <span class="hero-dot" aria-hidden="true">·</span>
+                                patents
+                                <span class="hero-dot" aria-hidden="true">·</span>
+                                Mitacs Canada
+                                <span class="hero-dot" aria-hidden="true">·</span>
+                                Wikimedia
+                                <span class="hero-dot" aria-hidden="true">·</span>
+                                B.Tech CSE 8.7
+                            </p>
+                            <div class="hero-actions">
+                                <a href="#apps" class="btn btn-primary" id="myAppsBtn">
+                                    <i class="fas fa-rocket"></i> See my apps
+                                </a>
+                                <a href="Resume_Bhanu.pdf" download class="btn btn-outline" id="downloadCvBtn">
+                                    <i class="fas fa-download"></i> Download CV
+                                </a>
+                                <a href="#contact" class="btn btn-ghost" id="viewWorkBtn">Contact</a>
+                            </div>
+                            <div class="social-links">
+                                <a href="https://www.linkedin.com/in/bhanunagpure" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="https://github.com/bhanu-dev82" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                                <a href="https://medium.com/@bhanu.r.nagpure.8082" target="_blank" rel="noopener" aria-label="Medium Blog"><i class="fab fa-medium-m"></i></a>
+                                <a href="mailto:bhanunagpure453@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                                <a href="https://play.google.com/store/apps/developer?id=Devanshu+Studios" target="_blank" rel="noopener" aria-label="Google Play"><i class="fab fa-google-play"></i></a>
+                            </div>
                         </div>
                     </div>
+
+                    <div class="hero-stats" aria-label="Career highlights">
+                        <div class="stat-pill">
+                            <div class="stat-num">2<span>+</span></div>
+                            <div class="stat-lbl">Play Store apps</div>
+                        </div>
+                        <div class="stat-pill">
+                            <div class="stat-num">2</div>
+                            <div class="stat-lbl">Patents</div>
+                        </div>
+                        <div class="stat-pill">
+                            <div class="stat-num">50k<span>+</span></div>
+                            <div class="stat-lbl">LOC shipped</div>
+                        </div>
+                        <div class="stat-pill">
+                            <div class="stat-num">CA</div>
+                            <div class="stat-lbl">Mitacs research</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Apps first — strongest proof -->
+        <section id="apps" class="section-padding fade-in">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-index">01 // apps</div>
+                    <h2 class="section-title">Products under Devanshu Studios</h2>
+                    <p class="section-subtitle">One live. One in open testing.</p>
+                </div>
+                <div class="apps-grid">
+                    <article class="app-card">
+                        <div class="app-card-header">
+                            <div class="app-icon-wrapper">
+                                <img src="images/PyMaster.png" alt="PyMaster App Icon" class="app-icon-img">
+                            </div>
+                            <div class="app-name-group">
+                                <div class="app-title-row">
+                                    <h3>PyMaster</h3>
+                                    <span class="app-status-badge badge-live">Live</span>
+                                </div>
+                                <p class="app-pitch">Learn Python · AI tutor · 50k+ LOC</p>
+                            </div>
+                        </div>
+                        <p class="app-description">1,200+ exercises, gamified levels, offline-first sync. Built solo in Flutter and live on the Play Store.</p>
+
+                        <div class="screenshot-slider" id="pymaster-slider" aria-label="PyMaster app screenshots">
+                            <button class="slider-btn prev-btn" type="button" aria-label="Previous screenshot"><i class="fas fa-chevron-left"></i></button>
+                            <div class="slider-track-wrap">
+                                <div class="slider-track">
+                                    <img src="images/app_screenshots/pymaster/pymaster_1.jpg" alt="PyMaster dashboard" width="230" height="480">
+                                    <img src="images/app_screenshots/pymaster/pymaster_2.jpg" alt="PyMaster exercise" width="230" height="480">
+                                    <img src="images/app_screenshots/pymaster/pymaster_3.jpg" alt="PyMaster path" width="230" height="480">
+                                    <img src="images/app_screenshots/pymaster/pymaster_4.jpg" alt="PyMaster AI tutor" width="230" height="480">
+                                    <img src="images/app_screenshots/pymaster/pymaster_5.jpg" alt="PyMaster progress" width="230" height="480">
+                                </div>
+                            </div>
+                            <button class="slider-btn next-btn" type="button" aria-label="Next screenshot"><i class="fas fa-chevron-right"></i></button>
+                            <div class="slider-dots" aria-hidden="true"></div>
+                        </div>
+
+                        <div class="app-links">
+                            <a href="https://play.google.com/store/apps/details?id=com.devanshustudios.pymaster" target="_blank" rel="noopener" class="play-badge" id="pyMasterPlayBtn">
+                                <i class="fab fa-google-play"></i>
+                                <span><small>Get it on</small>Google Play</span>
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="app-card">
+                        <div class="app-card-header">
+                            <div class="app-icon-wrapper">
+                                <img src="images/chakuli.png" alt="Chakuli App Icon" class="app-icon-img">
+                            </div>
+                            <div class="app-name-group">
+                                <div class="app-title-row">
+                                    <h3>Chakuli</h3>
+                                    <span class="app-status-badge badge-open">Open testing</span>
+                                </div>
+                                <p class="app-pitch">On-device AI · Gemma · Phi · SmolLM</p>
+                            </div>
+                        </div>
+                        <p class="app-description">Privacy-first offline chatbot. LLMs run entirely on your phone — no cloud inference.</p>
+
+                        <div class="screenshot-slider" id="chakuli-slider" aria-label="Chakuli app screenshots">
+                            <button class="slider-btn prev-btn" type="button" aria-label="Previous screenshot"><i class="fas fa-chevron-left"></i></button>
+                            <div class="slider-track-wrap">
+                                <div class="slider-track">
+                                    <img src="images/app_screenshots/chakuli/chakuli_1.jpg" alt="Chakuli chat" width="230" height="480">
+                                    <img src="images/app_screenshots/chakuli/chakuli_2.jpg" alt="Chakuli models" width="230" height="480">
+                                    <img src="images/app_screenshots/chakuli/chakuli_3.jpg" alt="Chakuli offline" width="230" height="480">
+                                </div>
+                            </div>
+                            <button class="slider-btn next-btn" type="button" aria-label="Next screenshot"><i class="fas fa-chevron-right"></i></button>
+                            <div class="slider-dots" aria-hidden="true"></div>
+                        </div>
+
+                        <div class="app-links">
+                            <a href="https://play.google.com/store/apps/developer?id=Devanshu+Studios" target="_blank" rel="noopener" class="btn btn-primary" id="chakuliOpenTestBtn">
+                                <i class="fab fa-google-play"></i> Join open testing
+                            </a>
+                        </div>
+                    </article>
                 </div>
             </div>
         </section>
@@ -114,136 +242,139 @@
         <section id="about" class="section-padding fade-in">
             <div class="container">
                 <div class="section-header">
-                    <h2 class="section-title">About Me</h2>
-                    <p class="section-subtitle">A quick snapshot of who I am and what I've studied</p>
+                    <div class="section-index">02 // about</div>
+                    <h2 class="section-title">Built for shipping, not slides</h2>
+                    <p class="section-subtitle">Engineer + founder. Mobile is a strength — systems, ML, and product ownership are the point.</p>
                 </div>
                 <div class="about-grid">
                     <div class="about-card">
-                        <p>I'm a mobile engineer who loves building things that <strong>actually ship</strong>. From founding <strong>Devanshu Studios</strong> and launching two apps on the Play Store, to contributing to Wikimedia's open-source Scribe-Android keyboard, I focus on writing clean, scalable code that solves real problems.</p>
-                        <p>My core expertise is in <strong>Android (Kotlin, Jetpack Compose)</strong> and <strong>Flutter (Dart, Riverpod, Clean Architecture)</strong>. I've shipped features involving on-device AI (LiteRT-LM), custom camera pipelines (CameraX), MediaPipe, offline-first sync, and full monetization stacks (RevenueCat, AdMob).</p>
-                        <p>I also write on <strong>Medium</strong> about indie app development — lessons learned from building, shipping, and breaking things.</p>
+                        <p>I love building things that <strong>actually ship</strong>. Founded <span class="hl">Devanshu Studios</span>, launched two apps on Google Play, and contribute to Wikimedia's Scribe-Android. I care about clean architecture, offline-first systems, and products people can install today.</p>
+                        <p>Beyond mobile UI: <strong>on-device AI</strong> (LiteRT-LM), <strong>ML research</strong> (BERT, MediaPipe), <strong>sync engines</strong>, monetization (RevenueCat + AdMob), CI/CD, and full Play Console lifecycle. Android &amp; Flutter are tools I ship with — not the ceiling.</p>
+                        <p>I write on <strong>Medium</strong> the way I build — postmortems and architecture notes. Once shipped a Python learning app from a hospital bed. That's the energy.</p>
                     </div>
                     <div class="about-card">
                         <h3><i class="fas fa-graduation-cap"></i> Education</h3>
                         <div class="education-item">
                             <h4>G. H. Raisoni College of Engineering</h4>
                             <p>B.Tech in Computer Science &amp; Engineering</p>
-                            <p class="edu-meta">CGPA: 8.7 / 10.0 &nbsp;·&nbsp; Nagpur, India &nbsp;·&nbsp; Dec 2021 – Jun 2025</p>
+                            <p class="edu-meta">CGPA 8.7 / 10.0 · Nagpur · Dec 2021 – Jun 2025</p>
                         </div>
                         <br>
                         <h3><i class="fas fa-pen-nib"></i> Writing on Medium</h3>
-                        <ul style="padding-left:18px; font-size:0.88rem; color:var(--text-2); line-height:1.7;">
-                            <li><a href="https://medium.com/@bhanu.r.nagpure.8082/i-built-a-python-learning-app-from-a-hospital-bed-heres-what-i-actually-built-dced76e5a39f" target="_blank" rel="noopener" style="color:var(--blue);text-decoration:none;">I Built a Python Learning App From a Hospital Bed</a></li>
-                            <li><a href="https://medium.com/@bhanu.r.nagpure.8082/i-didnt-stress-test-my-native-ads-my-app-paid-the-price-78164161c590" target="_blank" rel="noopener" style="color:var(--blue);text-decoration:none;">I Didn't Stress Test My Native Ads. My App Paid the Price.</a></li>
-                            <li><a href="https://medium.com/@bhanu.r.nagpure.8082/why-i-stopped-building-apps-and-started-building-an-engine-in-flutter-e947a3c73890" target="_blank" rel="noopener" style="color:var(--blue);text-decoration:none;">Why I Stopped Building Apps and Started Building an Engine in Flutter</a></li>
+                        <ul class="writing-list">
+                            <li>
+                                <a href="https://medium.com/@bhanu.r.nagpure.8082/i-built-a-python-learning-app-from-a-hospital-bed-heres-what-i-actually-built-dced76e5a39f" target="_blank" rel="noopener">
+                                    <span class="w-meta">story</span>
+                                    I Built a Python Learning App From a Hospital Bed
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://medium.com/@bhanu.r.nagpure.8082/i-didnt-stress-test-my-native-ads-my-app-paid-the-price-78164161c590" target="_blank" rel="noopener">
+                                    <span class="w-meta">postmortem</span>
+                                    I Didn't Stress Test My Native Ads. My App Paid the Price.
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://medium.com/@bhanu.r.nagpure.8082/why-i-stopped-building-apps-and-started-building-an-engine-in-flutter-e947a3c73890" target="_blank" rel="noopener">
+                                    <span class="w-meta">architecture</span>
+                                    Why I Stopped Building Apps and Started Building an Engine
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Experience -->
+        <!-- Experience — featured + compact -->
         <section id="experience" class="section-padding fade-in">
             <div class="container">
                 <div class="section-header">
-                    <h2 class="section-title">Experience</h2>
-                    <p class="section-subtitle">Where I've worked and what I built</p>
+                    <div class="section-index">03 // experience</div>
+                    <h2 class="section-title">Where the work happened</h2>
+                    <p class="section-subtitle">Founder mode first. Past roles compressed for a fast scan.</p>
                 </div>
                 <div class="experience-timeline">
 
-                    <article class="timeline-item" itemscope itemtype="https://schema.org/WorkExperience">
+                    <article class="timeline-item featured">
                         <div class="timeline-content">
                             <div class="timeline-header">
                                 <div>
-                                    <h3 itemprop="jobTitle">Founder &amp; Lead Mobile Engineer</h3>
-                                    <h4><span itemprop="worksFor">Devanshu Studios</span> &nbsp;<span class="location-badge"><i class="fas fa-globe"></i> Remote</span></h4>
+                                    <h3>Founder &amp; Lead Engineer</h3>
+                                    <h4>Devanshu Studios &nbsp;<span class="location-badge"><i class="fas fa-globe"></i> Remote</span></h4>
                                 </div>
                                 <span class="dates-badge">Aug 2025 – Present</span>
                             </div>
                             <ul>
-                                <li>Architected and shipped <strong>PyMaster</strong> — a Flutter Python learning platform (50k+ LOC, Live on Play Store) using Clean Architecture, Riverpod 2.0, Flutter Flavors, Firebase, and RevenueCat IAP.</li>
-                                <li>Built <strong>Chakuli — Offline AI Chatbot</strong>: a privacy-first Android app running Gemma/Phi/SmolLM entirely on-device via LiteRT-LM. No cloud calls for AI inference — premium local AI experience.</li>
-                                <li>Integrated Gemini AI Tutor, offline-first sync engine, custom CameraX pipeline, Agent Skills system, and full monetization stack (AdMob mediation + RevenueCat).</li>
+                                <li>Shipped <strong>PyMaster</strong> (50k+ LOC, Live on Play Store) — Clean Architecture, Riverpod 2.0, Flutter Flavors, Firebase, RevenueCat, Gemini AI Tutor, offline-first sync.</li>
+                                <li>Built <strong>Chakuli</strong> (Open Testing) — on-device Gemma/Phi/SmolLM via LiteRT-LM, Jetpack Compose, Hilt, CameraX, Agent Skills. Zero cloud AI inference.</li>
+                                <li>Owned full product stack: architecture, monetization (AdMob + IAP), CI/CD, Crashlytics, and Play Console publishing.</li>
                             </ul>
                         </div>
                     </article>
 
-                    <article class="timeline-item">
-                        <div class="timeline-content">
-                            <div class="timeline-header">
-                                <div>
-                                    <h3>Software Developer Intern</h3>
-                                    <h4>BETIC-GHRCE &nbsp;<span class="location-badge"><i class="fas fa-map-marker-alt"></i> Nagpur, India</span></h4>
-                                </div>
-                                <span class="dates-badge">Oct 2022 – May 2024</span>
-                            </div>
-                            <ul>
-                                <li>Built an <strong>Android (Kotlin/Java)</strong> app for TMJ disorder screening using <strong>MediaPipe FaceMesh API</strong> and <strong>Google ML Kit</strong>, improving diagnostic classification accuracy by <strong>60%</strong>.</li>
-                                <li>Boosted camera performance by <strong>30%</strong> via optimised ML Kit integration; work resulted in a filed patent (Pub. No. 202321022476).</li>
-                            </ul>
-                        </div>
-                    </article>
-
-                    <article class="timeline-item">
+                    <article class="timeline-item compact">
                         <div class="timeline-content">
                             <div class="timeline-header">
                                 <div>
                                     <h3>Open Source Contributor</h3>
-                                    <h4>Wikimedia Foundation — Scribe-Android &nbsp;<span class="location-badge"><i class="fas fa-globe"></i> Remote</span></h4>
+                                    <h4>Wikimedia Foundation — Scribe-Android · Remote</h4>
                                 </div>
                                 <span class="dates-badge">Feb 2025 – Present</span>
                             </div>
-                            <ul>
-                                <li>Developed tablet-specific keyboard layouts in <strong>Kotlin</strong> for 7+ languages including German, French, and Spanish.</li>
-                                <li>Resolved UI bugs and refactored the core KeyHandler module for better maintainability.</li>
-                            </ul>
+                            <p class="compact-blurb">Tablet keyboard layouts in <strong>Kotlin</strong> for 7+ languages; UI fixes and KeyHandler refactor for maintainability.</p>
                         </div>
                     </article>
 
-                    <article class="timeline-item">
+                    <article class="timeline-item compact">
                         <div class="timeline-content">
                             <div class="timeline-header">
                                 <div>
                                     <h3>Machine Learning Intern</h3>
-                                    <h4>Athabasca University &nbsp;<span class="location-badge"><i class="fas fa-map-marker-alt"></i> Athabasca, AB, Canada</span></h4>
+                                    <h4>Athabasca University · Canada</h4>
                                 </div>
-                                <span class="dates-badge">Aug 2024 – Oct 2024</span>
+                                <span class="dates-badge">Aug – Oct 2024</span>
                             </div>
-                            <ul>
-                                <li>Delivered <strong>95% prediction accuracy</strong> for a text ideology identification model (Transformers/BERT).</li>
-                                <li>Built and deployed a prototype web interface for researchers to validate model outputs.</li>
-                            </ul>
+                            <p class="compact-blurb"><strong>95%</strong> accuracy ideology classifier (BERT/Transformers) + researcher web UI for validation.</p>
                         </div>
                     </article>
 
-                    <article class="timeline-item">
+                    <article class="timeline-item compact">
                         <div class="timeline-content">
                             <div class="timeline-header">
                                 <div>
                                     <h3>Globalink Research Intern</h3>
-                                    <h4>Mitacs &nbsp;<span class="location-badge"><i class="fas fa-map-marker-alt"></i> Edmonton, AB, Canada</span></h4>
+                                    <h4>Mitacs · Edmonton, AB, Canada</h4>
                                 </div>
-                                <span class="dates-badge">Apr 2024 – Aug 2024</span>
+                                <span class="dates-badge">Apr – Aug 2024</span>
                             </div>
-                            <ul>
-                                <li>Led end-to-end development of a <strong>cross-platform (iOS, Android, Web) Flutter field-trip app</strong> with Firebase Auth/Storage and OpenStreetMaps integration.</li>
-                                <li>Presented research at the 3rd Annual TRESL Lab International Symposium, Athabasca, Canada.</li>
-                            </ul>
+                            <p class="compact-blurb">Sole developer on cross-platform <strong>Flutter</strong> field-trip app (iOS/Android/Web) + Firebase + OpenStreetMaps. Presented at TRESL Lab Symposium.</p>
                         </div>
                     </article>
 
-                    <article class="timeline-item">
+                    <article class="timeline-item compact">
                         <div class="timeline-content">
                             <div class="timeline-header">
                                 <div>
-                                    <h3>Fellowship</h3>
-                                    <h4>IIT Bombay &nbsp;<span class="location-badge"><i class="fas fa-map-marker-alt"></i> Mumbai, India</span></h4>
+                                    <h3>Software Developer Intern</h3>
+                                    <h4>BETIC-GHRCE · Nagpur</h4>
                                 </div>
-                                <span class="dates-badge">Mar 2022 – Oct 2022</span>
+                                <span class="dates-badge">Oct 2022 – May 2024</span>
                             </div>
-                            <ul>
-                                <li>Led a team to design and prototype a medical device for xerostomia patients, reducing diagnostic time by <strong>80%</strong>. Commended by industry experts at IIT Bombay.</li>
-                            </ul>
+                            <p class="compact-blurb">TMJ screening app with <strong>MediaPipe FaceMesh</strong> + ML Kit — <strong>60%</strong> accuracy gain, <strong>30%</strong> camera speedup. Contributed to granted patent (Pub. No. 202321022476).</p>
+                        </div>
+                    </article>
+
+                    <article class="timeline-item compact">
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <div>
+                                    <h3>Fellowship — Design for Health</h3>
+                                    <h4>IIT Bombay · Mumbai</h4>
+                                </div>
+                                <span class="dates-badge">Mar – Oct 2022</span>
+                            </div>
+                            <p class="compact-blurb">Led medical device prototype for xerostomia — <strong>80%</strong> faster assessment. Commended at IIT Bombay.</p>
                         </div>
                     </article>
 
@@ -251,42 +382,43 @@
             </div>
         </section>
 
-        <!-- Skills -->
+        <!-- Skills — broader engineer framing -->
         <section id="skills" class="section-padding fade-in">
             <div class="container">
                 <div class="section-header">
-                    <h2 class="section-title">Technical Skills</h2>
-                    <p class="section-subtitle">Technologies I work with professionally</p>
+                    <div class="section-index">04 // stack</div>
+                    <h2 class="section-title">What I ship with</h2>
+                    <p class="section-subtitle">Mobile is a pillar — not the whole house. Production stack across product, systems, and ML.</p>
                 </div>
-                <div class="skills-grid">
+                <div class="skills-grid skills-grid-broad">
                     <div class="skill-category">
-                        <h3><i class="fas fa-mobile-alt"></i> Android</h3>
+                        <h3><i class="fas fa-mobile-alt"></i> Mobile</h3>
                         <div class="skill-tags">
-                            <span>Kotlin</span><span>Java</span><span>Jetpack Compose</span><span>Android SDK</span><span>MVVM / MVI</span><span>Hilt (DI)</span><span>WorkManager</span><span>CameraX</span><span>Room</span><span>Proto DataStore</span>
+                            <span>Kotlin</span><span>Java</span><span>Jetpack Compose</span><span>Flutter</span><span>Dart</span><span>Riverpod 2.0</span><span>MVVM / MVI</span><span>Hilt</span><span>CameraX</span><span>WorkManager</span><span>Room</span><span>Platform Channels</span>
                         </div>
                     </div>
                     <div class="skill-category">
-                        <h3><i class="fas fa-layer-group"></i> Flutter</h3>
+                        <h3><i class="fas fa-microchip"></i> AI / ML</h3>
                         <div class="skill-tags">
-                            <span>Flutter</span><span>Dart</span><span>Riverpod 2.0</span><span>Clean Architecture</span><span>Flutter Flavors</span><span>BLoC / Cubit</span><span>go_router</span><span>Platform Channels</span>
+                            <span>LiteRT-LM</span><span>Gemma 2/3</span><span>Phi 3.5</span><span>SmolLM</span><span>MediaPipe</span><span>Google ML Kit</span><span>BERT / Transformers</span><span>TensorFlow</span><span>YOLOv5</span><span>Gemini API</span>
                         </div>
                     </div>
                     <div class="skill-category">
-                        <h3><i class="fas fa-brain"></i> AI &amp; On-Device ML</h3>
+                        <h3><i class="fas fa-server"></i> Systems &amp; Backend</h3>
                         <div class="skill-tags">
-                            <span>LiteRT-LM</span><span>Gemma 2/3</span><span>Phi 3.5 Mini</span><span>MediaPipe</span><span>Google ML Kit</span><span>TensorFlow</span><span>BERT/Transformers</span><span>YOLOv5</span>
+                            <span>Firebase</span><span>Offline-first sync</span><span>REST APIs</span><span>Hive</span><span>Proto DataStore</span><span>SQL</span><span>Google Cloud</span><span>CI/CD</span><span>Linux</span>
                         </div>
                     </div>
                     <div class="skill-category">
-                        <h3><i class="fas fa-server"></i> Backend &amp; Tools</h3>
+                        <h3><i class="fas fa-rocket"></i> Product &amp; Ship</h3>
                         <div class="skill-tags">
-                            <span>Firebase</span><span>RevenueCat</span><span>Google AdMob</span><span>REST APIs</span><span>OpenStreetMaps</span><span>Git / GitHub</span><span>CI/CD</span><span>Google Cloud</span><span>Linux</span>
+                            <span>Clean Architecture</span><span>RevenueCat</span><span>AdMob</span><span>Play Console</span><span>Flutter Flavors</span><span>Crashlytics</span><span>Git / GitHub</span>
                         </div>
                     </div>
-                    <div class="skill-category">
+                    <div class="skill-category skill-category-wide">
                         <h3><i class="fas fa-code"></i> Languages</h3>
                         <div class="skill-tags">
-                            <span>Kotlin</span><span>Dart</span><span>Python</span><span>Java</span><span>C++</span><span>SQL</span>
+                            <span>Kotlin</span><span>Dart</span><span>Python</span><span>Java</span><span>C++</span><span>SQL</span><span>JavaScript</span>
                         </div>
                     </div>
                 </div>
@@ -297,16 +429,17 @@
         <section id="projects" class="section-padding fade-in">
             <div class="container">
                 <div class="section-header">
-                    <h2 class="section-title">Projects</h2>
-                    <p class="section-subtitle">Research, engineering, and impact</p>
+                    <div class="section-index">05 // projects</div>
+                    <h2 class="section-title">Research, engineering, impact</h2>
+                    <p class="section-subtitle">Safety wearables, clinical screening, and robots that pick up trash.</p>
                 </div>
                 <div class="projects-grid">
                     <article class="project-card">
                         <img src="images/vsafe_anywhere.jpeg" alt="V-Safe-Anywhere Women Safety App" class="project-thumbnail" loading="lazy">
                         <div class="project-info">
                             <h3>V-Safe-Anywhere</h3>
-                            <p class="project-meta">Women's Safety · Flutter + IoT · Nov 2022 – Apr 2024</p>
-                            <p>Flutter app paired with a wearable: pressing a panic button triggers real-time GPS location sharing to saved contacts via Firebase. 98% uptime. Published by IGI Global.</p>
+                            <p class="project-meta">Women's Safety · Flutter + IoT · 2022 – 2024</p>
+                            <p>Flutter app + wearable: panic button triggers live GPS sharing to contacts via Firebase. 98% uptime. Published by IGI Global.</p>
                             <p class="tech-stack">Flutter · Firebase · Google Cloud · IoT</p>
                             <div class="project-links">
                                 <a href="https://www.igi-global.com/chapter/v-safe-anywhere/342150" target="_blank" rel="noopener" class="btn-outline-sm">Publication <i class="fas fa-external-link-alt"></i></a>
@@ -317,8 +450,8 @@
                         <img src="images/osmf.jpeg" alt="OCanPredict OSMF Screening App" class="project-thumbnail" loading="lazy">
                         <div class="project-info">
                             <h3>OCanPredict — OSMF Screening</h3>
-                            <p class="project-meta">Biomedical · Android · Dec 2022 – Jul 2023</p>
-                            <p>Android (Kotlin/Java) app using MediaPipe FaceMesh API for OSMF diagnosis, increasing efficiency by 40%. Multiple national awards. Contributed to patent (Pub. No. 202321022476).</p>
+                            <p class="project-meta">Biomedical · Android · 2022 – 2023</p>
+                            <p>Android app using MediaPipe FaceMesh for OSMF diagnosis — 40% efficiency gain. National awards + patent contribution (Pub. No. 202321022476).</p>
                             <p class="tech-stack">Kotlin · Java · MediaPipe · Firebase</p>
                         </div>
                     </article>
@@ -326,9 +459,9 @@
                         <img src="images/autonomous.jpeg" alt="Autonomous Garbage Collection Robot" class="project-thumbnail" loading="lazy">
                         <div class="project-info">
                             <h3>Autonomous Garbage Collection Robot</h3>
-                            <p class="project-meta">Computer Vision · Robotics · Jun 2023 – Sep 2023</p>
-                            <p>YOLOv5-powered robot for autonomous floating waste detection and retrieval, cutting manual effort by 60%. Published at 8th ICACS 2024, Hong Kong (ACM).</p>
-                            <p class="tech-stack">Python · YOLOv5 · OpenCV · NumPy · IoT</p>
+                            <p class="project-meta">Computer Vision · Robotics · 2023</p>
+                            <p>YOLOv5-powered robot for floating waste detection and retrieval — 60% less manual effort. ACM ICACS 2024, Hong Kong.</p>
+                            <p class="tech-stack">Python · YOLOv5 · OpenCV · IoT</p>
                             <div class="project-links">
                                 <a href="https://dl.acm.org/doi/10.1145/3693939.3693957" target="_blank" rel="noopener" class="btn-outline-sm">ACM Paper <i class="fas fa-external-link-alt"></i></a>
                             </div>
@@ -338,142 +471,32 @@
             </div>
         </section>
 
-        <!-- Apps -->
-        <section id="apps" class="section-padding fade-in">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">My Apps</h2>
-                    <p class="section-subtitle">Published and upcoming — under Devanshu Studios</p>
-                </div>
-                <div class="apps-grid">
-                    <div class="app-card">
-                        <div class="app-card-header">
-                            <div class="app-icon-wrapper">
-                                <img src="images/PyMaster.png" alt="PyMaster App Icon" class="app-icon-img">
-                            </div>
-                            <div class="app-name-group">
-                                <h3>PyMaster — Learn Python</h3>
-                                <p class="app-developer">by Devanshu Studios</p>
-                                <span class="app-status-badge badge-live"><i class="fas fa-circle" style="font-size:0.5rem;"></i> Live on Play Store</span>
-                            </div>
-                        </div>
-                        <p class="app-description">Production-grade Python learning platform with 1,200+ interactive exercises, gamified league system, and a Gemini-powered AI Tutor. Built with Flutter and Clean Architecture for a smooth, premium experience.</p>
-                        <div class="app-features">
-                            <span><i class="fas fa-check-circle"></i> 1,200+ Exercises</span>
-                            <span><i class="fas fa-check-circle"></i> AI Tutor (Gemini)</span>
-                            <span><i class="fas fa-check-circle"></i> League System</span>
-                            <span><i class="fas fa-check-circle"></i> Offline Support</span>
-                            <span><i class="fas fa-check-circle"></i> Cloud Sync</span>
-                        </div>
-                        <div class="app-tech">
-                            <span>Flutter</span><span>Dart</span><span>Riverpod 2.0</span><span>Firebase</span><span>Gemini AI</span><span>RevenueCat</span>
-                        </div>
-                        
-                        <!-- PyMaster Screenshots Gallery -->
-                        <div class="screenshot-slider" id="pymaster-slider" aria-label="PyMaster app screenshots">
-                            <button class="slider-btn prev-btn" type="button" aria-label="Previous PyMaster screenshot"><i class="fas fa-chevron-left"></i></button>
-                            <div class="slider-track-wrap">
-                                <div class="slider-track">
-                                    <img src="images/app_screenshots/pymaster/pymaster_1.jpg" alt="PyMaster lesson dashboard screenshot" loading="lazy">
-                                    <img src="images/app_screenshots/pymaster/pymaster_2.jpg" alt="PyMaster Python exercise screenshot" loading="lazy">
-                                    <img src="images/app_screenshots/pymaster/pymaster_3.jpg" alt="PyMaster learning path screenshot" loading="lazy">
-                                    <img src="images/app_screenshots/pymaster/pymaster_4.jpg" alt="PyMaster AI tutor screenshot" loading="lazy">
-                                    <img src="images/app_screenshots/pymaster/pymaster_5.jpg" alt="PyMaster progress screenshot" loading="lazy">
-                                </div>
-                            </div>
-                            <button class="slider-btn next-btn" type="button" aria-label="Next PyMaster screenshot"><i class="fas fa-chevron-right"></i></button>
-                        </div>
-
-                        <div class="app-links">
-                            <a href="https://play.google.com/store/apps/details?id=com.devanshustudios.pymaster" target="_blank" rel="noopener" class="play-badge" id="pyMasterPlayBtn">
-                                <i class="fab fa-google-play"></i>
-                                <span><small>Get it on</small>Google Play</span>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="app-card">
-                        <div class="app-card-header">
-                            <div class="app-icon-wrapper">
-                                <img src="images/chakuli.png" alt="Chakuli App Icon" class="app-icon-img">
-                            </div>
-                            <div class="app-name-group">
-                                <h3>Chakuli — Offline AI Chatbot</h3>
-                                <p class="app-developer">by Devanshu Studios</p>
-                                <span class="app-status-badge badge-beta"><i class="fas fa-flask" style="font-size:0.7rem;"></i> Closed Testing</span>
-                            </div>
-                        </div>
-                        <p class="app-description">The AI assistant that actually respects your privacy. Chakuli runs Gemma, Phi, and SmolLM <strong>entirely on your device</strong> via LiteRT-LM — no internet required for AI. A premium consumer experience on local AI, not just a tech demo.</p>
-                        <div class="app-features">
-                            <span><i class="fas fa-check-circle"></i> 100% On-Device AI</span>
-                            <span><i class="fas fa-check-circle"></i> No Cloud · No Tracking</span>
-                            <span><i class="fas fa-check-circle"></i> Agent Skills</span>
-                            <span><i class="fas fa-check-circle"></i> Audio &amp; Camera</span>
-                            <span><i class="fas fa-check-circle"></i> Multiple LLMs</span>
-                        </div>
-                        <div class="app-tech">
-                            <span>Kotlin</span><span>Jetpack Compose</span><span>LiteRT-LM</span><span>Hilt</span><span>CameraX</span>
-                        </div>
-                        
-                        <!-- Chakuli Screenshots Gallery -->
-                        <div class="screenshot-slider" id="chakuli-slider" aria-label="Chakuli app screenshots">
-                            <button class="slider-btn prev-btn" type="button" aria-label="Previous Chakuli screenshot"><i class="fas fa-chevron-left"></i></button>
-                            <div class="slider-track-wrap">
-                                <div class="slider-track">
-                                    <img src="images/app_screenshots/chakuli/chakuli_1.jpg" alt="Chakuli local AI chat screenshot" loading="lazy">
-                                    <img src="images/app_screenshots/chakuli/chakuli_2.jpg" alt="Chakuli model selection screenshot" loading="lazy">
-                                    <img src="images/app_screenshots/chakuli/chakuli_3.jpg" alt="Chakuli offline assistant screenshot" loading="lazy">
-                                </div>
-                            </div>
-                            <button class="slider-btn next-btn" type="button" aria-label="Next Chakuli screenshot"><i class="fas fa-chevron-right"></i></button>
-                        </div>
-
-                        <div class="coming-soon-box">
-                            <div class="coming-soon-label"><span class="blink">&#9679;</span> Launching Soon — Closed Testing in Progress</div>
-                            <div class="countdown-grid">
-                                <div class="countdown-unit"><span class="countdown-num" id="cd-days">00</span><span class="countdown-lbl">Days</span></div>
-                                <span class="countdown-sep">:</span>
-                                <div class="countdown-unit"><span class="countdown-num" id="cd-hours">00</span><span class="countdown-lbl">Hours</span></div>
-                                <span class="countdown-sep">:</span>
-                                <div class="countdown-unit"><span class="countdown-num" id="cd-mins">00</span><span class="countdown-lbl">Mins</span></div>
-                                <span class="countdown-sep">:</span>
-                                <div class="countdown-unit"><span class="countdown-num" id="cd-secs">00</span><span class="countdown-lbl">Secs</span></div>
-                            </div>
-                            <p class="coming-soon-sub">12 testers opted in · Play Store closed test underway</p>
-                        </div>
-                        <div class="app-links" style="margin-top:12px;">
-                            <a href="https://bhanu-dev82.github.io#apps" class="btn btn-outline" id="chakuliLearnMoreBtn">Learn More &amp; Stay Updated</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!-- Highlights -->
         <section id="highlights" class="section-padding fade-in">
             <div class="container">
                 <div class="section-header">
-                    <h2 class="section-title">Recognition</h2>
-                    <p class="section-subtitle">Awards, publications, patents and conferences</p>
+                    <div class="section-index">06 // recognition</div>
+                    <h2 class="section-title">Awards, patents, papers</h2>
+                    <p class="section-subtitle">Proof that the work left the lab.</p>
                 </div>
                 <div class="highlights-grid">
                     <div class="highlight-item">
                         <h3><i class="fas fa-award"></i> Awards &amp; Grants</h3>
                         <ul>
-                            <li><strong>Third Place</strong> — Avishkar 2024, Nashik (Jan 2024)</li>
-                            <li><strong>Runner-up</strong> — DIPEX 2023, Amravati (Apr 2023)</li>
-                            <li><strong>Runner-up</strong> — SHRISTI 2023, Kottayam (Mar 2023)</li>
-                            <li><strong>Grant Awardee</strong> — BIREC E-YUVA GRANT (Rs. 10 lakh, Feb 2023)</li>
-                            <li><strong>Winner</strong> — MEDHA and MEDIC-2022 (Oct 2022)</li>
+                            <li><strong>Third Place</strong> — Avishkar 2024, Nashik</li>
+                            <li><strong>Runner-up</strong> — DIPEX 2023, Amravati</li>
+                            <li><strong>Runner-up</strong> — SHRISTI 2023, Kottayam</li>
+                            <li><strong>Grant</strong> — BIREC E-YUVA (₹10 lakh)</li>
+                            <li><strong>Winner</strong> — MEDHA &amp; MEDIC-2022</li>
                         </ul>
                     </div>
                     <div class="highlight-item">
                         <h3><i class="fas fa-book-open"></i> Publications &amp; Patent</h3>
                         <ul>
                             <li>"V-Safe-Anywhere: Wearable AI &amp; IoT." <em>IGI Global</em>, Mar 2024. <a href="https://www.igi-global.com/chapter/v-safe-anywhere/342150" target="_blank" rel="noopener">[Link]</a></li>
-                            <li>"Autonomous Floating Garbage Collection." <em>8th ICACS 2024, ACM</em>. <a href="https://dl.acm.org/doi/10.1145/3693939.3693957" target="_blank" rel="noopener">[Link]</a></li>
-                            <li><strong>Patent (Granted):</strong> Smart Chairside TMJ Examination Tool. (Pub. No. 202321022476, Granted Mar 2023)</li>
-                            <li><strong>Patent (Published, Pending Grant):</strong> AI Based Portable Device for Dental Disease Detection. (App. No. 202421006731, Published Aug 2025, Pending Grant)</li>
+                            <li>"Autonomous Floating Garbage Collection." <em>ACM ICACS 2024</em>. <a href="https://dl.acm.org/doi/10.1145/3693939.3693957" target="_blank" rel="noopener">[Link]</a></li>
+                            <li><strong>Patent (Granted):</strong> Smart Chairside TMJ Examination Tool (Pub. No. 202321022476)</li>
+                            <li><strong>Patent (Pending):</strong> AI Portable Device for Dental Disease Detection (App. No. 202421006731)</li>
                         </ul>
                     </div>
                     <div class="highlight-item">
@@ -491,17 +514,20 @@
         <section id="contact" class="section-padding fade-in">
             <div class="container">
                 <div class="contact-box">
-                    <h2 class="section-title">Get In Touch</h2>
-                    <p>Open to Android and Flutter developer roles, collaborations, and interesting conversations.</p>
-                    <a href="mailto:bhanunagpure453@gmail.com" class="btn btn-primary main-contact-btn" id="contactEmailBtn">bhanunagpure453@gmail.com</a>
+                    <div class="section-index">07 // contact</div>
+                    <h2 class="section-title">Let's build something real</h2>
+                    <p>Open to software engineering roles, mobile/AI product work, collabs, and interesting problems. Prefer shipping over meetings.</p>
+                    <a href="mailto:bhanunagpure453@gmail.com" class="btn btn-primary main-contact-btn" id="contactEmailBtn">
+                        <i class="fas fa-paper-plane"></i> bhanunagpure453@gmail.com
+                    </a>
                     <div class="contact-info-row">
                         <span><i class="fas fa-phone"></i> +91 982-210-7989</span>
                         <span><i class="fas fa-map-marker-alt"></i> Nagpur, MH, India</span>
                     </div>
                     <div class="social-links-contact">
-                        <a href="https://www.linkedin.com/in/bhanunagpure" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                        <a href="https://www.linkedin.com/in/bhanunagpure" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
                         <a href="https://github.com/bhanu-dev82" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
-                        <a href="https://medium.com/@bhanu.r.nagpure.8082" target="_blank" rel="noopener"><i class="fab fa-medium"></i> Medium</a>
+                        <a href="https://medium.com/@bhanu.r.nagpure.8082" target="_blank" rel="noopener"><i class="fab fa-medium-m"></i> Medium</a>
                         <a href="https://play.google.com/store/apps/developer?id=Devanshu+Studios" target="_blank" rel="noopener"><i class="fab fa-google-play"></i> Play Store</a>
                     </div>
                 </div>
@@ -511,113 +537,190 @@
 
     <footer>
         <div class="footer-inner">
-            <p>&copy; <span id="currentYear"></span> Bhanu Nagpure &nbsp;&middot;&nbsp; Devanshu Studios &nbsp;&middot;&nbsp; Nagpur, India</p>
+            <p>&copy; <span id="currentYear"></span> Bhanu Nagpure · Devanshu Studios · Nagpur</p>
             <div class="footer-links">
-                <a href="https://medium.com/@bhanu.r.nagpure.8082" target="_blank" rel="noopener">Medium Blog</a>
+                <a href="https://medium.com/@bhanu.r.nagpure.8082" target="_blank" rel="noopener">Medium</a>
                 <a href="https://play.google.com/store/apps/developer?id=Devanshu+Studios" target="_blank" rel="noopener">Play Store</a>
-                <a href="https://sites.google.com/view/devanshustudios/home" target="_blank" rel="noopener">Privacy Policy</a>
+                <a href="https://sites.google.com/view/devanshustudios/home" target="_blank" rel="noopener">Privacy</a>
             </div>
         </div>
     </footer>
 
     <script>
-    window.addEventListener('load', () => {
-        const s = document.getElementById('loadingScreen');
-        if (s) { s.style.opacity='0'; setTimeout(()=>s.style.display='none',400); }
-    });
-    document.getElementById('currentYear').textContent = new Date().getFullYear();
+    (function () {
+        const html = document.documentElement;
+        const header = document.getElementById('header');
+        const loadingScreen = document.getElementById('loadingScreen');
+        const themeBtn = document.getElementById('theme-toggle');
+        const navToggle = document.getElementById('navToggle');
+        const navLinks = document.getElementById('navLinks');
 
-    // Theme toggle
-    const themeBtn = document.getElementById('theme-toggle');
-    const html = document.documentElement;
-    const saved = localStorage.getItem('theme') || 'light';
-    html.setAttribute('data-theme', saved);
-    themeBtn.textContent = saved === 'dark' ? '☀️' : '🌙';
-    themeBtn.addEventListener('click', () => {
-        const cur = html.getAttribute('data-theme');
-        const next = cur === 'dark' ? 'light' : 'dark';
-        html.setAttribute('data-theme', next);
-        localStorage.setItem('theme', next);
-        themeBtn.textContent = next === 'dark' ? '☀️' : '🌙';
-    });
+        window.addEventListener('load', () => {
+            if (!loadingScreen) return;
+            loadingScreen.style.opacity = '0';
+            setTimeout(() => { loadingScreen.style.display = 'none'; }, 400);
+        });
 
-    // Mobile nav
-    const navToggle = document.getElementById('navToggle');
-    const navLinks = document.getElementById('navLinks');
-    if (navToggle) navToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
-    document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('active')));
+        const yearEl = document.getElementById('currentYear');
+        if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-    // Active nav highlight
-    const navAs = document.querySelectorAll('.nav-links a');
-    document.querySelectorAll('section[id]').forEach(sec => {
-        new IntersectionObserver(entries => {
-            entries.forEach(e => {
-                if (!e.isIntersecting) return;
-                navAs.forEach(a => a.classList.remove('active'));
-                const a = document.querySelector('.nav-links a[href="#'+e.target.id+'"]');
-                if (a) a.classList.add('active');
+        const saved = localStorage.getItem('theme');
+        applyTheme(saved || 'dark');
+
+        function applyTheme(theme) {
+            html.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+            if (themeBtn) {
+                themeBtn.innerHTML = theme === 'dark'
+                    ? '<i class="fas fa-sun"></i>'
+                    : '<i class="fas fa-moon"></i>';
+            }
+            document.querySelector('meta[name="theme-color"]')
+                ?.setAttribute('content', theme === 'dark' ? '#000000' : '#FFF8F0');
+        }
+
+        if (themeBtn) {
+            themeBtn.addEventListener('click', () => {
+                applyTheme(html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
             });
-        }, { rootMargin: '-40% 0px -55% 0px' }).observe(sec);
-    });
-
-    // Fade-in on scroll
-    document.querySelectorAll('.fade-in').forEach(el => {
-        new IntersectionObserver(entries => {
-            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-        }, { threshold: 0.07 }).observe(el);
-    });
-
-    // Screenshot galleries
-    function initSlider(id) {
-        const slider = document.getElementById(id);
-        if (!slider) return;
-        const wrap = slider.querySelector('.slider-track-wrap');
-        const track = slider.querySelector('.slider-track');
-        const slides = slider.querySelectorAll('.slider-track img');
-        const prev = slider.querySelector('.prev-btn');
-        const next = slider.querySelector('.next-btn');
-        if (!wrap || !track || !slides.length || !prev || !next) return;
-
-        function getStep() {
-            const styles = getComputedStyle(track);
-            const gap = parseFloat(styles.columnGap || styles.gap) || 0;
-            return slides[0].getBoundingClientRect().width + gap;
         }
 
-        function updateButtons() {
-            const maxScroll = wrap.scrollWidth - wrap.clientWidth - 2;
-            prev.disabled = wrap.scrollLeft <= 2;
-            next.disabled = wrap.scrollLeft >= maxScroll;
+        function onScrollHeader() {
+            if (!header) return;
+            header.classList.toggle('scrolled', window.scrollY > 12);
+        }
+        window.addEventListener('scroll', onScrollHeader, { passive: true });
+        onScrollHeader();
+
+        if (navToggle && navLinks) {
+            navToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                const open = navLinks.classList.contains('active');
+                navToggle.innerHTML = open
+                    ? '<i class="fas fa-times"></i>'
+                    : '<i class="fas fa-bars"></i>';
+                navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+            });
+            navLinks.querySelectorAll('a').forEach(a => {
+                a.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                    navToggle.innerHTML = '<i class="fas fa-bars"></i>';
+                });
+            });
         }
 
-        prev.addEventListener('click', (e) => {
-            e.preventDefault();
-            wrap.scrollBy({ left: -getStep(), behavior: 'smooth' });
+        const navAs = document.querySelectorAll('.nav-links a');
+        document.querySelectorAll('section[id]').forEach(sec => {
+            new IntersectionObserver(entries => {
+                entries.forEach(e => {
+                    if (!e.isIntersecting) return;
+                    navAs.forEach(a => a.classList.remove('active'));
+                    const a = document.querySelector('.nav-links a[href="#' + e.target.id + '"]');
+                    if (a) a.classList.add('active');
+                });
+            }, { rootMargin: '-40% 0px -55% 0px' }).observe(sec);
         });
 
-        next.addEventListener('click', (e) => {
-            e.preventDefault();
-            wrap.scrollBy({ left: getStep(), behavior: 'smooth' });
+        document.querySelectorAll('.fade-in').forEach(el => {
+            new IntersectionObserver(entries => {
+                entries.forEach(e => {
+                    if (e.isIntersecting) e.target.classList.add('visible');
+                });
+            }, { threshold: 0.07 }).observe(el);
         });
 
-        wrap.addEventListener('scroll', updateButtons, { passive: true });
-        window.addEventListener('resize', updateButtons, { passive: true });
-        updateButtons();
-    }
-    initSlider('pymaster-slider');
-    initSlider('chakuli-slider');
+        // Screenshot carousels — index-based (fixes arrows that never scrolled)
+        function initSlider(id) {
+            const slider = document.getElementById(id);
+            if (!slider) return;
+            const wrap = slider.querySelector('.slider-track-wrap');
+            const slides = Array.from(slider.querySelectorAll('.slider-track img'));
+            const prev = slider.querySelector('.prev-btn');
+            const next = slider.querySelector('.next-btn');
+            const dotsHost = slider.querySelector('.slider-dots');
+            if (!wrap || !slides.length || !prev || !next) return;
 
-    // Chakuli countdown — 10 days remaining
-    const launch = new Date(Date.now() + 10 * 24 * 60 * 60 * 1000);
-    function tick() {
-        const d = launch - Date.now();
-        if (d <= 0) return;
-        document.getElementById('cd-days').textContent  = String(Math.floor(d/86400000)).padStart(2,'0');
-        document.getElementById('cd-hours').textContent = String(Math.floor(d%86400000/3600000)).padStart(2,'0');
-        document.getElementById('cd-mins').textContent  = String(Math.floor(d%3600000/60000)).padStart(2,'0');
-        document.getElementById('cd-secs').textContent  = String(Math.floor(d%60000/1000)).padStart(2,'0');
-    }
-    tick(); setInterval(tick, 1000);
+            let index = 0;
+            let dots = [];
+
+            if (dotsHost) {
+                dotsHost.innerHTML = '';
+                slides.forEach((_, i) => {
+                    const d = document.createElement('button');
+                    d.type = 'button';
+                    d.className = 'slider-dot';
+                    d.setAttribute('aria-label', 'Go to screenshot ' + (i + 1));
+                    d.addEventListener('click', () => goTo(i));
+                    dotsHost.appendChild(d);
+                    dots.push(d);
+                });
+            }
+
+            function goTo(i) {
+                index = Math.max(0, Math.min(slides.length - 1, i));
+                const slide = slides[index];
+                // Center the active slide in the viewport
+                const left = slide.offsetLeft - (wrap.clientWidth - slide.offsetWidth) / 2;
+                wrap.scrollTo({ left: Math.max(0, left), behavior: 'smooth' });
+                prev.disabled = index <= 0;
+                next.disabled = index >= slides.length - 1;
+                dots.forEach((d, di) => d.classList.toggle('active', di === index));
+            }
+
+            prev.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                goTo(index - 1);
+            });
+            next.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                goTo(index + 1);
+            });
+
+            // Sync index when user swipes/scrolls
+            let scrollTimer;
+            wrap.addEventListener('scroll', () => {
+                clearTimeout(scrollTimer);
+                scrollTimer = setTimeout(() => {
+                    const mid = wrap.scrollLeft + wrap.clientWidth / 2;
+                    let best = 0;
+                    let bestDist = Infinity;
+                    slides.forEach((s, i) => {
+                        const c = s.offsetLeft + s.offsetWidth / 2;
+                        const dist = Math.abs(c - mid);
+                        if (dist < bestDist) { bestDist = dist; best = i; }
+                    });
+                    index = best;
+                    prev.disabled = index <= 0;
+                    next.disabled = index >= slides.length - 1;
+                    dots.forEach((d, di) => d.classList.toggle('active', di === index));
+                }, 60);
+            }, { passive: true });
+
+            function ready() {
+                goTo(0);
+            }
+
+            // Wait for images so offsetWidth is real (root cause of broken arrows)
+            const pending = slides.filter(img => !img.complete);
+            if (!pending.length) {
+                requestAnimationFrame(ready);
+            } else {
+                let left = pending.length;
+                pending.forEach(img => {
+                    img.addEventListener('load', () => { if (--left === 0) ready(); }, { once: true });
+                    img.addEventListener('error', () => { if (--left === 0) ready(); }, { once: true });
+                });
+                // Fallback if some loads hang
+                setTimeout(ready, 1200);
+            }
+
+            window.addEventListener('resize', () => goTo(index), { passive: true });
+        }
+        initSlider('pymaster-slider');
+        initSlider('chakuli-slider');
+    })();
     </script>
 </body>
 </html>
