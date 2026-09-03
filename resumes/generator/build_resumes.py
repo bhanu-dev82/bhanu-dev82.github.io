@@ -172,7 +172,7 @@ role(
             "stack": "Kotlin, LiteRT-LM, Jetpack Compose, WorkManager, Proto DataStore",
             "dates": "2025 - Present",
             "bullets": [
-                "<b>Open testing on Play Store.</b> Runs Gemma 2/3, Phi 3.5 Mini and SmolLM entirely on-device - zero cloud inference. Compose UI, Hilt DI, CameraX, Agent Skills, encrypted key storage.",
+                "<b>Live on Google Play.</b> Runs Gemma 2/3, Phi 3.5 Mini and SmolLM entirely on-device - zero cloud inference. Compose UI, Hilt DI, CameraX, Agent Skills, encrypted key storage.",
             ],
         },
     ],
@@ -205,7 +205,7 @@ role(
             "org": "Independent",
             "place": "Remote",
             "bullets": [
-                "Shipped <b>Chakuli - Offline AI Chatbot</b> (Play Store open testing): a privacy-first Android assistant running <b>Gemma 2/3, Phi 3.5 Mini and SmolLM</b> entirely on-device via <b>LiteRT-LM</b> - zero cloud calls for AI inference; owned the full production lifecycle (CI/CD, Crashlytics, RevenueCat, AdMob mediation).",
+                "Shipped <b>Chakuli - Offline AI Chatbot</b> (live on Google Play): a privacy-first Android assistant running <b>Gemma 2/3, Phi 3.5 Mini and SmolLM</b> entirely on-device via <b>LiteRT-LM</b> - zero cloud calls for AI inference; owned the full production lifecycle (CI/CD, Crashlytics, RevenueCat, AdMob mediation).",
                 "Built the full <b>Jetpack Compose</b> (Material 3) UI, <b>Hilt</b> DI, <b>Proto DataStore</b>, <b>WorkManager</b> background model downloads, custom <b>CameraX</b> pipeline, Agent Skills system and encrypted key storage.",
                 "Architected and shipped <b>PyMaster</b> - an Android/Flutter Python learning platform (50k+ LOC) with Gemini AI tutor, RevenueCat IAP and Firebase backend, live on Play Store.",
             ],
