@@ -106,7 +106,7 @@ role(
     headline="Software Engineer",
     summary=(
         "Software engineer (B.Tech CSE, CGPA 8.7) who owns the whole product lifecycle - architecture, "
-        "backend, and shipping. Shipped <b>2 production apps to Google Play</b> with offline-first sync, "
+        "backend, and shipping. Shipped <b>3 apps to Google Play (2 live, 1 in closed testing)</b> with offline-first sync, "
         "event-driven async engines, REST/Firebase backends and CI/CD pipelines. Globalink intern "
         "(Mitacs, Canada); <b>IGI Global</b> and <b>ACM</b> publications; <b>granted patent</b>; Wikimedia OSS."
     ),
@@ -126,7 +126,7 @@ role(
             "bullets": [
                 "Took complete ownership of building and shipping <b>PyMaster</b> (Play Store): 50k+ LOC production platform, <b>Clean Architecture</b>, multi-env build system (dev/staging/prod), Riverpod 2.0 and a Gemini AI tutor - <b>99.5% crash-free sessions</b>; designed unit-testable data / domain / presentation layers with Repository + Hilt DI, Proto DataStore and EncryptedSharedPreferences.",
                 "Engineered an <b>offline-first async sync engine</b>: event queue persists user progress locally and batch-uploads to Firebase on reconnect - <b>zero data loss</b> under intermittent connectivity with deterministic conflict resolution.",
-                "Owned the full <b>production lifecycle</b>: CI/CD pipeline, Play Console publishing, A/B testing, Crashlytics incident response, RevenueCat billing (subscriptions + IAP) and AdMob native-ad mediation; also built <b>Chakuli</b>, an on-device LLM chatbot (Gemma 2/3, Phi 3.5) running via LiteRT-LM with WorkManager-managed model downloads.",
+                "Owned the full <b>production lifecycle</b>: CI/CD pipeline, Play Console publishing, A/B testing, Crashlytics incident response, RevenueCat billing (subscriptions + IAP) and AdMob native-ad mediation; shipped <b>Chakuli</b> (live: Gemma 4, Qwen3.5, Phi, SmolLM on a dual <b>LiteRT + GGUF</b> runtime) and led <b>Keepary</b> through Play closed testing (on-device ML Kit OCR, RevenueCat Pro).",
             ],
         },
         {
@@ -169,10 +169,18 @@ role(
         },
         {
             "title": "Chakuli - Offline AI Chatbot",
-            "stack": "Kotlin, LiteRT-LM, Jetpack Compose, WorkManager, Proto DataStore",
+            "stack": "Kotlin, LiteRT-LM + GGUF, Jetpack Compose, WorkManager, Proto DataStore",
             "dates": "2025 - Present",
             "bullets": [
-                "<b>Live on Google Play.</b> Runs Gemma 2/3, Phi 3.5 Mini and SmolLM entirely on-device - zero cloud inference. Compose UI, Hilt DI, CameraX, Agent Skills, encrypted key storage.",
+                "<b>Live on Google Play.</b> Runs Gemma 4, Qwen3.5, Phi 3.5 Mini and SmolLM entirely on-device on a dual LiteRT + GGUF runtime - zero cloud inference. Compose UI, Hilt DI, CameraX, Agent Skills, encrypted key storage.",
+            ],
+        },
+        {
+            "title": "Rote Playoffs - Agent Procedure Benchmark (WeMakeDevs x Modiqo)",
+            "stack": "Python, Rote CLI, controlled A/B benchmarking, deterministic grading",
+            "dates": "Sep 2026",
+            "bullets": [
+                "Shipped <b>38 agent procedures</b> (all 1.00, top-5 of 123 makers); measured procedure reuse in a controlled study: <b>9.9x faster</b>, <b>15.3x fewer output tokens</b>, replicated across 6 tasks with frozen ground truth.",
             ],
         },
     ],
@@ -194,7 +202,7 @@ role(
         ("Languages &amp; UI", "Kotlin, Java, SQL; Jetpack Compose (Material 3), custom layouts, Material Design"),
         ("Architecture", "MVVM/MVI, Clean Architecture, Hilt (DI), Repository pattern, SOLID"),
         ("Concurrency &amp; Persistence", "Coroutines &amp; Flow, WorkManager, Room, Proto DataStore, EncryptedSharedPreferences, Retrofit, REST APIs"),
-        ("On-Device AI", "LiteRT-LM (TFLite runtime), Gemma 2/3, Phi 3.5 Mini, MediaPipe FaceMesh, Google ML Kit"),
+        ("On-Device AI", "Dual runtime (LiteRT-LM + GGUF), Gemma 4, Qwen3.5, Phi 3.5 Mini, MediaPipe FaceMesh, Google ML Kit"),
         ("Firebase &amp; Monetisation", "Firebase (Auth, Firestore, Storage, Crashlytics), RevenueCat (IAP), Google AdMob mediation"),
         ("Tools", "Git, Gradle (Kotlin DSL), Android Studio, CI/CD, Google Cloud Platform, Linux"),
     ],
@@ -205,7 +213,7 @@ role(
             "org": "Independent",
             "place": "Remote",
             "bullets": [
-                "Shipped <b>Chakuli - Offline AI Chatbot</b> (live on Google Play): a privacy-first Android assistant running <b>Gemma 2/3, Phi 3.5 Mini and SmolLM</b> entirely on-device via <b>LiteRT-LM</b> - zero cloud calls for AI inference; owned the full production lifecycle (CI/CD, Crashlytics, RevenueCat, AdMob mediation).",
+                "Shipped <b>Chakuli - Offline AI Chatbot</b> (live on Google Play): a privacy-first Android assistant running <b>Gemma 4, Qwen3.5, Phi 3.5 Mini and SmolLM</b> entirely on-device via a dual <b>LiteRT + GGUF</b> runtime - zero cloud calls for AI inference; owned the full production lifecycle (CI/CD, Crashlytics, RevenueCat, AdMob mediation).",
                 "Built the full <b>Jetpack Compose</b> (Material 3) UI, <b>Hilt</b> DI, <b>Proto DataStore</b>, <b>WorkManager</b> background model downloads, custom <b>CameraX</b> pipeline, Agent Skills system and encrypted key storage.",
                 "Architected and shipped <b>PyMaster</b> - an Android/Flutter Python learning platform (50k+ LOC) with Gemini AI tutor, RevenueCat IAP and Firebase backend, live on Play Store.",
             ],
@@ -233,10 +241,10 @@ role(
     projects=[
         {
             "title": "Chakuli - Offline AI Chatbot",
-            "stack": "Kotlin, Jetpack Compose, LiteRT-LM, Hilt, CameraX",
+            "stack": "Kotlin, Jetpack Compose, LiteRT + GGUF, Hilt, CameraX",
             "dates": "2025 - Present",
             "bullets": [
-                "On-device Android AI assistant running <b>Gemma 2/3, Phi 3.5 Mini, SmolLM</b> via <b>LiteRT-LM</b> - no internet required for inference, full data privacy; Agent Skills system, encrypted storage, foreground WorkManager model downloads, Protobuf DataStore persistence.",
+                "On-device Android AI assistant running <b>Gemma 4, Qwen3.5, Phi 3.5 Mini, SmolLM</b> via a dual <b>LiteRT + GGUF</b> runtime - no internet required for inference, full data privacy; Agent Skills system, encrypted storage, foreground WorkManager model downloads, Protobuf DataStore persistence.",
             ],
         },
         {
@@ -258,7 +266,7 @@ role(
     headline="Flutter Developer",
     summary=(
         "Flutter engineer with <b>2+ years of end-to-end product experience</b>, having independently designed, "
-        "built and shipped <b>2 apps to Google Play</b>. Expert in <b>Flutter, Dart, Riverpod 2.0 and Clean "
+        "built and shipped <b>3 apps (2 live, 1 in closed testing) to Google Play</b>. Expert in <b>Flutter, Dart, Riverpod 2.0 and Clean "
         "Architecture</b>, with deep cross-platform (iOS, Android, Web) experience and strong command of Firebase, "
         "RevenueCat and production-grade app architecture."
     ),
@@ -280,7 +288,8 @@ role(
                 "Architected and shipped <b>PyMaster</b> (Live on Play Store) - a <b>50k+ LOC Flutter</b> Python learning platform with Clean Architecture, <b>Riverpod 2.0</b> and Flutter Flavors for dev/staging/prod environments.",
                 "Integrated <b>Gemini LLM</b> as a native AI tutor; built an <b>offline-first sync engine</b> (Riverpod + Hive) that batch-queues progress and uploads to Firebase on reconnect - zero data loss.",
                 "Implemented the full <b>monetisation stack</b>: RevenueCat (subscriptions &amp; IAP), Google AdMob native-ad mediation, Firebase Google Sign-In - managing the entire lifecycle from code to Play Console.",
-                "Shipped <b>Chakuli</b>, an on-device AI Android chatbot (Gemma/Phi via LiteRT-LM) as a companion Flutter/Android product.",
+                "Shipped <b>Chakuli</b> (live on Play) - on-device AI chatbot, Gemma 4/Qwen3.5 on a dual LiteRT + GGUF runtime.",
+                "Leading <b>Keepary</b> through Play closed testing - a Flutter scan-to-PDF scanner with on-device <b>ML Kit OCR</b>, local vault + search, compress-to-target-size, <b>RevenueCat Pro</b> and capped AdMob - no account, no cloud.",
             ],
         },
         {
@@ -303,6 +312,14 @@ role(
         },
     ],
     projects=[
+        {
+            "title": "Keepary - Document Scanner (Closed Testing)",
+            "stack": "Flutter, Riverpod, ML Kit OCR, RevenueCat, AdMob",
+            "dates": "2026 - Present",
+            "bullets": [
+                "Scan-to-PDF with on-device OCR, local vault + search, merge/split/compress, ID-card mode and QR - <b>no account, no cloud</b>; Pro via RevenueCat (searchable PDF, encryption).",
+            ],
+        },
         {
             "title": "PyMaster - Learn Python Coding",
             "stack": "Flutter, Dart, Riverpod 2.0, Firebase, RevenueCat, Gemini AI",
@@ -348,7 +365,7 @@ role(
         ("ML &amp; Deep Learning", "PyTorch, TensorFlow, HuggingFace Transformers, BERT, Scikit-learn, fine-tuning, evaluation (accuracy/precision/recall)"),
         ("NLP &amp; Generative AI", "Text classification, tokenization, Gemini API (Flash Lite), context-aware prompt/system design"),
         ("Computer Vision", "OpenCV, YOLOv5, MediaPipe FaceMesh, Google ML Kit, optimised inference pipelines"),
-        ("On-Device AI", "LiteRT-LM (TFLite runtime), Gemma 2/3, Phi 3.5 Mini, SmolLM, offline inference"),
+        ("On-Device AI", "Dual runtime (LiteRT-LM + GGUF), Gemma 4, Qwen3.5, Phi 3.5 Mini, SmolLM, offline inference"),
         ("Languages", "Python (research), Java, Kotlin, Dart, C++, SQL"),
         ("MLOps &amp; Deployment", "Flask/REST service deployment, Firebase, Git, CI/CD, model lifecycle"),
     ],
@@ -359,7 +376,7 @@ role(
             "org": "Independent",
             "place": "Remote",
             "bullets": [
-                "Built <b>Chakuli</b>, an on-device LLM chatbot running <b>Gemma 2/3, Phi 3.5 Mini and SmolLM</b> via <b>LiteRT-LM</b> - full AI inference offline, zero cloud calls, preserving user privacy.",
+                "Built <b>Chakuli</b>, an on-device LLM chatbot running <b>Gemma 4, Qwen3.5, Phi 3.5 Mini and SmolLM</b> via a dual <b>LiteRT + GGUF</b> runtime - full AI inference offline, zero cloud calls, preserving user privacy.",
                 "Designed a <b>mastery-based adaptive practice engine</b> that detects weak topics and generates focused AI sessions; integrated a <b>Gemini AI tutor</b> with per-track system prompts.",
             ],
         },
@@ -394,8 +411,16 @@ role(
     ],
     projects=[
         {
+            "title": "Rote Playoffs - Agent Procedure Benchmark",
+            "stack": "Python, controlled A/B benchmarking, deterministic grading, telemetry",
+            "dates": "Sep 2026",
+            "bullets": [
+                "Measured procedure reuse in agentic LLM workflows across 6 tasks: <b>9.9x faster</b>, <b>15.3x fewer output tokens</b>, 9.8/10 with-Play correctness; frozen ground truth, deterministic grader.",
+            ],
+        },
+        {
             "title": "Chakuli - On-Device AI Chatbot",
-            "stack": "LiteRT-LM, Gemma/Phi/SmolLM, Kotlin, Compose",
+            "stack": "LiteRT + GGUF, Gemma 4/Qwen3.5/Phi/SmolLM, Kotlin, Compose",
             "dates": "2025 - Present",
             "bullets": [
                 "Offline AI assistant with zero-cloud LLM inference and an Agent Skills system; foreground WorkManager manages multi-GB model downloads with exponential backoff.",
@@ -427,8 +452,8 @@ role(
     plausible_targets="DevOps / Platform / Release Engineer",
     headline="DevOps &amp; Platform Engineer",
     summary=(
-        "Production engineer who owns the path from code to release. Shipped <b>2 production apps to Google Play</b> "
-        "with <b>multi-env build and release pipelines</b> (dev/staging/prod), <b>CI/CD</b>, cloud backends "
+        "Production engineer who owns the path from code to release. Shipped <b>3 apps to Google Play (2 live, 1 in closed testing)</b> "
+        "with a third in closed testing. Runs <b>multi-env build and release pipelines</b> (dev/staging/prod), <b>CI/CD</b>, cloud backends "
         "(Firebase / GCP) and crash monitoring. Hands-on with <b>Linux, Git, Docker, AWS and CI/CD</b>, with a "
         "B.Tech CSE (CGPA 8.7) and experience on production open-source (Wikimedia)."
     ),
@@ -447,7 +472,7 @@ role(
             "org": "Independent",
             "place": "Remote",
             "bullets": [
-                "Set up the full <b>CI/CD</b> pipeline for PyMaster and Chakuli - multi-env build system (dev/staging/prod) via Flutter Flavors and Gradle, automated Play Console releases and A/B testing.",
+                "Set up the full <b>CI/CD</b> pipeline for PyMaster, Chakuli and Keepary - multi-env build system (dev/staging/prod) via Flutter Flavors and Gradle, automated Play Console releases, closed-testing track management and A/B testing.",
                 "Run <b>production monitoring</b>: Firebase Crashlytics incident response, Analytics-driven decisions - sustained <b>99.5% crash-free</b> sessions.",
                 "Built and operated cloud backends (Firebase / GCP) and an <b>offline-first sync engine</b> with deterministic conflict resolution for reliable data transfer.",
                 "Integrated and operated the monetisation stack (RevenueCat, AdMob mediation) and model-download delivery for on-device AI.",
@@ -496,7 +521,7 @@ ROLE_ORDER = ["sde", "android", "flutter", "ml", "devops"]
 
 # -------------------------------------------------------------- styling ----
 
-def styles(accent):
+def styles(accent, scale=1.0):
     s = {}
     s["name"] = ParagraphStyle(
         "name", fontName="Helvetica-Bold", fontSize=17, leading=19,
@@ -545,6 +570,10 @@ def styles(accent):
         "award", fontName="Helvetica", fontSize=8.6, leading=10.3,
         textColor=black, alignment=TA_JUSTIFY,
     )
+    if scale != 1.0:
+        for st in s.values():
+            st.fontSize = max(6.3, st.fontSize * scale)
+            st.leading = st.leading * scale
     return s
 
 
@@ -589,9 +618,9 @@ def job_block(job, r):
                         + [bullet(b, r) for b in job["bullets"]] + [Spacer(1, 2)])
 
 
-def build_one(data, out_pdf):
+def build_one(data, out_pdf, scale=1.0):
     accent = data["accent"]
-    r = styles(accent)
+    r = styles(accent, scale)
     story = []
 
     # Header
@@ -650,7 +679,8 @@ def build_one(data, out_pdf):
         subject=f"Resume - {data['plausible_targets']}",
     )
     doc.build(story)
-    print("Wrote", out_pdf)
+    print(f"Wrote {out_pdf} (scale {scale:.2f}, {doc.page} page)")
+    return doc
 
 
 def main():
@@ -659,7 +689,10 @@ def main():
         folder = os.path.join(OUT_DIR, key)
         os.makedirs(folder, exist_ok=True)
         out = os.path.join(folder, data["fileslug"] + ".pdf")
-        build_one(data, out)
+        for scale in (1.0, 0.97, 0.94, 0.91, 0.88, 0.85):
+            doc = build_one(data, out, scale)
+            if doc.page <= 1:
+                break
 
 
 if __name__ == "__main__":

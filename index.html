@@ -80,13 +80,17 @@ nav .links a:hover{color:var(--accent)}
 .metric .v.o{color:var(--brand-ink)}
 .metric .k{color:var(--muted);font-size:13.5px;margin-top:7px}
 .hero-cta{display:flex;gap:14px;margin-top:32px;flex-wrap:wrap}
+.hero-grid{display:grid;grid-template-columns:1fr 320px;gap:clamp(24px,3.5vw,56px);align-items:center}
+.photo-wrap{display:flex;justify-content:center}
+.photo{width:100%;max-width:320px;aspect-ratio:.86;object-fit:cover;object-position:center 20%;border-radius:20px;border:1px solid var(--rule);box-shadow:var(--shadow,0 18px 48px rgba(0,0,0,.36));transform:rotate(1.2deg)}
 .btn{display:inline-flex;align-items:center;gap:9px;background:var(--accent);color:#0e0e0e;font-weight:700;padding:13px 20px;border-radius:10px;font-size:15px;cursor:pointer;border:0;transition:transform .24s var(--ease)}
 .btn:hover{transform:translateY(-2px)}
 .btn.ghost{background:var(--surface-muted);color:var(--text);border:1px solid var(--rule)}
 .rv{opacity:0;transform:translateY(18px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
 .rv.on{opacity:1;transform:none}
 
-.app{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(24px,3vw,48px);background:var(--surface);border:1px solid var(--rule-subtle);border-radius:16px;padding:clamp(22px,2.8vw,40px);margin-top:22px}
+.app{display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:clamp(24px,3vw,48px);background:var(--surface);border:1px solid var(--rule-subtle);border-radius:16px;padding:clamp(22px,2.8vw,40px);margin-top:22px}
+.app>*{min-width:0}
 .app.inverse{background:var(--surface-muted)}
 .app-head{display:flex;align-items:center;gap:14px;margin-bottom:12px}
 .app-head img.ic{width:52px;height:52px;border-radius:12px}
@@ -100,7 +104,7 @@ nav .links a:hover{color:var(--accent)}
 .spec{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
 .spec span{font-family:var(--mono);font-size:11.5px;border:1px solid var(--rule);border-radius:99px;padding:5px 10px;color:var(--muted)}
 .app-cta{display:flex;gap:12px;margin-top:22px;flex-wrap:wrap}
-.shots{display:flex;gap:12px;overflow-x:auto;padding:6px 2px;scroll-snap-type:x mandatory}
+.shots{display:flex;gap:12px;overflow-x:auto;padding:10px 2px 14px;scroll-snap-type:x mandatory;align-self:center}
 .shots img{height:400px;border-radius:18px;border:1px solid var(--rule-subtle);scroll-snap-align:center;flex:0 0 auto}
 .feat{width:100%;border-radius:12px;border:1px solid var(--rule-subtle);margin-bottom:14px}
 
@@ -133,7 +137,7 @@ nav .links a:hover{color:var(--accent)}
 .group{margin-top:26px}
 .group .glabel{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint)}
 
-.resume-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:28px}
+.resume-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-top:28px}
 .resume{background:var(--surface);border:1px solid var(--rule-subtle);border-radius:12px;padding:20px;transition:border-color .24s var(--ease)}
 .resume:hover{border-color:var(--accent)}
 .resume .rt{font-weight:700;font-size:15.5px}
@@ -149,7 +153,7 @@ footer .cols{display:flex;gap:30px;flex-wrap:wrap;justify-content:space-between;
 footer a{color:var(--muted)}footer a:hover{color:var(--accent)}
 .flinks{display:flex;gap:20px;flex-wrap:wrap}
 
-@media (max-width:960px){.app{grid-template-columns:1fr}.grid3,.metrics,.resume-grid{grid-template-columns:1fr 1fr}nav .links{display:none}}
+@media (max-width:960px){.app{grid-template-columns:1fr}.grid3,.metrics,.resume-grid{grid-template-columns:1fr 1fr}nav .links{display:none}.hero-grid{grid-template-columns:1fr}.photo{max-width:200px;transform:none;margin:0 auto}}
 @media (max-width:600px){.grid3,.metrics,.resume-grid{grid-template-columns:1fr}.shots img{height:300px}}
 </style>
 </head>
@@ -160,16 +164,21 @@ footer a{color:var(--muted)}footer a:hover{color:var(--accent)}
     <span class="nav-brand"><span class="dot"></span>bhanu<span style="color:var(--faint);font-weight:400">.dev</span></span>
     <span class="open-chip">open to work</span>
     <div class="links">
-      <a href="#apps">Apps</a><a href="#playoffs">Case study</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#stack">Stack</a><a href="#recognition">Recognition</a><a href="#resume">Résumé</a><a href="#contact">Contact</a>
+      <a href="#apps">Apps</a><a href="#hackathons">Hackathons</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#stack">Stack</a><a href="#recognition">Recognition</a><a href="#resume">Résumé</a><a href="#contact">Contact</a>
     </div>
   </div>
 </nav>
 
 <header class="hero">
   <div class="wrap">
-    <div class="eyebrow rv">Software engineer · Indie founder · Nagpur, India</div>
-    <h1 class="h1 rv">I ship end-to-end products —<br>mobile, on-device AI,<br>and the <em>systems under them</em><span class="o">.</span></h1>
-    <p class="sub rv">Founder of <b style="color:var(--text)">Devanshu Studios</b>: two production apps on Google Play and a third in closed testing. On-device LLMs with LiteRT-LM, Flutter and Kotlin in production, RevenueCat + AdMob monetization, full Play Console lifecycle — plus ML research, two patents, and a measured hackathon study below. I care about things people can <b style="color:var(--text)">install today</b>.</p>
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow rv">Software engineer · Indie founder · Nagpur, India</div>
+        <h1 class="h1 rv">I ship end-to-end products —<br>mobile, on-device AI,<br>and the <em>systems under them</em><span class="o">.</span></h1>
+        <p class="sub rv">Founder of <b style="color:var(--text)">Devanshu Studios</b>: two production apps on Google Play and a third in closed testing. On-device LLMs with LiteRT-LM and GGUF, Flutter and Kotlin in production, RevenueCat + AdMob monetization, full Play Console lifecycle — plus ML research, two patents, and a measured hackathon study below. I care about things people can <b style="color:var(--text)">install today</b>.</p>
+      </div>
+      <div class="photo-wrap rv"><img class="photo" src="images/profile.jpg" alt="Bhanu Nagpure"></div>
+    </div>
     <div class="metrics rv">
       <div class="metric"><div class="v num">3</div><div class="k">products shipped / in testing</div></div>
       <div class="metric"><div class="v o num">50k+</div><div class="k">lines shipped to production</div></div>
@@ -178,7 +187,7 @@ footer a{color:var(--muted)}footer a:hover{color:var(--accent)}
     </div>
     <div class="hero-cta rv">
       <a class="btn" href="#apps">See the apps ↓</a>
-      <a class="btn ghost" href="#playoffs">The measured case study</a>
+      <a class="btn ghost" href="#hackathons">Hackathons</a>
       <a class="btn ghost" href="#resume">Résumé</a>
     </div>
   </div>
@@ -196,24 +205,20 @@ footer a{color:var(--muted)}footer a:hover{color:var(--accent)}
         <span class="badge testing">closed testing</span>
         <p><b>Scan to PDF on the phone. OCR, merge, compress. No account.</b> On-device OCR with Google ML Kit — zero API cost, zero cloud. Local document vault with on-device search, PDF tools (split, merge, compress to target size, password), ID-card mode, QR scan, and signing. Keepary Pro via RevenueCat: searchable PDFs, encryption, high compression. Ads engineered with caps and cooldowns — interstitials only after saves, never on first launch.</p>
         <div class="spec"><span>Flutter</span><span>Riverpod 3</span><span>ML Kit OCR</span><span>RevenueCat</span><span>AdMob</span><span>Camera</span><span>offline-first</span></div>
-        <div class="app-cta"><a class="btn ghost" href="https://play.google.com/store/apps/developer?id=Devanshu+Studios" target="_blank" rel="noopener">Studio on Google Play ↗</a></div>
+        <div class="app-cta"><a class="btn" href="https://play.google.com/store/apps/developer?id=Devanshu+Studios" target="_blank" rel="noopener">Studio on Google Play ↗</a></div>
       </div>
-      <div>
-        <img class="feat" src="images/keepary/feature.png" alt="Keepary feature graphic">
-        <div class="shots">
-          <img src="images/keepary/home.png" alt="Keepary home vault" loading="lazy">
-          <img src="images/keepary/viewer.png" alt="Keepary document viewer" loading="lazy">
-          <img src="images/keepary/edit.png" alt="Keepary page editing" loading="lazy">
-          <img src="images/keepary/pdftools.png" alt="Keepary PDF tools" loading="lazy">
-          <img src="images/keepary/qr.png" alt="Keepary QR scanner" loading="lazy">
-        </div>
-        <p class="note">in closed testing — validating with a private cohort before public launch</p>
+      <div class="shots">
+        <img src="images/keepary/home.png" alt="Keepary home vault" loading="lazy">
+        <img src="images/keepary/viewer.png" alt="Keepary document viewer" loading="lazy">
+        <img src="images/keepary/edit.png" alt="Keepary page editing" loading="lazy">
+        <img src="images/keepary/compress.png" alt="Keepary compression" loading="lazy">
+        <img src="images/keepary/pdftools.png" alt="Keepary PDF tools" loading="lazy">
       </div>
     </div>
 
     <div class="app inverse rv">
       <div>
-        <div class="app-head"><div><h3>PyMaster</h3><div class="tag">com.devanshustudios.pymaster · Flutter</div></div></div>
+        <div class="app-head"><img class="ic" src="images/PyMaster.png" alt="PyMaster logo"><div><h3>PyMaster</h3><div class="tag">com.devanshustudios.pymaster · Flutter</div></div></div>
         <span class="badge live">live on play</span>
         <p><b>Learn Python on the phone.</b> 1,200+ exercises across gamified levels with an AI tutor, offline-first sync, and a clean-architecture Flutter codebase past <b>50k lines</b> — built solo. RevenueCat subscriptions + AdMob native ads in production; the monetization postmortem is on the blog.</p>
         <div class="spec"><span>Flutter</span><span>Riverpod 2.0</span><span>Flavors</span><span>Firebase</span><span>RevenueCat</span><span>Gemini tutor</span></div>
@@ -228,11 +233,11 @@ footer a{color:var(--muted)}footer a:hover{color:var(--accent)}
 
     <div class="app rv">
       <div>
-        <div class="app-head"><div><h3>Chakuli</h3><div class="tag">com.devanshustudios.chakuli · Kotlin · Jetpack Compose</div></div></div>
-        <span class="badge prod">production</span>
-        <p><b>Privacy-first on-device AI chat.</b> Gemma 2/3, Phi 3.5, and SmolLM run entirely on the phone via LiteRT-LM — no cloud inference, no accounts. Jetpack Compose UI, Hilt, CameraX vision skills, and agent skills for actions beyond chat.</p>
-        <div class="spec"><span>Kotlin</span><span>Compose</span><span>LiteRT-LM</span><span>Gemma · Phi · SmolLM</span><span>Hilt</span><span>CameraX</span></div>
-        <div class="app-cta"><a class="btn ghost" href="https://play.google.com/store/apps/developer?id=Devanshu+Studios" target="_blank" rel="noopener">View on Google Play ↗</a></div>
+        <div class="app-head"><img class="ic" src="images/chakuli.png" alt="Chakuli logo"><div><h3>Chakuli</h3><div class="tag">com.devanshustudios.chakuli · Kotlin · Jetpack Compose</div></div></div>
+        <span class="badge prod">live on play</span>
+        <p><b>Privacy-first on-device AI chat — with a dual runtime.</b> Runs modern LLMs entirely on the phone: Gemma 4, Qwen3.5, Phi 3.5, and SmolLM — switchable between <b>LiteRT</b> and <b>GGUF</b> engines with per-model accelerator profiles and dual sampler modes for thinking vs. instruct. No cloud inference, no accounts. Jetpack Compose UI, Hilt, CameraX vision skills, and agent skills with per-call permissions.</p>
+        <div class="spec"><span>Kotlin</span><span>Compose</span><span>LiteRT-LM</span><span>GGUF</span><span>Gemma 4 · Qwen3.5</span><span>Hilt</span><span>CameraX</span></div>
+        <div class="app-cta"><a class="btn" href="https://play.google.com/store/apps/details?id=com.devanshustudios.chakuli" target="_blank" rel="noopener">Get it on Google Play ↗</a></div>
       </div>
       <div class="shots">
         <img src="images/app_screenshots/chakuli/chakuli_1.jpg" alt="Chakuli screenshot 1" loading="lazy">
@@ -243,31 +248,45 @@ footer a{color:var(--muted)}footer a:hover{color:var(--accent)}
   </div>
 </section>
 
-<section id="playoffs">
+<section id="hackathons">
   <div class="wrap">
-    <div class="eyebrow rv">02 · case study</div>
-    <h2 class="rv">The Rote Playoffs study: procedure memory beats model effort.</h2>
-    <p class="lede rv">For the WeMakeDevs × Modiqo hackathon I shipped 38 zero-key "Plays" (all scored 1.00, top-5 of 123 makers), then ran a controlled experiment: the same agent, model, and task — with a crystallized procedure versus re-deriving it from scratch. Frozen ground truth, deterministic grader, six tasks, leak audit, raw telemetry published.</p>
-    <div class="metrics rv" style="margin-top:30px">
-      <div class="metric"><div class="v num">9.9×</div><div class="k">faster with a Play (36.7 s vs 362.7 s)</div></div>
-      <div class="metric"><div class="v num">15.3×</div><div class="k">fewer output tokens</div></div>
-      <div class="metric"><div class="v o num">9.8/10</div><div class="k">with-Play correctness, replicated over 6 tasks</div></div>
-      <div class="metric"><div class="v o num">38</div><div class="k">Plays published · every one 1.00</div></div>
+    <div class="eyebrow rv">02 · hackathons & case studies</div>
+    <h2 class="rv">I don't just attend hackathons — I measure what I build.</h2>
+    <p class="lede rv">Four hackathons this season: WeMakeDevs × Modiqo, the Zerops Challenge, Bright Data's Into the Scrape-Verse, and the Agent Harness Hackathon. One of them turned into a full research study.</p>
+
+    <div class="app inverse rv" style="margin-top:26px">
+      <div>
+        <div class="app-head"><div><h3>Rote Playoffs — the measured one</h3><div class="tag">WeMakeDevs × Modiqo · Sep 1–6 2026 · 38 Plays published, all scored 1.00 · top-5 of 123 makers</div></div></div>
+        <p>I shipped a 38-Play arsenal of zero-key agent procedures, then asked the question every builder should ask: <b>does crystallized procedure memory actually beat model effort?</b> The answer became a controlled study — same agent, same model, same task, with-Play versus re-derivation. Frozen ground truth, deterministic grader, six tasks, thirty-one graded trials, a leak audit that caught two baselines reading the experiment's own answer key (reported, not hidden), and raw telemetry for everything.</p>
+        <div class="metrics rv" style="margin-top:18px">
+          <div class="metric"><div class="v num">9.9×</div><div class="k">faster with a Play</div></div>
+          <div class="metric"><div class="v num">15.3×</div><div class="k">fewer output tokens</div></div>
+          <div class="metric"><div class="v o num">9.8/10</div><div class="k">correctness, replicated 6 tasks</div></div>
+        </div>
+        <div class="app-cta">
+          <a class="btn" href="playoffs/">Open the full study →</a>
+          <a class="btn ghost" href="https://github.com/bhanu-dev82/roll/tree/main/benchmark" target="_blank" rel="noopener">Artifacts on GitHub ↗</a>
+        </div>
+      </div>
+      <div>
+        <div class="scroll"><table class="tbl">
+          <thead><tr><th>transfer task</th><th>w/ Play</th><th>baseline</th></tr></thead>
+          <tbody>
+            <tr><td>side-effect audit</td><td class="mono" style="color:var(--accent)">10, 10</td><td>7, 7</td></tr>
+            <tr><td>instruction burial</td><td class="mono" style="color:var(--accent)">9, 9</td><td style="color:var(--danger)">2, 2</td></tr>
+            <tr><td>commit hygiene</td><td class="mono" style="color:var(--accent)">10, 10</td><td>8, 8</td></tr>
+            <tr><td>JSON integrity</td><td class="mono" style="color:var(--accent)">10, 10</td><td>10, 9</td></tr>
+            <tr><td>event deadline join</td><td class="mono" style="color:var(--accent)">10, 10</td><td>10, 10</td></tr>
+          </tbody>
+        </table></div>
+        <p class="note">baseline @ 572–2,180 s vs with-Play @ ~32 s on instruction burial</p>
+      </div>
     </div>
-    <div class="scroll rv"><table class="tbl">
-      <thead><tr><th>transfer task</th><th>with-Play</th><th>baseline</th><th>what separates them</th></tr></thead>
-      <tbody>
-        <tr><td>side-effect audit — claim-vs-observation join</td><td class="mono" style="color:var(--accent)">10, 10</td><td>7, 7</td><td>exact path-mention semantics</td></tr>
-        <tr><td>instruction burial — rules past the attention cliff</td><td class="mono" style="color:var(--accent)">9, 9 @ ~32 s</td><td style="color:var(--danger)">2, 2 @ 572–2,180 s</td><td>one baseline run: 36 minutes, wrong answer</td></tr>
-        <tr><td>commit hygiene — convention classification</td><td class="mono" style="color:var(--accent)">10, 10</td><td>8, 8</td><td>invented a looser convention</td></tr>
-        <tr><td>JSON integrity — error localization</td><td class="mono" style="color:var(--accent)">10, 10</td><td>10, 9</td><td>method well-known; re-derivation cheap</td></tr>
-        <tr><td>event deadline — live multi-source join</td><td class="mono" style="color:var(--accent)">10, 10</td><td>10, 10</td><td>correct but 3–4× slower</td></tr>
-      </tbody>
-    </table></div>
-    <p class="note rv">The boundary is the finding: procedure memory adds nothing where the method is common knowledge — and is decisive everywhere else. Two baseline trials found the experiment's own answer key on disk; kept, reported, protocol amended. Full study with per-trial telemetry, grader, and paper:</p>
-    <div class="hero-cta rv">
-      <a class="btn" href="playoffs/">Open the full study →</a>
-      <a class="btn ghost" href="https://github.com/bhanu-dev82/roll/tree/main/benchmark" target="_blank" rel="noopener">Benchmark artifacts on GitHub ↗</a>
+
+    <div class="grid3 rv">
+      <div class="card"><h3>Crucible</h3><div class="tag" style="font-family:var(--mono);font-size:12px;color:var(--faint);margin-bottom:8px">The Zerops Challenge · WeMakeDevs × Zerops</div><p>Your URL under fire, live: four challenge packs (heartbeat, HTTPS/uptime, JSON validation, capped concurrent load) with a real scoreboard and letter grades. Fastify + React 19 + PostgreSQL with an async probe worker as the product — deployed on Zerops, SSRF-hardened, pre-seeded scorecards so it's never empty for judges.</p><span class="m"><a href="https://github.com/bhanu-dev82/Crucible" target="_blank" rel="noopener" style="color:var(--accent)">github.com/bhanu-dev82/Crucible ↗</a></span></div>
+      <div class="card"><h3>HYDRA — shrinkflation watch</h3><div class="tag" style="font-family:var(--mono);font-size:12px;color:var(--faint);margin-bottom:8px">Into the Scrape-Verse · Bright Data</div><p>"The jar got smaller. The price didn't." Custom Scraper Studio collectors read ALDI, Sprouts, and a self-hosted fixture shelf; when package size drops and price holds, HYDRA flags it — and collectors self-heal from a plain-English field list when the HTML moves. Live on Vercel with a 1:38 demo video.</p><span class="m"><a href="https://hydra-fleet-agent-i.vercel.app/" target="_blank" rel="noopener" style="color:var(--accent)">Live demo ↗</a> · <a href="https://github.com/bhanu-dev82/HYDRA-shrinkflation-watch-" target="_blank" rel="noopener" style="color:var(--accent)">repo ↗</a></span></div>
+      <div class="card"><h3>Agent Harness</h3><div class="tag" style="font-family:var(--mono);font-size:12px;color:var(--faint);margin-bottom:8px">The Agent Harness Hackathon</div><p>A quota-aware multi-tier Gemini model router, an agent-harness client with turn running, local + remote MCP tool configs, and automated Qodo PR-review workflows — packaged with offline docs, project starters, and a Kaggle benchmark harness so any agent (or human) can execute the build cold.</p><span class="m"><a href="https://github.com/bhanu-dev82/agentscope" target="_blank" rel="noopener" style="color:var(--accent)">github.com/bhanu-dev82/agentscope ↗</a></span></div>
     </div>
   </div>
 </section>
@@ -305,7 +324,7 @@ footer a{color:var(--muted)}footer a:hover{color:var(--accent)}
     <h2 class="rv">What I ship with.</h2>
     <p class="lede rv">Mobile is a pillar — not the whole house. Production stack across product, systems, and ML.</p>
     <div class="group rv"><div class="glabel">mobile</div><div class="chips"><span class="hot">Kotlin</span><span class="hot">Flutter</span><span class="hot">Jetpack Compose</span><span>Dart</span><span>Riverpod 2.0</span><span>MVVM / MVI</span><span>Hilt</span><span>CameraX</span><span>WorkManager</span><span>Room</span><span>Platform Channels</span></div></div>
-    <div class="group rv"><div class="glabel">ai / ml</div><div class="chips"><span class="hot">LiteRT-LM</span><span class="hot">Gemma 2/3</span><span>Phi 3.5</span><span>SmolLM</span><span>MediaPipe</span><span>ML Kit</span><span>BERT / Transformers</span><span>TensorFlow</span><span>YOLOv5</span><span>Gemini API</span></div></div>
+    <div class="group rv"><div class="glabel">ai / ml</div><div class="chips"><span class="hot">LiteRT-LM</span><span class="hot">Gemma 4</span><span>Phi 3.5</span><span>SmolLM</span><span>MediaPipe</span><span>ML Kit</span><span>BERT / Transformers</span><span>TensorFlow</span><span>YOLOv5</span><span>Gemini API</span></div></div>
     <div class="group rv"><div class="glabel">systems & backend</div><div class="chips"><span class="hot">Firebase</span><span>offline-first sync</span><span>REST</span><span>Hive</span><span>Proto DataStore</span><span>SQL</span><span>Google Cloud</span><span>Linux</span></div></div>
     <div class="group rv"><div class="glabel">product & ship</div><div class="chips"><span class="hot">Clean Architecture</span><span class="hot">RevenueCat</span><span>AdMob</span><span>Play Console</span><span>Flavors</span><span>Crashlytics</span><span>Git / GitHub</span></div></div>
   </div>
@@ -327,12 +346,13 @@ footer a{color:var(--muted)}footer a:hover{color:var(--accent)}
   <div class="wrap">
     <div class="eyebrow rv">07 · résumé</div>
     <h2 class="rv">Tailored one-pagers.</h2>
-    <p class="lede rv">Same engineer, three lenses. LaTeX sources live in the repo.</p>
+    <p class="lede rv">Same engineer, five lenses — generated from one shared data source, so the facts never drift. LaTeX and generator sources live in the repo.</p>
     <div class="resume-grid rv">
-      <div class="resume"><div class="rt">Mobile Engineer</div><div class="rd">Android · Flutter · Play</div><a href="resumes/Resume_Andorid_flutter.pdf" target="_blank">Download PDF ↗</a></div>
-      <div class="resume"><div class="rt">DevOps / Platform</div><div class="rd">CI/CD · cloud · systems</div><a href="resumes/Bhanu_Nagpure_DevOps.pdf" target="_blank">Download PDF ↗</a></div>
-      <div class="resume"><div class="rt">Software Engineer</div><div class="rd">general SDE lens</div><a href="resumes/Bhanu_nagpure_1p.pdf" target="_blank">Download PDF ↗</a></div>
-      <div class="resume"><div class="rt">Full CV</div><div class="rd">everything, one document</div><a href="Resume_Bhanu.pdf" target="_blank">Download PDF ↗</a></div>
+      <div class="resume"><div class="rt">Android Developer</div><div class="rd">Kotlin · Compose · on-device AI</div><a href="resumes/android/Bhanu_Nagpure_Android.pdf" target="_blank">Download PDF ↗</a></div>
+      <div class="resume"><div class="rt">Flutter Developer</div><div class="rd">3 shipped apps · monetization</div><a href="resumes/flutter/Bhanu_Nagpure_Flutter.pdf" target="_blank">Download PDF ↗</a></div>
+      <div class="resume"><div class="rt">ML / AI Engineer</div><div class="rd">on-device LLM · BERT · CV</div><a href="resumes/ml/Bhanu_Nagpure_ML_Engineer.pdf" target="_blank">Download PDF ↗</a></div>
+      <div class="resume"><div class="rt">DevOps / Platform</div><div class="rd">CI/CD · release engineering</div><a href="resumes/devops/Bhanu_Nagpure_DevOps.pdf" target="_blank">Download PDF ↗</a></div>
+      <div class="resume"><div class="rt">Software Engineer</div><div class="rd">general SDE lens</div><a href="resumes/sde/Bhanu_Nagpure_SDE.pdf" target="_blank">Download PDF ↗</a></div>
     </div>
   </div>
 </section>
