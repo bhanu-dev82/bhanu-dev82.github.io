@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>bhanu82 — Procedure memory beats model effort · 38 Plays, all 1.00</title>
+<meta name="description" content="A measured answer for the Rote Playoffs: the same agent, same model, same task — with a crystallized Play it finishes 9.9× faster using 15.3× fewer output tokens. 38 Plays published, every one scored 1.00. Full data on this page.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --page:#0e0e0e; --field:#101010; --surface:#111111; --surface-muted:#151515; --elevated:#202020;
+  --text:#ffffff; --muted:rgba(255,255,255,.68); --faint:rgba(255,255,255,.42);
+  --rule-subtle:rgba(255,255,255,.08); --rule:rgba(255,255,255,.15); --rule-strong:rgba(255,255,255,.3);
+  --accent:#b6ff3c; --accent-soft:#263313; --highlight:#e4f064;
+  --brand:#ff5b1f; --brand-ink:#ff7b4d; --brand-soft:#25150f;
+  --positive:#78e772; --warning:#f3bc56; --danger:#ff7466;
+  --shadow-soft:0 18px 48px rgba(0,0,0,.36); --shadow-strong:0 28px 78px rgba(0,0,0,.56);
+  --track-display:-.055em; --track-meta:.1em; --leading:1.625;
+  --ease:cubic-bezier(.22,1,.36,1);
+  --gutter:clamp(20px,3.25vw,52px); --section:clamp(72px,9vw,128px); --maxw:1600px;
+  --mono:"Geist Mono","IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --sans:"Geist","Helvetica Neue",Arial,system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--page);color:var(--text);font:16px/var(--leading) var(--sans);-webkit-font-smoothing:antialiased}
+::selection{background:var(--accent);color:#0e0e0e}
+a{color:inherit;text-decoration:none}
+.mono{font-family:var(--mono)}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--gutter)}
+section{padding:var(--section) 0;border-top:1px solid var(--rule-subtle)}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:var(--track-meta);text-transform:uppercase;color:var(--brand-ink)}
+h2{font-size:clamp(28px,3.6vw,44px);letter-spacing:var(--track-display);font-weight:700;margin:14px 0 10px}
+.lede{color:var(--muted);max-width:820px;font-size:clamp(16px,1.4vw,19px)}
+.num{font-variant-numeric:tabular-nums}
+
+/* nav */
+nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);background:rgba(14,14,14,.78);border-bottom:1px solid var(--rule-subtle)}
+.nav-in{display:flex;align-items:center;gap:22px;height:58px}
+.nav-brand{font-weight:700;letter-spacing:var(--track-display);display:flex;align-items:center;gap:9px}
+.dot{width:9px;height:9px;border-radius:50%;background:var(--brand);box-shadow:0 0 12px var(--brand)}
+nav .links{display:flex;gap:18px;margin-left:auto;overflow-x:auto}
+nav .links a{font-family:var(--mono);font-size:12.5px;color:var(--muted);letter-spacing:.04em;white-space:nowrap}
+nav .links a:hover{color:var(--accent)}
+.countdown{font-family:var(--mono);font-size:12px;color:#0e0e0e;background:var(--accent);padding:5px 10px;border-radius:6px;font-weight:600;white-space:nowrap}
+
+/* hero */
+.hero{padding:clamp(64px,9vw,120px) 0 var(--section);position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;inset:0;background:
+ radial-gradient(900px 420px at 78% -10%, rgba(255,91,31,.16), transparent 62%),
+ radial-gradient(700px 380px at 8% 8%, rgba(182,255,60,.07), transparent 60%);pointer-events:none}
+.h1{font-size:clamp(40px,6.2vw,84px);line-height:1.02;letter-spacing:var(--track-display);font-weight:800;max-width:1150px}
+.h1 em{font-style:normal;color:var(--accent)}
+.h1 .o{color:var(--brand-ink)}
+.sub{color:var(--muted);max-width:860px;margin-top:22px;font-size:clamp(16px,1.5vw,20px)}
+.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--rule-subtle);border:1px solid var(--rule-subtle);margin-top:44px;border-radius:14px;overflow:hidden}
+.metric{background:var(--surface);padding:clamp(18px,2.2vw,30px)}
+.metric .v{font-family:var(--mono);font-weight:600;font-size:clamp(34px,4.6vw,64px);letter-spacing:var(--track-display);color:var(--accent)}
+.metric .v.o{color:var(--brand-ink)}
+.metric .k{color:var(--muted);font-size:14px;margin-top:8px}
+.metric .d{color:var(--faint);font-size:12.5px;margin-top:3px;font-family:var(--mono)}
+.hero-cta{display:flex;gap:14px;margin-top:34px;flex-wrap:wrap;align-items:center}
+.btn{display:inline-flex;align-items:center;gap:9px;background:var(--accent);color:#0e0e0e;font-weight:700;padding:13px 20px;border-radius:10px;border:0;font-size:15px;cursor:pointer;transition:transform .24s var(--ease)}
+.btn:hover{transform:translateY(-2px)}
+.btn.ghost{background:var(--surface-muted);color:var(--text);border:1px solid var(--rule)}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(18px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.rv.on{opacity:1;transform:none}
+
+/* tables */
+.tbl{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:26px}
+.tbl th{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);text-align:left;padding:10px 12px;border-bottom:1px solid var(--rule)}
+.tbl td{padding:11px 12px;border-bottom:1px solid var(--rule-subtle);color:var(--muted)}
+.tbl td:first-child,.tbl td.num{color:var(--text)}
+.tbl tr:hover td{background:rgba(255,255,255,.025)}
+.scroll{overflow-x:auto;border:1px solid var(--rule-subtle);border-radius:12px;background:var(--field)}
+.scroll .tbl{margin:0}
+.note{font-family:var(--mono);font-size:12px;color:var(--faint);margin-top:10px}
+
+/* verdict strip */
+.strip{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule-subtle);border:1px solid var(--rule-subtle);border-radius:14px;overflow:hidden;margin-top:26px}
+.strip>div{background:var(--surface);padding:22px}
+.strip .big{font-family:var(--mono);font-size:clamp(22px,2.6vw,34px);color:var(--text);letter-spacing:var(--track-display)}
+.strip .lbl{color:var(--muted);font-size:13.5px;margin-top:6px}
+
+/* callouts */
+.callout{border:1px solid var(--rule);border-radius:14px;padding:clamp(20px,2.6vw,30px);margin-top:26px;background:linear-gradient(180deg,var(--surface-muted),var(--field));display:grid;grid-template-columns:110px 1fr;gap:20px;align-items:start}
+.callout .tag{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding:7px 10px;border-radius:7px;display:inline-block}
+.callout .leak .tag{background:var(--brand-soft);color:var(--brand-ink)}
+.callout .win .tag{background:var(--accent-soft);color:var(--accent)}
+.callout p{color:var(--muted)}
+.callout p b{color:var(--text)}
+.callout .mono-line{font-family:var(--mono);font-size:13px;color:var(--highlight);margin-top:10px;display:block}
+
+/* cards grid */
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:30px}
+.card{background:var(--surface);border:1px solid var(--rule-subtle);border-radius:12px;padding:22px}
+.card h3{font-size:17px;margin-bottom:8px;letter-spacing:var(--track-display)}
+.card p{color:var(--muted);font-size:14.5px}
+.card .mono-line{font-family:var(--mono);font-size:12.5px;color:var(--accent);margin-top:12px;display:block}
+.pill{display:inline-block;font-family:var(--mono);font-size:11px;padding:4px 9px;border-radius:99px;border:1px solid var(--rule);color:var(--muted);margin-right:6px}
+
+/* plays */
+.controls{display:flex;gap:10px;flex-wrap:wrap;margin:26px 0 4px;align-items:center}
+.controls input{flex:1;min-width:240px;background:var(--field);border:1px solid var(--rule);color:var(--text);border-radius:10px;padding:12px 14px;font-family:var(--mono);font-size:14px;outline:none}
+.controls input:focus{border-color:var(--accent)}
+.chip{font-family:var(--mono);font-size:12px;padding:9px 13px;border-radius:9px;border:1px solid var(--rule);background:var(--surface);color:var(--muted);cursor:pointer;transition:all .24s var(--ease)}
+.chip.on{background:var(--accent);color:#0e0e0e;border-color:var(--accent);font-weight:600}
+.plays{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:14px;margin-top:22px}
+.play{background:var(--surface);border:1px solid var(--rule-subtle);border-radius:12px;padding:18px;transition:border-color .24s var(--ease),transform .24s var(--ease)}
+.play:hover{border-color:var(--rule-strong);transform:translateY(-2px)}
+.play-top{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.play-name{font-weight:700;letter-spacing:var(--track-display)}
+.ver{color:var(--faint);font-size:12px}
+.play p{color:var(--muted);font-size:13.5px;margin:8px 0 12px;line-height:1.55;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.play-foot{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.uri{font-size:11.5px;color:var(--faint);word-break:break-all}
+.uri:hover{color:var(--accent)}
+.copy{font-size:11px;color:var(--accent);background:var(--accent-soft);border:1px solid transparent;border-radius:7px;padding:6px 9px;cursor:pointer;white-space:nowrap}
+.copy:hover{border-color:var(--accent)}
+.hidden{display:none}
+
+/* install */
+.install{margin-top:28px;background:var(--page);border:1px solid var(--rule);border-radius:14px;padding:20px;display:flex;gap:16px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.install code{font-family:var(--mono);font-size:clamp(13px,1.6vw,16px);color:var(--highlight)}
+.install code span{color:var(--faint)}
+footer{padding:52px 0 72px;border-top:1px solid var(--rule-subtle);color:var(--faint);font-size:14px}
+footer .cols{display:flex;gap:34px;flex-wrap:wrap;justify-content:space-between;align-items:flex-start}
+footer a{color:var(--muted)} footer a:hover{color:var(--accent)}
+.fgrid{display:flex;gap:22px;flex-wrap:wrap}
+
+@media (max-width:960px){
+ .metrics,.grid3,.strip{grid-template-columns:1fr 1fr}
+ nav .links{display:none}
+}
+@media (max-width:600px){
+ .metrics,.grid3,.strip{grid-template-columns:1fr}
+ .callout{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav-in">
+    <span class="nav-brand"><span class="dot"></span>bhanu82<span style="color:var(--faint);font-weight:400">/roll</span></span>
+    <span class="countdown mono" id="cd" title="Submissions close Sun 6 Sep 2026 20:00 London">—</span>
+    <div class="links">
+      <a href="#results">Results</a><a href="#leak">The Leak</a><a href="#method">Method</a><a href="#receipts">Receipts</a><a href="#plays">38 Plays</a><a href="#paper">Paper</a><a href="#install">Install</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow rv">Rote Playoffs · WeMakeDevs × Modiqo · measured 2026-09-05</div>
+    <h1 class="h1 rv">Procedure memory<br>beats <em>model effort</em><span class="o">.</span></h1>
+    <p class="sub rv">Same task. Same agent, same model, same prompt. The only difference: one arm was handed a crystallized <b>Play</b> — a recorded working method — and the other had to re-derive it from scratch. Ten trials, frozen ground truth, a deterministic grader, raw telemetry, and one answer key that the baseline agents found and used. <b style="color:var(--text)">Everything is on this page.</b></p>
+    <div class="metrics rv">
+      <div class="metric"><div class="v num" data-count="9.9" data-suffix="×">0×</div><div class="k">faster wall-clock</div><div class="d">36.7 s vs 362.7 s mean</div></div>
+      <div class="metric"><div class="v num" data-count="15.3" data-suffix="×">0×</div><div class="k">fewer output tokens</div><div class="d">1,232 vs 18,905 mean</div></div>
+      <div class="metric"><div class="v o num" data-count="10" data-prefix="~" data-suffix="×">~0×</div><div class="k">lower billed cost</div><div class="d">$0.016 vs $0.154 mean</div></div>
+      <div class="metric"><div class="v o num" data-count="38" data-suffix="">0</div><div class="k">Plays published · all 1.00</div><div class="d">zero API keys · read-only</div></div>
+    </div>
+    <div class="hero-cta rv">
+      <a class="btn" href="#results">See the data ↓</a>
+      <a class="btn ghost" href="#plays">Browse the arsenal</a>
+    </div>
+  </div>
+</header>
+
+<section id="results">
+  <div class="wrap">
+    <div class="eyebrow rv">01 · The scoreboard</div>
+    <h2 class="rv">The measurement, per trial.</h2>
+    <p class="lede rv">Harness: Grok Build headless (<span class="mono">grok-4.6-build</span>), n=3 per arm, back-to-back, fresh scratch per trial. Correctness 0–10 against frozen ground truth via a deterministic grader. Hostile-input control (n=1 per arm) uses fixture-local truth. Full raw telemetry is in the repo — the table below is the complete result set.</p>
+
+    <div class="strip rv">
+      <div><div class="big num">36.7 s <span style="color:var(--faint);font-size:.55em">vs 362.7 s</span></div><div class="lbl">mean wall-clock, with-Play vs baseline (n=3). With the anti-shortcut guard, honest re-derivation took 800–1,058 s — <b style="color:var(--text)">25× slower than the Play</b>.</div></div>
+      <div><div class="big num">1,232 <span style="color:var(--faint);font-size:.55em">vs 18,905</span></div><div class="lbl">mean output tokens per run. The with-Play arm resolves a URI, runs it, reads the answer. The baseline writes an analyzer.</div></div>
+      <div><div class="big num">9 / 9 / 9</div><div class="lbl">with-Play correctness, three trials, zero variance. Under corrupted input it reproduced ground truth <b style="color:var(--text)">exactly</b>; the baseline diverged (3/10).</div></div>
+    </div>
+
+    <div class="scroll rv"><table class="tbl">
+      <thead><tr><th>trial</th><th>arm</th><th>score /10</th><th>wall s</th><th>turns</th><th>input tok</th><th>cache tok</th><th>output tok</th><th>cost</th></tr></thead>
+      <tbody><tr><td class="mono">1</td><td>baseline</td><td class="mono">10*</td><td class="mono">499</td><td class="mono">22</td><td class="mono num">146,455</td><td class="mono num">1,410,048</td><td class="mono num">25,711</td><td class="mono num">$0.196</td></tr>
+<tr><td class="mono">2</td><td>baseline</td><td class="mono">10*</td><td class="mono">258</td><td class="mono">19</td><td class="mono num">93,173</td><td class="mono num">982,784</td><td class="mono num">12,979</td><td class="mono num">$0.128</td></tr>
+<tr><td class="mono">3</td><td>baseline</td><td class="mono">9</td><td class="mono">331</td><td class="mono">18</td><td class="mono num">161,981</td><td class="mono num">754,304</td><td class="mono num">18,026</td><td class="mono num">$0.138</td></tr>
+<tr><td class="mono">2</td><td>baseline_v2</td><td class="mono">1</td><td class="mono">800</td><td class="mono">33</td><td class="mono num">—</td><td class="mono num">—</td><td class="mono num">—</td><td class="mono num">—</td></tr>
+<tr><td class="mono">3</td><td>baseline_v2</td><td class="mono">1</td><td class="mono">1,058</td><td class="mono">20</td><td class="mono num">—</td><td class="mono num">—</td><td class="mono num">—</td><td class="mono num">—</td></tr>
+<tr><td class="mono">1</td><td>with_play</td><td class="mono">9</td><td class="mono">33</td><td class="mono">4</td><td class="mono num">12,707</td><td class="mono num">75,904</td><td class="mono num">1,163</td><td class="mono num">$0.012</td></tr>
+<tr><td class="mono">2</td><td>with_play</td><td class="mono">9</td><td class="mono">45</td><td class="mono">5</td><td class="mono num">24,021</td><td class="mono num">94,464</td><td class="mono num">1,589</td><td class="mono num">$0.018</td></tr>
+<tr><td class="mono">3</td><td>with_play</td><td class="mono">9</td><td class="mono">32</td><td class="mono">4</td><td class="mono num">34,959</td><td class="mono num">49,920</td><td class="mono num">945</td><td class="mono num">$0.017</td></tr></tbody>
+    </table></div>
+    <p class="note rv">* leaked trials — see below; perfect by construction, kept and reported. baseline_v2 trial 1 exceeded the 900 s cap with no answer. Cost as billed by the harness; arm means: baseline 9.7 pts / $0.154 · with-Play 9.0 pts / $0.016.</p>
+
+    <div class="callout win rv" id="leak2">
+      <span class="tag">hostile input</span>
+      <div><p><b>We fed both arms a corrupted transcript store</b> — valid sessions mixed with a corrupt-JSONL file and one 600KB line. The with-Play arm reproduced the fixture truth <b>exactly</b> (single inert file, 1 read, 3 sessions, skips labeled — 10/10). The baseline degraded gracefully (no fail-open) but diverged — it missed the valid signal inside the partially-corrupt file (3/10). Labeled degradation beats plausible guessing.</p></div>
+    </div>
+
+    <h2 class="rv" style="margin-top:56px">Replicated across six tasks.</h2>
+    <p class="lede rv">Five transfer tasks, each exercising a different Play and a different ability — side-effect auditing, instruction-burial analysis, commit hygiene, JSON integrity, live event extraction. Twenty further trials. Hardened protocol: baseline inputs staged inside the scratch, explicit anti-leak rules, every trial audited (zero leaks). Graded 0–10 against per-task frozen ground truth.</p>
+    <div class="scroll rv"><table class="tbl">
+      <thead><tr><th>task (ability tested)</th><th>with-Play, n=2</th><th>baseline, n=2</th><th>what separates them</th></tr></thead>
+      <tbody>
+        <tr><td>side-effect audit — claim-vs-observation join</td><td class="mono" style="color:var(--accent)">10, 10</td><td class="mono">7, 7</td><td>baseline misses the play's exact path-mention semantics</td></tr>
+        <tr><td>instruction burial — rules past the attention cliff</td><td class="mono" style="color:var(--accent)">9, 9 <span style="color:var(--faint)">@ ~32 s</span></td><td class="mono" style="color:var(--danger)">2, 2 @ 572–2,180 s</td><td>one baseline run spent 36 minutes deriving a wrong answer</td></tr>
+        <tr><td>commit hygiene — convention classification</td><td class="mono" style="color:var(--accent)">10, 10</td><td class="mono">8, 8</td><td>baseline invents a looser convention</td></tr>
+        <tr><td>JSON integrity — error localization</td><td class="mono" style="color:var(--accent)">10, 10</td><td class="mono">10, 9</td><td>method is well-known; re-derivation is cheap here</td></tr>
+        <tr><td>event deadline — live multi-source join</td><td class="mono" style="color:var(--accent)">10, 10</td><td class="mono">10, 10</td><td>baseline correct but 3–4× slower per run</td></tr>
+      </tbody>
+    </table></div>
+    <p class="note rv">with-Play mean across the transfer suite: 9.8/10 (min 9). The boundary is the finding: procedure memory adds nothing where the method is common knowledge — and is decisive everywhere else.</p>
+  </div>
+</section>
+
+<section id="leak">
+  <div class="wrap">
+    <div class="eyebrow rv">02 · The finding nobody planned</div>
+    <h2 class="rv">Your agent will find the answer key.</h2>
+    <div class="callout leak rv">
+      <span class="tag">leaked</span>
+      <div>
+        <p><b>Two of three baseline trials scored 10/10 — because the agents explored the filesystem, found this experiment's own frozen ground truth and reference engine, and used them.</b> Their logs say it out loud:</p>
+        <span class="mono-line">"I'll run the official analyzer and check it against the frozen ground truth."</span>
+        <p style="margin-top:12px">We kept the trials, marked them leaked, and amended the protocol mid-execution. Then we ran a hardened arm told to derive everything and reuse nothing — it took <b>800–1,058 seconds per trial</b> and <b>still answered wrong</b>, under-scanning the transcripts (8 of 13 sessions) and inventing a weaker influence criterion. On a shared filesystem, benchmark isolation isn't a nicety. It's the experiment.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="method">
+  <div class="wrap">
+    <div class="eyebrow rv">03 · How we ran it</div>
+    <h2 class="rv">Design, frozen before execution.</h2>
+    <p class="lede rv">One real job — audit an AI agent's own JSONL session transcripts for files loaded into context that never influenced later work. Two transcript schemas, path extraction, order-sensitive influence tracing: genuinely nontrivial to re-derive, deterministic to grade.</p>
+    <div class="grid3 rv">
+      <div class="card"><h3>Arms</h3><p><b>with-Play</b> — one added line: the exact <span class="mono">rote play run</span> command for the job's Play. It still has to run it and read the output. <b>baseline</b> — identical prompt, no mention of rote. <b>baseline_v2</b> — plus an anti-shortcut guard, added after the leak.</p><span class="mono-line">n=3 per arm · hostile control n=1</span></div>
+      <div class="card"><h3>Grading</h3><p>Frozen ground truth from a reference implementation; a fixed Python grader scores free-text answers: top-3 set match (0–5), read counts ±1 (0–2), session count ±1 (0–2), influence semantics (0–1). Path matching is normalized to favor the baseline.</p><span class="mono-line">score_answers.py · offline</span></div>
+      <div class="card"><h3>Honesty hardware</h3><p>Every trial's text + reasoning grepped for leak patterns; results annotated per trial. Protocol amended twice, in writing, before grading. Telemetry, prompts, ground truth, and the grader are all published with the study.</p><span class="mono-line">10 trials · 0 missing datapoints</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="receipts">
+  <div class="wrap">
+    <div class="eyebrow rv">04 · The improvement loop</div>
+    <h2 class="rv">Three real bugs, caught by real runs.</h2>
+    <p class="lede rv">Rule for every update: score 1.00 → push → download the published Play fresh → run it on something real. No demos. The loop caught what staring at code never would:</p>
+    <div class="grid3 rv">
+      <div class="card"><span class="pill">buried-instructions 0.1.1</span><h3 style="margin-top:12px">A detector that couldn't read real instructions</h3><p>Run on the actual AGENTS.md: <b>0 rules found</b> — in a file full of rules. Markdown emphasis broke the matcher and rules hid mid-paragraph. Rewritten sentence-level with an imperative-verb pattern: now <b>303 rules across 21 real skill files, 88 past the ~3,000-token reading cliff</b>.</p></div>
+      <div class="card"><span class="pill">catch-sneaky-changes 0.2.1</span><h3 style="margin-top:12px">A census that could lie on big repos</h3><p>The after-census flagged files as "dirty→cleared" that still existed — an artifact of the 500-entry git cap shifting alphabetically between snapshots. Fixed: cleared-path claims suppressed under truncation, warning surfaced. Re-verified: <b>16/16 real transitions, zero artifacts</b>. Now a 4-probe parallel DAG (lockfiles ∥ listeners ∥ git + join).</p></div>
+      <div class="card"><span class="pill">find-wasted-tokens 0.2.0</span><h3 style="margin-top:12px">Scope before you scan</h3><p>Upgraded to a parallel pair: a no-parse inventory census (∥) the deep influence analysis, so you see what will be scanned — 13 sessions, 12.4 MB on this machine — before committing to the run. Ran live on real transcripts; the published URI is what you can run below.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="plays">
+  <div class="wrap">
+    <div class="eyebrow rv">05 · The arsenal</div>
+    <h2 class="rv">38 Plays. Every one scored 1.00.</h2>
+    <p class="lede rv">Zero API keys. Python stdlib only. Read-only unless the contract discloses writes. Inspectable before you run it — <span class="mono">rote play inspect</span> the URI first. Standing after the build week: <b style="color:var(--text)">#4 of 123 playmakers</b> in a catalog of 800+ Plays.</p>
+    <div class="controls rv">
+      <input id="q" type="search" placeholder="filter 38 plays… (try: tokens, git, session, lint)" autocomplete="off">
+      <button class="chip on" data-cat="all">all</button><button class="chip" data-cat="context">context</button><button class="chip" data-cat="governance">governance</button><button class="chip" data-cat="repo">repo</button><button class="chip" data-cat="ops">ops</button>
+    </div>
+    <div class="plays" id="playsGrid"></div>
+  </div>
+</section>
+
+<section id="paper">
+  <div class="wrap">
+    <div class="eyebrow rv">06 · The paper</div>
+    <h2 class="rv">"Procedure Memory Beats Model Effort."</h2>
+    <p class="lede rv" style="max-width:960px">A controlled case study of one real task — auditing an AI agent's own session transcripts for context files that were loaded but never influenced later work — executed by the same harness in two arms: with a crystallized Play, and re-deriving from scratch. The with-Play arm finished in <b style="color:var(--text)">36.7 s</b> on average versus <b style="color:var(--text)">362.7 s</b> (9.9×), used <b style="color:var(--text)">15.3× fewer</b> output tokens at ~10× lower billed cost, and exactly reproduced ground truth under hostile input where the baseline diverged — at equal correctness on clean inputs. Two of three baseline trials were leaked: they discovered the experiment's own ground truth on the shared filesystem and used it, scoring perfectly by construction; we keep, report, and learn from them. The honest baseline's failure modes — the method-rebuilding tax, partial-corruption divergence, and the price of anti-shortcut guarding — are catalogued with session receipts. Full protocol, prompts, telemetry, and grader ship with the study.</p>
+    <div class="grid3 rv">
+      <div class="card"><h3>Contribution 1</h3><p>A paired-arm protocol (with-Play vs baseline) for measuring procedure reuse: frozen ground truth, deterministic grader, leak audit, pre-registered amendments.</p></div>
+      <div class="card"><h3>Contribution 2</h3><p>Per-trial results on a real task with a hostile-input control — including a benchmark-isolation failure every agent-evaluation builder should internalize.</p></div>
+      <div class="card"><h3>Contribution 3</h3><p>A baseline failure-mode taxonomy: answer-key capture, the method-rebuilding tax, fails-plausible degradation, and the cost of forced honesty.</p></div>
+    </div>
+    <p class="note rv">Manual arms (documented, runnable prompt packs included): Gemini 3.8 Flash High in Google Antigravity 2.0 — $0.75/$3.75 per 1M tokens, adjustable thinking depth, strong agentic-coding gains; Meta Muse Spark 1.3 in OpenCode Zen — free, #4 by observed usage (~10T tokens/week, 93% input-cache ratio). The thesis predicts the largest savings exactly where models are cheapest.</p>
+  </div>
+</section>
+
+<section id="install">
+  <div class="wrap">
+    <div class="eyebrow rv">07 · Run it yourself</div>
+    <h2 class="rv">One command. Then one URI.</h2>
+    <p class="lede rv">Credentials never travel; the contract declares every effect. This is the whole submission — no deck, no video, just a public URI that runs.</p>
+    <div class="install rv">
+      <code id="cmd">curl -fsSL https://getrote.dev/playoffs/install.sh | sh</code>
+      <button class="btn" data-copy="curl -fsSL https://getrote.dev/playoffs/install.sh | sh">Copy install</button>
+    </div>
+    <div class="install rv">
+      <code><span>rote play run </span>https://play.modiqo.ai/bhanu82/find-wasted-tokens</code>
+      <button class="btn" data-copy="rote play run https://play.modiqo.ai/bhanu82/find-wasted-tokens">Copy run</button>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap cols">
+    <div style="max-width:520px">
+      <div class="nav-brand" style="margin-bottom:10px"><span class="dot"></span>bhanu82</div>
+      Built for the Rote Playoffs (WeMakeDevs × Modiqo), Sep 1–6 2026. Plays are inspectable, versioned procedures; this page is the full study — the data lives in the repo's <a href="https://github.com/bhanu-dev82/roll/tree/main/benchmark" target="_blank" rel="noopener">benchmark/</a> directory.
+    </div>
+    <div class="fgrid">
+      <a href="https://luma.com/rotehack" target="_blank" rel="noopener">Event</a>
+      <a href="https://www.modiqo.ai/blog/the-playoffs" target="_blank" rel="noopener">Field guide</a>
+      <a href="https://play.modiqo.ai/bhanu82/find-wasted-tokens@0.2.0" target="_blank" rel="noopener">Flagship Play</a>
+      <a href="https://github.com/bhanu-dev82/roll" target="_blank" rel="noopener">Repository</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+const PLAYS = [{"name": "agenda-gap-check", "version": "0.1.0", "desc": "Which meetings have no agenda? Read-only .ics audit flagging events with empty or token descriptions as UNPREPARED. Weekly calendar hygiene with zero keys; needs only python3."}, {"name": "buried-instructions", "version": "0.1.1", "desc": "Are your agent's orders buried where it stops reading? Every imperative rule gets a token offset; rules past the threshold are BURIED with move-up guidance. Research-grounded prompt hygiene with zero keys; needs only python3."}, {"name": "catch-sneaky-changes", "version": "0.2.1", "desc": "Catch secret files, deleted code, or hidden changes your AI agent made without telling you. Compares your workspace before and after an agent session so nothing unexpected slips into your code. Four parallel probes (baseline, lockfiles, Git, listeners) join into one verdict. Zero setup, zero API keys, 100% safe and read-only."}, {"name": "changelog-tag-guard", "version": "0.1.0", "desc": "Does the CHANGELOG describe what the tags shipped? Cross-checks git tags against CHANGELOG entries before release; untracked tags are DRIFT, missing evidence INDETERMINATE. Release-gate habit, read-only, zero keys; needs only python3 and git."}, {"name": "commit-message-lint", "version": "0.1.0", "desc": "Do your commit messages follow the convention your tooling expects? Grades recent git history against Conventional Commits shape and records breaking markers. Every-push habit, read-only, zero keys; needs only python3 and git."}, {"name": "compact-debt", "version": "0.1.0", "desc": "Did the compaction eat the instruction you keep repeating? Scans session transcripts for compaction markers and reports what fraction of user turns plus instruction references survive each compaction. Zero setup, zero API keys, runs completely locally."}, {"name": "cron-output-audit", "version": "0.1.0", "desc": "A cron job that runs is not a job anyone hears about. Audits each crontab entry for output disposition (MAILTO, log redirect, swallowed to /dev/null) and failure alerting (healthcheck ping, failure hook, strict shell). Silent entries listed; missing crontab is INDETERMINATE. Read-only, zero keys, bash only."}, {"name": "dns-a-pulse", "version": "0.1.1", "desc": "Pulse DNS A records for a list of public hostnames. Splits a comma-separated list, fans out one dig A per host, and joins a table of addresses. Empty answers queue review. Relative URLs are dropped. Zero keys. Default: example.com, iana.org, play.modiqo.ai."}, {"name": "doc-example-runner", "version": "0.1.0", "desc": "Docs rot one paste at a time. Structurally scans fenced code examples across repo markdown for unclosed fences and missing language tags, and checks every file each example names exists. Executes nothing, edits nothing. Zero keys, read-only, bash plus python3."}, {"name": "editor-style-guard", "version": "0.1.0", "desc": "Noisy diffs are a daily tax: trailing whitespace, missing final newlines, mixed tabs-and-spaces, CRLF endings. Scans the worktree read-only with no git needed and lists offending lines. Zero keys, python3 stdlib only."}, {"name": "error-spiral-trap", "version": "0.1.0", "desc": "Catch the error spiral before it eats the session budget. Finds runs where the same tool fails on the same target 3+ times and reports the longest spiral. Session-evidence check with zero keys; needs only python3."}, {"name": "event-brief-from-public-urls", "version": "0.1.1", "desc": "Turn any hackathon or event link into a clear 1-page summary. Tells you the exact deadline, timezone, prizes, submission rules, setup commands, and official links. Catches and highlights when rules on different pages disagree with each other so you never miss a requirement. 100% read-only, zero setup, zero API keys, needs only python3."}, {"name": "fact-check-ai-claims", "version": "0.1.0", "desc": "Fact-check claims made by your AI against real public websites. Compares dates, prices, rules, and facts from 2 to 8 web pages and clearly flags when sources agree or contradict each other. Zero setup, zero API keys, 100% read-only."}, {"name": "find-outdated-skills", "version": "0.1.1", "desc": "Find broken or outdated commands in your AI agent's instructions. Checks instructions in your README, SKILL.md, or AGENTS.md against the actual tools installed on your computer and shows you what needs fixing. Zero setup, zero keys, 100% safe."}, {"name": "find-repeated-prompts", "version": "0.1.1", "desc": "Find the questions and instructions you type to your AI agent over and over again. Automatically groups your repeated prompts so you can turn them into fast, reusable 1-click tools. Zero setup, zero API keys, runs completely locally."}, {"name": "find-wasted-tokens", "version": "0.2.0", "desc": "Find giant files and useless junk eating up your AI tokens. Scans your AI agent's chat history to show which files were loaded into memory but never actually used, and what you can safely remove. A scope inventory runs in parallel with the influence analysis. Zero setup, zero API keys, needs only python3."}, {"name": "hook-candidate-miner", "version": "0.1.0", "desc": "Mines JSONL session transcripts for manual corrections recurring 3+ times and proposes each as a hook candidate (PreToolUse deny+redirect or skill patch). Read-only transcript audit with zero keys; needs only python3."}, {"name": "http-vs-rendered", "version": "0.1.2", "desc": "A public page can look full in a browser and empty to a plain GET. Compares stdlib HTTP (robots.txt + GET + title/h1/links) with a real browser extract of headings and links. Verdicts: RENDERED-SAME, JS-OWNED, HTTP-ONLY, HTTP-BLOCKED, ROBOTS-BLOCKED, DIVERGENT, INDETERMINATE. No bot User-Agents, no keys, python3 plus the local browser. Default https://example.com."}, {"name": "ics-meeting-cost", "version": "0.1.0", "desc": "Audits an exported calendar file for meeting load and fragmentation: total hours, days without a focus block, worst back-to-back run, overlaps flagged. Weekly Friday habit with zero adapters; needs only python3."}, {"name": "instruction-watch", "version": "0.1.3", "desc": "Receipts for who edited the agent's own rules. Hashes AGENTS.md, SKILL.md, and hooks before an agent session and diffs them after, naming any mid-run self-modification for human review. Run as a session gate with zero API keys; needs only python3 and git."}, {"name": "json-sweep", "version": "0.1.0", "desc": "One malformed JSON file breaks the build nobody watches. Sweeps worktree JSON files for syntax errors with exact line and column. Skips counted, never silent. Zero keys, python3 stdlib only."}, {"name": "large-commit-scan", "version": "0.1.0", "desc": "Commits nobody can review: diffs touching more files or lines than a human can hold. Read-only git-log audit with exact counts. Every-push habit with zero keys; needs only python3 and git."}, {"name": "last-session-autopsy", "version": "0.1.2", "desc": "Reconstruct the last coding-agent session as a claim trial. Parses stated claims, fans out git/instruction/secret-name/failure/read/compaction probes, ranks the top three unverified claims, then walks a sequential load-check-record verify chain for each. CONTRADICTED keeps the claim and the evidence. Secret-shaped names are listed never opened. Relative paths refused. Read-only, zero keys, python3. Empty args run the bundled fixture pack."}, {"name": "log-level-audit", "version": "0.1.0", "desc": "Leftover debug prints are log lines with no level and no off switch. Worktree audit reporting print()/pprint()/console.log in prod code with exact file:line, excluding tests, scripts, and examples. Zero keys, python3 stdlib only."}, {"name": "morning-handoff-court", "version": "0.1.0", "desc": "Before you type this morning: probes git dirt, plan checkboxes vs commit subjects, instruction files, secret-shaped names (listed never opened), and open loops; ranks the top three blockers; walks a sequential load-check-record trial. CONTRADICTED keeps the clean-start claim and the dirty evidence. Relative paths refused. Empty args run the bundled fixture pack. Read-only, zero keys, python3."}, {"name": "onboard-doctor", "version": "0.1.2", "desc": "Is this machine ready for the Rote Playoffs? Parallel probes (OS, binaries, versions, login, harness plus play CLI/skill, registry search) join into READY / NOT-READY / INDETERMINATE. A runtime self-check withholds READY if the analyzer fails its own cases. Empty version stdout is UNKNOWN, never a pass. Read-only, zero API keys, needs only python3."}, {"name": "plan-drift-check", "version": "0.1.0", "desc": "Is the plan file telling the truth? Compares PLAN.md checkboxes against commit subjects since the plan mtime; done-uncommitted and committed-unmarked items are DRIFT, a missing plan INDETERMINATE. Read-only, zero keys; needs only python3 and git."}, {"name": "prompt-secret-leak", "version": "0.1.0", "desc": "Pasted a token or password into a prompt? It now lives in your agent transcripts. Scans JSONL session transcripts, USER turns only, for secret-shaped strings and reports redacted shapes with file locations, never values. Zero setup, zero API keys, runs completely locally."}, {"name": "rate-limit-ledger", "version": "0.1.0", "desc": "Where did the session hit the rate wall? Tallies throttle incidents in session evidence with waits quoted from evidence, never extrapolated. Session-evidence check with zero keys; needs only python3."}, {"name": "replay-microscope", "version": "0.1.3", "desc": "Run the same prompt twice, diff the paths. Finds repeats of one prompt inside local agent transcripts and reports CONSISTENT, PARAPHRASE, or DIVERGENT with a consistency fraction, so flaky prompts get pinned instead of rerun blind. Zero API keys; needs only python3."}, {"name": "retry-budget-guard", "version": "0.1.0", "desc": "Where does this repo retry with no budget? Static walk of Python/JS/TS for retry loops missing backoff, jitter, and cap. Comments blanked, code never executed. Pre-commit habit with zero keys, python3 stdlib only."}, {"name": "rss-morning-brief", "version": "0.1.0", "desc": "Reads your public RSS/Atom feeds and prints this morning's brief: fresh items newest-first with per-feed counts. Failed feeds stay DEGRADED, undated items UNKNOWN. Daily 09:00 habit with zero API keys; needs only python3."}, {"name": "session-gate", "version": "0.1.2", "desc": "One gate after every agent session: four parallel probes (rule files, workspace dirt, documented commands, transcript growth) join into SESSION-CLEAN or REVIEW-QUEUE. A runtime self-check withholds CLEAN if the analyzer fails its own cases; truncated probe output never reports CLEAN. Read-only, zero API keys; needs only python3 and git."}, {"name": "session-handoff-brief", "version": "0.1.0", "desc": "Next-session resume brief from repo state: branch, dirty files, last commit, open loops from the uncommitted diff plus transcript tail, and a suggested first command. Subjects and counts only, never SHAs. Read-only, zero keys; needs only python3 and git."}, {"name": "test-execution-gap", "version": "0.1.0", "desc": "Did THIS diff's files get exercised? Maps non-test files changed in the last N commits to sibling tests by name/path convention. Static mapping only, tests never executed. Every-push habit with zero keys; needs only python3 and git."}, {"name": "tls-notafter", "version": "0.1.0", "desc": "Pulse live TLS notAfter for a list of public hostnames. Splits a comma-separated list, fans out one handshake per host, and joins days-left against a warning horizon. Expired, unverified, or soon-expiring certs queue review. Relative URLs are dropped. Zero keys. Default: example.com, iana.org, play.modiqo.ai. Not a rotation-plan JSON model and not a committed-PEM scan."}, {"name": "unused-import-scan", "version": "0.1.0", "desc": "Every unused import is tokens paid on every read. Pre-commit scan of Python files with stdlib ast: per-file per-line unused imports, respecting re-exports, __all__, and noqa. Zero keys, python3 stdlib only."}, {"name": "url-pulse", "version": "0.1.1", "desc": "Pulse a list of public http(s) URLs in parallel with curl. Splits a comma-separated list, fans out one probe per URL, and joins a table of status codes. 2xx/3xx are reachable; 4xx/5xx queue review. Relative URLs are dropped. Zero keys. Default: example.com, iana.org, play.modiqo.ai."}];
+const GRID = document.getElementById('playsGrid');
+GRID.innerHTML = PLAYS.map(p => `<article class="play" data-s="${(p.name+' '+p.desc).toLowerCase()}">
+  <div class="play-top"><span class="play-name">${p.name}</span><span class="ver mono">v${p.version}</span></div>
+  <p>${p.desc}</p>
+  <div class="play-foot"><a class="uri mono" href="https://play.modiqo.ai/bhanu82/${p.name}" target="_blank" rel="noopener">play.modiqo.ai/bhanu82/${p.name}</a>
+  <button class="copy mono" data-copy="rote play run https://play.modiqo.ai/bhanu82/${p.name}">copy run</button></div>
+</article>`).join('');
+
+document.getElementById('q').addEventListener('input', e => {
+  const q = e.target.value.toLowerCase().trim();
+  document.querySelectorAll('#playsGrid .play').forEach(el => {
+    el.classList.toggle('hidden', q && !el.dataset.s.includes(q));
+  });
+});
+
+document.querySelectorAll('.chip').forEach(ch => ch.addEventListener('click', () => {
+  document.querySelectorAll('.chip').forEach(c => c.classList.remove('on'));
+  ch.classList.add('on');
+  const cat = ch.dataset.cat;
+  document.querySelectorAll('#playsGrid .play').forEach(el => {
+    el.classList.toggle('hidden', cat !== 'all' && !el.dataset.s.includes(cat));
+  });
+}));
+
+document.querySelectorAll('[data-copy]').forEach(b => b.addEventListener('click', async () => {
+  try { await navigator.clipboard.writeText(b.dataset.copy); } catch(e) {}
+  const t = b.textContent; b.textContent = 'copied ✓'; setTimeout(() => b.textContent = t, 1400);
+}));
+
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); } }), {threshold:.12});
+document.querySelectorAll('.rv').forEach(el => io.observe(el));
+
+const cio = new IntersectionObserver(es => es.forEach(e => {
+  if (!e.isIntersecting) return; cio.unobserve(e.target);
+  const el = e.target, end = parseFloat(el.dataset.count),
+        pre = el.dataset.prefix || '', suf = el.dataset.suffix || '', t0 = performance.now();
+  (function tick(t) {
+    const k = Math.min(1, (t - t0) / 1100), v = end * (1 - Math.pow(1 - k, 3));
+    el.textContent = pre + (end % 1 ? v.toFixed(1) : Math.round(v)) + suf;
+    if (k < 1) requestAnimationFrame(tick);
+  })(t0);
+}), {threshold:.4});
+document.querySelectorAll('[data-count]').forEach(el => cio.observe(el));
+
+const DEADLINE = new Date('2026-09-06T19:00:00Z');
+const cd = document.getElementById('cd');
+(function cdTick() {
+  const d = DEADLINE - new Date();
+  if (d <= 0) { cd.textContent = 'SUBMISSIONS CLOSED'; return; }
+  const h = Math.floor(d / 36e5), m = Math.floor(d % 36e5 / 6e4), s = Math.floor(d % 6e4 / 1e3);
+  cd.textContent = `${h}h ${String(m).padStart(2,'0')}m ${String(s).padStart(2,'0')}s to deadline`;
+  setTimeout(cdTick, 1000);
+})();
+</script>
+</body>
+</html>
